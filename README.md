@@ -36,8 +36,11 @@ The last update to this file was: **July 18th, 2024**
     - [Expectations](#expectations)
 - [UI / Design Choices](#ui-design-choices)
   - [Moodboard](#moodboard)
+  - [Fonts](#fonts)
+  - [Icons](#icons)
   - [Colours](#colours)
   - [Media Queries](#media-queries)
+  - [Wireframes](#wireframes)
 
 
 # UX
@@ -85,3 +88,42 @@ The last update to this file was: **July 18th, 2024**
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+# UI / Design Choices
+
+## Moodboard
+
+One of the first milestones of this project was to create a moodboard to help envision the overall house style of the webiite and ensure that all of the sections and elements are cohesive. The software I used to create the moodboard for this website is [Mila Note](https://milanote.com/ "Mila Note").
+Below, is the moodboard:
+![Moodboard](docs/moodboard.png)
+
+## Fonts
+
+## Icons
+
+## Colours
+
+The colour scheme of the website is inspired by the moodboard (previously depicted). I have used [Coolers](https://coolors.co/ "coolers") to retrieve the desired colour codes and generate the colour palette.
+
+Below, is the color palette:
+![Colour Palette](docs/colour-palette.png)
+
+## Media Queries
+
+As a starting point, I have designed this website with a mobile first mindset using the iPhone 5/SE (320px) as the smallest screen size for styling to look good on. Then I created 3 additional media queries for largers devices listed below.
+
+| Screen Size |  Breakpoint |
+| ----------- | ----------- | 
+| mobile      |  <320px     |
+| tablet      |  => 768px   |
+| laptop      |  => 1920px  |
+| desktop     |  => 2560px  |
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+
+## Wireframes
