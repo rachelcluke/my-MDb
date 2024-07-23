@@ -21,7 +21,7 @@ The following are high-level details of this project:
 - There are no passwords or secret keys in the project repository. 
 
 
-The last update to this file was: **July 18th, 2024**
+The last update to this file was: **July 23rd, 2024**
 
 # Table of Contents
 
@@ -127,3 +127,25 @@ As a starting point, I have designed this website with a mobile first mindset us
 
 
 ## Wireframes
+
+I have used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") to develop my wireframes for my website. I initially created the mobile version and then the wireframes and then scaled it up for desktop. The website has 3 pages that are all scrollable and displays/hides sections with logic in lieu of having even more HTML pages to decrease inconvenient reloading of entire website.
+
+The wireframes are below:
+
+[Landing Page - Mobile & Desktop Wireframes](docs/wireframes/wireframe-landing-page-mobile-desktop.png "home mobile and desktop wireframes")
+
+[Login Page - Mobile & Desktop Wireframes](docs/wireframes/wireframe-login-page-mobile-desktop.png "login mobile and desktop wireframes")
+
+[Main Page - Mobile & Desktop Wireframes](docs/wireframes/wireframe-landing-page-mobile-desktop.png "main mobile and desktop wireframes")
+
+[Community Page - Mobile & Desktop Wireframes](docs/wireframes/wireframe-community-page-mobile-desktop.png "community mobile and desktop wireframes")
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Features 
+
+## Existing Features 
