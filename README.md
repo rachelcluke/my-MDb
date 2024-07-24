@@ -21,7 +21,7 @@ The following are high-level details of this project:
 - There are no passwords or secret keys in the project repository. 
 
 
-The last update to this file was: **July 23rd, 2024**
+The last update to this file was: **July 24th, 2024**
 
 # Table of Contents
 
@@ -41,6 +41,7 @@ The last update to this file was: **July 23rd, 2024**
   - [Colours](#colours)
   - [Media Queries](#media-queries)
   - [Wireframes](#wireframes)
+  - [Mockups](#mockups)
 
 
 # UX
@@ -145,6 +146,17 @@ The wireframes are below:
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+## Mockups
+Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ "Figma") to help me plan the interface design. Mockups for both mobile and desktop have been created as part of the website design phase, and can be viewed via this link [Mockups](https://www.figma.com/design/9iYeCSMx1ZhPTEsWesTW6V/Project-3?node-id=0-1&t=h3CqbXc5uzz9nmsm-1 "Mockups").
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 
 # Features 
 
