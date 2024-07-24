@@ -42,6 +42,18 @@ The last update to this file was: **July 24th, 2024**
   - [Media Queries](#media-queries)
   - [Wireframes](#wireframes)
   - [Mockups](#mockups)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+   - [Future actions - Features to be Implemented](#future-actions)
+- [Technologies used](#technologies-used)
+  - [Languages](#languages)
+  - [IDE](#ide)
+  - [Libraries & Framework](#libraries-framework)
+  - [Tools](#tools)
+- [Validating](#validating)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
 
 # UX
@@ -156,7 +168,6 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 [Back to Top](#table-of-contents)
 \
 &nbsp;
-
 
 # Features 
 
