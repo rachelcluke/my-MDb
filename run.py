@@ -8,11 +8,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("components/background.html")
+    return render_template("pages/launch.html")
 
-@app.route("/launch")
-def launch():
-    return render_template("launch.html")
+@app.route("/background/")
+def background():
+    return render_template("components/background.html")
 
 
 if __name__ == "__main__":
