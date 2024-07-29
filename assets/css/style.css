@@ -1,0 +1,35 @@
+
+:root {
+    --offwhite: #faf9f6;
+    --applegreen: #eff1be;
+    --heathergray: #b1bcca;
+    --supernova: #f1c800;
+    --tundora: #424242;
+    --mirage: #1d2134;
+    --jetblack: #1d1b1b;
+}
+
+
+/* Universal */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--offwhite);
+    background-image: url("assets/img/gradient-background.jpg");
+}
+
+/* background.html */
+#logo-text {
+    font-size: 4rem;
+    color: var(--jetblack);
+}
