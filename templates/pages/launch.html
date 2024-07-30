@@ -8,7 +8,8 @@
         <meta name="description" content="My MDb, where you can track, review and share movies online.">
         <meta name="keywords" content="movie, review, films, hollywood, IMDb">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!--<link rel="stylesheet" href="assets/css/style.css" type="text/css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <link rel="icon" type="image/png" href="assets/favicons/favicon-32x32.png">
     <title>Launch</title>
 </head>
@@ -18,4 +19,5 @@
     {% include "components/button.html" %}
 
 </body>
+<script src="{{ url_for('static',filename='index.js') }}"> </script>
 </html>
