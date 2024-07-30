@@ -28,7 +28,9 @@ html {
 
 body {
     font-size: 1.6rem;
-    background-image: url("/assets/img/gradient-background.jpg");
+    background-image: url(/static/img/gradient-background.jpg) ;
+    background-size: auto auto;
+    background-repeat: no-repeat;
 }
 
 .nav-menu {
@@ -53,20 +55,26 @@ body {
     width: 100%;
 }
 
-.nav-menu li a {
+a {
+    text-decoration: none;
+}
+
+#logo-text a{
+    font-size: 2rem;
+    font-family: var(--font-roboto);
+    font-weight: 700px;
+    color: var(--offwhite);
+    letter-spacing: -5%;
+    padding-left: 2rem;
+}
+
+#secondary-header {
     font-family: var(--font-rubik);
     transition: 0.30s ease-in-out;
     padding-bottom: 1rem;
     padding-left: 1rem;
     font-size: 2rem;
     color: var(--offwhite);
-}
-
-/* background.html */
-#logo-text {
-    font-size: 4rem;
-    font-family: var(--font-rubik);
-    color: var(--supernova);
 }
 
 .auth-btn{
