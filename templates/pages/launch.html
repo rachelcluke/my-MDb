@@ -14,9 +14,11 @@
     <title>My IMDb</title>
 </head>
 <body>
-    <!--{% include "components/background.html" %}-->
     {% include "components/header.html" %}
     {% include "components/button.html" %}
+    <div id = "div-launch-poster">
+        <img id="launch-movie-poster" class=“d-flex align-items-center” src="/static/img/launch-movie-poster.jpeg" alt="Rogue One Movie Poster">
+    </div>
 
 </body>
 <script src="{{ url_for('static',filename='index.js') }}"> </script>

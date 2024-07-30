@@ -24,13 +24,16 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 2rem;
     font-size: 62.5%;
+    max-width: 100%;
 }
 
 body {
     font-size: 1.6rem;
+    max-width: 100%;
     background-image: url(/static/img/gradient-background.jpg) ;
     background-size: auto auto;
     background-repeat: no-repeat;
+
 }
 
 .nav-menu {
@@ -78,5 +81,28 @@ a {
 }
 
 .auth-btn{
-    padding: 1rem 4rem 1rem 4rem;
+    padding: .5rem 5rem .5rem 5rem;
+    border-radius: 1.5rem 1.5rem;
+    font-family: var(--font-web);
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: -10%;
+    color: var(--jetblack);
+    background-color: var(--supernova);
+}
+
+.div-auth-btn, #div-launch-poster {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-items: center;
+}
+
+
+#launch-movie-poster {
+    resize: inherit;
+    max-width: 50%;
+    padding-block-start: 50%;
+    padding-left: 25%;
+    overflow: hidden;
 }
