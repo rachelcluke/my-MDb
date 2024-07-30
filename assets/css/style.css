@@ -24,12 +24,11 @@ html {
 
 body {
     font-size: 1.6rem;
-    color: var(--offwhite);
-    background-image: url("assets/img/gradient-background.jpg");
+    background-image: url("/assets/img/gradient-background.jpg");
 }
 
 /* background.html */
 #logo-text {
     font-size: 4rem;
-    color: var(--jetblack);
+    color: var(--supernova);
 }
