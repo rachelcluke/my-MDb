@@ -3,7 +3,12 @@
     {% include "components/html-head.html" %}
     <body>
         {% include "components/header.html" %}
-        {% include "components/button.html" %}
+
+        <!-- btn not component added to include id for index.js -->
+        <div class="div-auth-btn">
+            <a class="auth-btn" id="launch-login-btn" href="/pages/auth.html">Login</a>
+        </div>
+
         <div id = "div-launch-poster">
             <img id="launch-movie-poster" class=“d-flex align-items-center” src="/static/img/launch-movie-poster.jpeg" alt="Rogue One Movie Poster">
         </div>
