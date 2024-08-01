@@ -3,8 +3,12 @@
     {% include "components/html-head.html" %}
     <body>
         {% include "components/header.html" %}
-        {% include "components/title-centre.html" %}
 
+        <div class="translucent-bkgd">
+            <div class="overlay">
+                {% include "components/title-centre.html" %}
+            </div>
+        </div>
     </body>
     <script src="{{ url_for('static',filename='index.js') }}"> </script>
 </html>
