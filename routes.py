@@ -1,3 +1,4 @@
+import os
 from flask import (
     Flask,
     render_template,
@@ -25,9 +26,12 @@ from flask_login import (
 from datetime import timedelta
 from werkzeug.routing import BuildError
 from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
-from run import create_app,db, login_manager,bcrypt
+from run import create_app, db, login_manager, bcrypt
 from models import MyMDB_User
 from forms import login_form, signup_form
+
+app = Flask(__name__)
+app = create_app()
 
 #Launch route
 @app.route("/")
@@ -39,7 +43,7 @@ def index():
 def auth():
     if form.validate_on_submit():
         try:
-            user = User.query.filter_by(email=form.email.data).first()
+            user = MyMDB_Userser.query.filter_by(email=form.email.data).first()
             if check_password_hash(user.pwd, form.pwd.data):
                 login_user(user)
                 return redirect(url_for('index'))
@@ -52,9 +56,7 @@ def auth():
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
-
-app = create_app()
+    return MyMDB_User.query.get(int(user_id))
 
 @app.before_request
 def session_handler():

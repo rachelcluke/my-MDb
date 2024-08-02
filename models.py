@@ -11,4 +11,4 @@ class MyMDB_User(UserMixin, db.Model):
     pwd = db.Column(db.String(300), unique=True, nullable=False)
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<MyMDB_User %r>' % self.username
