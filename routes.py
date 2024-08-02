@@ -43,6 +43,9 @@ def index():
 def auth():
     return render_template("/pages/auth.html")
 
+#Register route
+
+
 #Main route (login validation)
 """
 @app.route("/main", methods=("GET", "POST"))

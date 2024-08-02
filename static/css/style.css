@@ -151,6 +151,12 @@ a {
     overflow: hidden;
 }
 
+#new-user-row {
+    font-family: var(--font-web);
+    color: var(--jetblack);
+    font-size: 2rem;
+}
+
 /* auth */
 /* TODO - fix so it goes behind text 
 .translucent-bkgd{
@@ -182,3 +188,4 @@ form .auth-btn {
     padding-left: 7rem;
     padding-right: 7rem;
 }
+
