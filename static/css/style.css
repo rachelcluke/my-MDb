@@ -39,6 +39,18 @@ body {
     z-index: 1000;
 }
 
+.centre {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 /* Components */
 .nav-menu {
@@ -114,7 +126,7 @@ a {
     padding-bottom: 1rem;
 }
 
-.centre, #launch-subheading-row, #launch-auth-btn-row, #div-launch-poster {
+#launch-subheading-row, #launch-auth-btn-row, #div-launch-poster {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -153,3 +165,24 @@ a {
     z-index: -1000;
 }
 */
+
+form {
+    font-family: var(--font-web);
+    font-size: 1.6rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+form .column {
+    padding-bottom: .4rem;
+}
+
+form input {
+    padding: .5rem 2rem .5rem 2rem;
+    margin-bottom: 2rem;
+}
+
+form .auth-btn {
+    padding-left: 7rem;
+    padding-right: 7rem;
+}
