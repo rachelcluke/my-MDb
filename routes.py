@@ -44,7 +44,9 @@ def auth():
     return render_template("/pages/auth.html")
 
 #Register route
-
+@app.route("/register")
+def register():
+    return render_template("/pages/register.html")
 
 #Main route (login validation)
 """
