@@ -152,15 +152,15 @@ a {
 }
 
 /* auth */
-/* TODO - fix so it goes behind text
+/* TODO - fix so it goes behind text 
 .translucent-bkgd{
     margin-top: 2rem;
     background: var(--offwhite);
     opacity: 40%;
     position: relative;
-    z-index: -1000;
-}
-*/
+    z-index: 1;
+} */
+
 
 form {
     font-family: var(--font-web);
