@@ -76,6 +76,7 @@ body {
 }
 
 a {
+    list-style: none;
     text-decoration: none;
 }
 
@@ -132,29 +133,33 @@ a {
     justify-content: center;
 }
 
+#new-user-row, #sign-up-link, .auth-btn{
+    font-family: var(--font-web);
+    color: var(--jetblack);
+    font-size: 1.6rem;
+}
+
+#sign-up-link {
+    text-decoration: underline;
+}
+
+#new-user-link-row a:hover {
+    opacity: 30%;
+}
+
 .auth-btn{
     padding: .5rem 5rem .5rem 5rem;
     border-radius: 1.5rem 1.5rem;
-    font-family: var(--font-web);
     font-weight: 600;
-    font-size: 1.6rem;
     letter-spacing: -10%;
-    color: var(--jetblack);
     background-color: var(--supernova);
 }
-
 
 #launch-movie-poster {
     resize: inherit;
     max-width: 50%;
     padding-block-start: 10%;
     overflow: hidden;
-}
-
-#new-user-row {
-    font-family: var(--font-web);
-    color: var(--jetblack);
-    font-size: 2rem;
 }
 
 /* auth */
@@ -187,5 +192,9 @@ form input {
 form .auth-btn {
     padding-left: 7rem;
     padding-right: 7rem;
+}
+
+#new-user-text-row {
+    padding-right: 2rem;
 }
 
