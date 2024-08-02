@@ -38,9 +38,16 @@ app = create_app()
 def index():
     return render_template("/pages/launch.html")
 
-#Login route
-@app.route("/auth", methods=("GET", "POST"))
+#Auth route
+@app.route("/auth")
 def auth():
+    return render_template("/pages/auth.html")
+
+#Main route (login validation)
+"""
+@app.route("/main", methods=("GET", "POST"))
+ 
+    error = None
     if form.validate_on_submit():
         try:
             user = MyMDB_Userser.query.filter_by(email=form.email.data).first()
@@ -51,8 +58,7 @@ def auth():
                 flash("Invalid username or password - please try again.", "login error")
         except Exception as e:
             flash(e, "login error")
-
-    return render_template("/pages/auth.html")
+"""
 
 @login_manager.user_loader
 def load_user(user_id):
