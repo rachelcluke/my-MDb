@@ -23,15 +23,15 @@ html {
     scroll-padding-top: 2rem;
     font-size: 62.5%;
     max-width: 100%;
+    min-height: 100vh;
+    background: rgb(13,46,81);
+    background: linear-gradient(180deg, rgba(13,46,81,1) 0%, rgba(49,101,138,1) 50%);
+    background-repeat: no-repeat;
 }
 
 body {
     font-size: 1.6rem;
     max-width: 100%;
-    background-image: url(/static/img/gradient-background.jpg) ;
-    background-size: auto auto;
-    background-repeat: no-repeat;
-
 }
 
 .overlay {
@@ -143,15 +143,11 @@ a {
     background-color: var(--supernova);
 }
 
-#launch-auth-btn-row {
-    padding-left: 30%;
-}
 
 #launch-movie-poster {
     resize: inherit;
     max-width: 50%;
     padding-block-start: 10%;
-    padding-left: 25%;
     overflow: hidden;
 }
 
