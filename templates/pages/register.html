@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "components/html-head.html" %}
+    <body>
+        {% include "components/header.html" %}
+
+        <div class="translucent-bkgd">
+            <div class="overlay">
+                {% include "components/title-centre.html" %}
+                {% include "components/form-login.html" %}
+                {% include "components/new-user.html" %}
+            </div>
+
+        </div>
+    </body>
+    <script src="{{url_for('static',filename='index.js')}}"> </script>
+</html>
