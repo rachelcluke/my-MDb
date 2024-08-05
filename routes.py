@@ -41,12 +41,12 @@ def index():
 #Auth route
 @app.route("/auth")
 def auth():
-    return render_template("/pages/auth.html")
+    return render_template("/pages/auth.html", title='Login')
 
 #Register route
 @app.route("/register")
 def register():
-    return render_template("/pages/register.html")
+    return render_template("/pages/register.html", title='Register')
 
 #Main route (login validation)
 """
