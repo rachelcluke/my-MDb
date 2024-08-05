@@ -26,13 +26,6 @@ class signup_form(FlaskForm):
     )
     email = StringField(validators=[InputRequired(), Email(), Length(1, 64)])
     pwd = PasswordField(validators=[InputRequired(), Length(8, 72)])
-    cpwd = PasswordField(
-        validators=[
-            InputRequired(),
-            Length(8, 72),
-            EqualTo("pwd", message="Passwords must match."),
-        ]
-    )
 
     #Validations
     def validate_email(self, email):
