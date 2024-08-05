@@ -49,20 +49,29 @@ def register():
     return render_template("/pages/register.html", title='Register')
 
 #Main route (login validation)
-"""
 @app.route("/main", methods=("GET", "POST"))
- 
-    error = None
+def main():
     if form.validate_on_submit():
         try:
             user = MyMDB_Userser.query.filter_by(email=form.email.data).first()
             if check_password_hash(user.pwd, form.pwd.data):
                 login_user(user)
-                return redirect(url_for('index'))
             else:
                 flash("Invalid username or password - please try again.", "login error")
-        except Exception as e:
-            flash(e, "login error")
+        finally: return render_template("/pages/main.html", title='My Movies')
+
+"""
+error = None
+if form.validate_on_submit():
+    try:
+        user = MyMDB_Userser.query.filter_by(email=form.email.data).first()
+        if check_password_hash(user.pwd, form.pwd.data):
+            login_user(user)
+            return redirect(url_for('/pages/main.html'))
+        else:
+            flash("Invalid username or password - please try again.", "login error")
+    except Exception as e:
+        flash(e, "login error")
 """
 
 @login_manager.user_loader
