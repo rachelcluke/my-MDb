@@ -51,6 +51,9 @@ def register():
 #Main route (login validation)
 @app.route("/main", methods=("GET", "POST"))
 def main():
+    return render_template("/pages/main.html", title='My Movies')
+    
+    """
     if form.validate_on_submit():
         try:
             user = MyMDB_Userser.query.filter_by(email=form.email.data).first()
@@ -59,6 +62,7 @@ def main():
             else:
                 flash("Invalid username or password - please try again.", "login error")
         finally: return render_template("/pages/main.html", title='My Movies')
+        """
 
 """
 error = None
