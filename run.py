@@ -1,5 +1,5 @@
 import os
-from my_mdb import app
+from mymdb import app
 
 
 if __name__ == "__main__":
