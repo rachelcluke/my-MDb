@@ -1,5 +1,6 @@
 from flask import render_template
 from mymdb import app, db
+from mymdb.models import User
 
 #Launch route
 @app.route("/")
