@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from mymdb import app, db
 from mymdb.models import User
 
@@ -17,9 +17,14 @@ def auth():
 def register():
     return render_template("/pages/register.html", title='Register')
 
-#Main route (login validation)
+#Main route (auth validation)
 @app.route("/main", methods=("GET", "POST"))
 def main():
+    if request.method == "POST":
+            user = User(username=request.form.get("username"))
+            db.session.add(username)
+            db.session.commit()
+            return redirect(url_for("auth")) 
     return render_template("/pages/main.html", title='My Movies')
     
     """
