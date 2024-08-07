@@ -1,4 +1,5 @@
-from __init__ import db
+"""
+from mymdb import db
 from flask_login import UserMixin
 
 #user model
@@ -12,3 +13,4 @@ class MyMDB_User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<MyMDB_User %r>' % self.username
+"""

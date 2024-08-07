@@ -1,37 +1,5 @@
-import os
-from flask import (
-    Flask,
-    render_template,
-    redirect,
-    flash,
-    url_for,
-    session
-)
-from sqlalchemy.exc import (
-    IntegrityError,
-    DataError,
-    DatabaseError,
-    InterfaceError,
-    InvalidRequestError,
-)
-from flask_login import (
-    UserMixin,
-    login_user,
-    LoginManager,
-    current_user,
-    logout_user,
-    login_required,
-)
-
-from datetime import timedelta
-from werkzeug.routing import BuildError
-from flask_bcrypt import Bcrypt, generate_password_hash, check_password_hash
-from __init___ import app, db, login_manager, bcrypt
-from models import MyMDB_User
-from forms import login_form, signup_form
-
-app = Flask(__name__)
-#app = create_app()
+from flask import render_template
+from mymdb import app, db
 
 #Launch route
 @app.route("/")
@@ -76,7 +44,7 @@ if form.validate_on_submit():
             flash("Invalid username or password - please try again.", "login error")
     except Exception as e:
         flash(e, "login error")
-"""
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -88,3 +56,5 @@ def session_handler():
     app.permanent_session_lifetime = timedelta(minutes=5)
 
 #TODO - register route + logout session
+
+"""

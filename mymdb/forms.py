@@ -1,3 +1,4 @@
+"""
 from wtforms import StringField, PasswordField, DateField, IntegerField, BooleanField, TextAreaField
 from flask_wtf import FlaskForm
 from wtforms.validators import InputRequired, Length, EqualTo, Email, Regexp, Optional
@@ -35,3 +36,5 @@ class signup_form(FlaskForm):
     def validate_username(self, username):
         if User.query.filter_by(username=username.data).first():
             raise ValidationError("Username already taken, please choose another.")
+
+"""
