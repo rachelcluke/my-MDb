@@ -1,4 +1,4 @@
-from mymdb import db
+from my_mdb import db
 from flask_login import UserMixin
 
 #user model
