@@ -1,6 +1,11 @@
 <div class="centre" id="form-register-div">
-        <!--form action="#" method="post"-->
-        <form method = "POST" action="{{ url_for ('main') }}">
+    <form method="POST" action="">
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+    <!--
+    <form method = "POST" action="{{ url_for ('main') }}">
         <div>
             <div class="row">
                 <div class="column" id="register-name-column">
@@ -30,4 +35,5 @@
     {% if error %}
     <p class="error"><strong>Error:</strong> {{ error }}
     {% endif %}
+    -->
 </div>

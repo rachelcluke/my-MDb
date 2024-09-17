@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from my_mdb import app, db
-from my_mdb.models import User
+from my_mdb.models import User, LoginForm, RegisterForm
 
 #Launch route
 @app.route("/")
