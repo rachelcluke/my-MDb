@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from my_mdb import app, db
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from my_mdb.models import User, LoginForm, RegisterForm
 
 #Launch route
