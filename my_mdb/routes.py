@@ -17,6 +17,15 @@ def auth():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
+
+    #password encryption
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data)
+        new_user = User(username=form.username.data, password=hashed_password)
+        db.session.add(new_user)
+        db.session.commit()
+        return redirect(url_for("auth"))
+
     return render_template("/pages/register.html", title='Register',form=form)
 
 #Main route (auth validation)
