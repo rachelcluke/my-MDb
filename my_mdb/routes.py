@@ -11,6 +11,12 @@ def index():
 @app.route("/auth", methods=['GET', 'POST'])
 def auth():
     form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user:
+            if bcrypt.check_password_hash(user.password, form.password.data):
+                login_user(user)
+                return redirect(url_for('main'))
     return render_template("/pages/auth.html", title='Login', form=form)
 
 #Register route
@@ -37,4 +43,10 @@ def main():
             db.session.commit()
             return redirect(url_for("auth")) 
     return render_template("/pages/main.html", title='My Movies')
+
+@app.route('/logout', methods=['GET', 'POST'])
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("auth"))
     
