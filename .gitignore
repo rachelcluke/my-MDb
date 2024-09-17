@@ -8,3 +8,4 @@ node_modules/
 env.py
 cloudinary_python.txt
 *.db
+settings.json
