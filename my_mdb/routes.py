@@ -32,6 +32,7 @@ def register():
         #new_user = User(username=form.username.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
+        flash("New User added successfully")
         return redirect(url_for("auth"))
     return render_template("/pages/register.html", title='Register',form=form)
 
