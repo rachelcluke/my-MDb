@@ -12,20 +12,20 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
-    pwd = db.Column(db.String(300), nullable=False)
+    password = db.Column(db.String(300), nullable=False)
 
     def __repr__(self):
-        return  self.id, self.username, self.pwd
+        return  self.id, self.username, self.password
 
 class RegisterForm(FlaskForm):
     username = StringField(validators=[
-                           InputRequired(), Length(min=4, max=15)], render_kw={"placeholder": "Username"})
+                           InputRequired(), Length(min=4, max=15)], render_kw={"placeholder": "New Username"})
 
     password = PasswordField(validators=[
-                             InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
+                             InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "New Password"})
 
     submit = SubmitField('Register')
 

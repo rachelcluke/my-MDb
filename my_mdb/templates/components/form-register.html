@@ -1,5 +1,5 @@
 <div class="centre" id="form-register-div">
-    <form method="POST" action="">
+    <form method="POST" action="{{ url_for ('auth') }}">
         {{ form.username }}
         {{ form.password }}
         {{ form.submit }}
