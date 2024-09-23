@@ -26,7 +26,6 @@ def auth():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
-    #password encryption
     if request.method=='POST' and form.validate_on_submit():
         #hashed_password = bcrypt.generate_password_hash(form.password.data)
         hashed_password = bcrypt.generate_password_hash(request.form.get("password"))
@@ -34,15 +33,17 @@ def register():
         new_user = User(username=request.form.get("username"), password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
-        return redirect(url_for("main"))
+        printlog("hit")
+        return redirect(url_for("auth"))
     return render_template("/pages/register.html", title='Register',form=form)
+    printlog("not hit")
 
 #Main route (auth validation)
 @app.route("/main", methods=("GET", "POST"))
 def main():
     if request.method == "POST":
             user = User(username=request.form.get("username"))
-            db.session.add(username)
+            db.session.add(user)
             db.session.commit()
             return redirect(url_for("auth")) 
     return render_template("/pages/main.html", title='My Movies')
