@@ -209,5 +209,8 @@ form .auth-btn {
 }
 
 #error-msg-row {
-    
+    font-family: var(--font-web);
+    font-size: 1.6rem;
+    color: var(--supernova);
+    padding-top: 3rem;
 }
