@@ -1,7 +1,8 @@
 from flask import render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-from my_mdb import app, db
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_bcrypt import Bcrypt 
+from my_mdb import app, db
 from my_mdb.models import User, LoginForm, RegisterForm
 
 #Launch route
@@ -27,13 +28,13 @@ def register():
     form = RegisterForm()
     #password encryption
     if request.method=='POST' and form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data)
+        #hashed_password = bcrypt.generate_password_hash(form.password.data)
+        hashed_password = bcrypt.generate_password_hash(request.form.get("password"))
+        #username = request.form['username']
         new_user = User(username=request.form.get("username"), password=hashed_password)
-        #new_user = User(username=form.username.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
-        flash("New User added successfully")
-        return redirect(url_for("auth"))
+        return redirect(url_for("main"))
     return render_template("/pages/register.html", title='Register',form=form)
 
 #Main route (auth validation)

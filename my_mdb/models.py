@@ -12,7 +12,7 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-class User(db.Model, UserMixin):
+class User(db.Model): #, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(300), nullable=False)
@@ -37,6 +37,7 @@ class RegisterForm(FlaskForm):
         if existing_user_username:
             raise ValidationError(
                 'Sorry this username already exists. Please choose a different one.')
+        
 
 class LoginForm(FlaskForm):
     username = StringField(validators=[
