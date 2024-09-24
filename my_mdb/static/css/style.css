@@ -68,7 +68,6 @@ body {
     flex-direction: row;
 }
 
-
 /* Components */
 .nav-menu {
     display: flex;
@@ -201,6 +200,13 @@ a, a:visited {
     background-color: var(--supernova);
 }
 
+#add-btn {
+    background-color: var(--heathergray);
+    padding: .1rem 3rem .1rem 3rem;
+    border-radius: 1rem 1rem;
+    font-weight: 400;
+}
+
 #launch-movie-poster {
     resize: inherit;
     max-width: 50%;
@@ -261,7 +267,7 @@ form .auth-btn {
     padding-left: 0.5rem;
 }
 
-#movie-card-column {
+#movie-card-column, #div-add-btn {
     padding-left: 1.5rem;
 }
 
