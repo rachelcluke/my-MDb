@@ -45,6 +45,18 @@ body {
     justify-content: center;
 }
 
+.left-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.right-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .column {
     display: flex;
     flex-direction: column;
@@ -54,7 +66,6 @@ body {
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
 
@@ -64,10 +75,13 @@ body {
     flex-direction: row;
     position: relative;
     left: auto;
-    top: 1.5rem;
-    height: 2.5rem;
     display: block;
     width: 100%;
+}
+
+.nav-menu, #secondary-header {
+    top: 1.5rem;
+    height: 2.5rem;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
 }
@@ -81,9 +95,11 @@ body {
     width: 100%;
 }
 
-a {
+a, a:visited {
     list-style: none;
     text-decoration: none;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 #logo-text a{
@@ -93,6 +109,30 @@ a {
     color: var(--offwhite);
     letter-spacing: -5%;
     padding-left: 2rem;
+}
+
+#secondary-header {
+    font-family: var(--font-web);
+    color: var(--offwhite);
+    justify-content: space-between;
+    list-style: none;
+    text-decoration: none;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+    text-wrap: nowrap;
+}
+
+#secondary-header li {
+    padding-right: 1.5rem;
+}
+
+#secondary-header a:hover {
+    color: var(--supernova);
+}
+
+/*TODO: to be added in js for active pages */
+.nav-is-active {
+    opacity: 50%;
 }
 
 /* Launch Page */

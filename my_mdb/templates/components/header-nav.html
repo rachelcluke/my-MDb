@@ -1,14 +1,14 @@
-<nav class="nav-menu" id="top-navbar"></nav>
-    <div class="nav-bar" id="header">
+<nav class = "row"> <!--class="nav-menu" -->
+    <div class="nav-menu">
       <ul id="nav-links">
         <li id="logo-text">
           <a href="{{url_for('main')}}" aria-label="Go to homepage">My MDb</a>
-          <div id="secondary-header">
-            <a href="{{url_for('main')}}" aria-label="Go to My Movies">My Movies</a>
-            <a href="#" aria-label="Go to Community page">Community</a>
-            <a href="{{url_for('logout')}}" aria-label="Logout">Logout</a>
-          </div>
         </li>
       </ul>
+    </div>
+    <div id="secondary-header" class="right-end">
+      <li><a href="{{url_for('main')}}" aria-label="Go to My Movies" style="text-decoration: none">My Movies</a></li>
+      <li><a href="#" aria-label="Go to Community page" style="text-decoration: none">Community</a></li>
+      <li><a href="{{url_for('logout')}}" aria-label="Logout" style="text-decoration: none">Logout</a></li>
     </div>
 </nav>
