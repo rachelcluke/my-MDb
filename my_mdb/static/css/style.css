@@ -254,3 +254,22 @@ form .auth-btn {
     color: var(--supernova);
     padding-top: 3rem;
 }
+
+/* Main Page */
+#main-title {
+    padding-top: 4rem;
+    padding-left: 0.5rem;
+}
+
+#movie-card-column img {
+    display: block;
+    width: 4rem;
+    height: 5rem;
+}
+
+#movie-card-name {
+    font-style: var(--font-web);
+    font-size: 2rem;
+    color: var(--offwhite);
+    opacity: 60%;
+}
