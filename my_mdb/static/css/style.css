@@ -261,15 +261,26 @@ form .auth-btn {
     padding-left: 0.5rem;
 }
 
-#movie-card-column img {
-    display: block;
-    width: 4rem;
-    height: 5rem;
+#movie-card-column {
+    padding-left: 1.5rem;
 }
 
-#movie-card-name {
+#movie-card-column img {
+    width: 40%;
+    height: 60%
+}
+
+#main-movie-caption {
+    padding-top: 1rem;
+}
+
+.movie-card-name {
     font-style: var(--font-web);
     font-size: 2rem;
     color: var(--offwhite);
     opacity: 60%;
+}
+
+.movie-rating p {
+    padding-top: 0.5rem;
 }
