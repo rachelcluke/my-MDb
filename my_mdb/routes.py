@@ -58,7 +58,6 @@ def register():
         db.session.commit()
 
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
         return redirect(url_for("main", username=session["user"]))
 
     return render_template("/pages/register.html", title='Register',form=form)
