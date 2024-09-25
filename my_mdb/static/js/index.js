@@ -1,9 +1,10 @@
 /*jshint esversion: 6 */
 
 //Query Selectors
-//const goToAuthBtnRef = document.querySelector("#launch-login-btn");
+const movieCardImgRef = document.querySelector('.movie-card-poster');
+const dialogRef = document.querySelector("dialog");
 
 //Event Click
-//goToAuthBtnRef.addEventListener ("click", function() {
-    
-//}); 
+movieCardImgRef.addEventListener("click", () => {
+    dialogRef.showModal();
+});

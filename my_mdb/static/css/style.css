@@ -271,13 +271,21 @@ form .auth-btn {
     padding-left: 1.5rem;
 }
 
-#movie-card-column img {
+#movie-card-column figure img {
     width: 40%;
-    height: 60%
+    height: 70%;
+	opacity: 1;
+	-webkit-transition: .2s ease-in-out;
+	transition: .2s ease-in-out;
+    padding: 3rem 0 0 0;
+}
+
+#movie-card-column figure:hover img {
+	opacity: .6;
 }
 
 #main-movie-caption {
-    padding-top: 1rem;
+    margin-top: -4rem;
 }
 
 .movie-card-name {
