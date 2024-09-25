@@ -15,7 +15,8 @@ def index():
 def auth():
     form = LoginForm()
     if request.method=='POST': #and form.validate_on_submit():
-        existing_user = User.query.filter_by(username=form.username.data).first()
+        existing_user = User.query.filter(User.username == \
+                                    request.form.get("username").lower()).all()
 
         if existing_user:
             print(request.form.get("username"))
@@ -23,10 +24,8 @@ def auth():
             if check_password_hash(
                     existing_user[0].password, request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Hello {}".format(
-                            request.form.get("username")))
                         return redirect(url_for(
-                            "main", username=session["auth"]))
+                            "main", username=session["user"]))
             else:
                 # case - password mismatch
                 flash("Incorrect Username and/or Password")
