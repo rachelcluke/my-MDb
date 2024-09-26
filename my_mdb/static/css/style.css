@@ -131,7 +131,7 @@ a, a:visited {
 
 /*TODO: to be added in js for active pages */
 .nav-is-active {
-    opacity: 50%;
+    opacity: 80%;
 }
 
 /* Launch Page */
