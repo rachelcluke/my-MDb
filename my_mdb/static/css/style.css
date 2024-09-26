@@ -54,7 +54,7 @@ body {
 .right-end {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .column {
@@ -207,6 +207,23 @@ a, a:visited {
     font-weight: 400;
 }
 
+#edit-btn, #delete-btn {
+    border-radius: 1rem 1rem;
+    font-weight: 400;
+}
+
+#edit-btn {
+    background-color: var(--supernova);
+    color: var(--jetblack);
+    padding: .1rem 2rem .1rem 2rem;
+}
+
+#delete-btn {
+    background-color: var(--jetblack);
+    color: var(--offwhite);
+    padding: .1rem 1rem .1rem 1rem;
+}
+
 #launch-movie-poster {
     resize: inherit;
     max-width: 50%;
@@ -297,4 +314,18 @@ form .auth-btn {
 
 .movie-rating p {
     padding-top: 0.5rem;
+}
+
+dialog {
+    background-color: var(--applegreen);
+    border-color: var(--applegreen);
+    border-radius: 1rem 1rem;
+    height: 70%;
+    width: 70%;
+}
+
+#dialog-btn-row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
 }
