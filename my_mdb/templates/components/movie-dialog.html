@@ -1,13 +1,36 @@
- <!-- Dialog when user clicks on movie poster to edit/ delete entry -->
- <dialog>
-    <div class="row" id="dialog-btn-row">
-      {% include "components/button-edit.html" %}
-      {% include "components/button-delete.html" %}
-      <div class="right-end" id="close-dialog-btn-div">
-        <button autofocus> X </button>
-      </div>
-    </div> 
-    <div>
-      <p>placeholder</p>
+<!-- Dialog when user clicks on movie poster to edit/ delete entry -->
+<dialog>
+  <!-- Top row of edit, delete + close dialog btns -->
+  <div class="row" id="dialog-btn-row">
+    {% include "components/button-edit.html" %}
+    {% include "components/button-delete.html" %}
+    <div class="right-end" id="close-dialog-btn-div">
+      <button autofocus> X </button>
     </div>
-  </dialog>
+  </div> 
+
+  <!-- Row with movie poster + api info -->
+  <div class="row" id="movie-api-info">
+    <figure>
+      <img class="movie-card-poster" src="/static/img/joker-poster.jpg" alt="Movie Poster">
+    </figure>
+    <div class="column" id="movie-api-description">
+      <div class="row" id="dialog-movie-name">
+        <p>Movie Name</p>
+      </div>
+      <div class="row">
+        <p>[ api info ]</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Information below the poster -->
+  <div class="column" id ="movie-user-info">
+    <div class="row">
+      <p>[ editable - user review ]</p>
+    </div>
+    <div class="row">
+      <p>[ editable - user rating ]</p>
+    </div>
+  </div>
+</dialog>
