@@ -14,7 +14,7 @@ def index():
 @app.route("/auth", methods=['GET', 'POST'])
 def auth():
     form = LoginForm()
-    if request.method=='POST': #and form.validate_on_submit():
+    if request.method=='POST':
         existing_user = User.query.filter(User.username == \
                                     request.form.get("username").lower()).all()
 
@@ -41,7 +41,7 @@ def auth():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
-    if request.method=='POST': #and form.validate_on_submit():
+    if request.method=='POST':
         existing_user = User.query.filter(User.username == request.form.get("username").lower()).all()
     
         if existing_user:
