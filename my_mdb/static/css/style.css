@@ -325,7 +325,17 @@ dialog {
 }
 
 #dialog-btn-row {
-    flex-direction: row;
     flex-wrap: nowrap;
-    width: 100%;
+    justify-content: space-around;
+}
+
+#close-dialog-btn-div {
+    padding-left: 4rem;
+}
+
+#close-dialog-btn-div button {
+    background-color: transparent;
+    border: none;
+    outline:none;
+    box-shadow: none;
 }
