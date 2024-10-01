@@ -1,8 +1,9 @@
 from my_mdb import db, app
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, DateField, TextAreaField, datetime
 from wtforms.validators import InputRequired, Length, ValidationError
+import _datetime
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -65,7 +66,10 @@ class AddMovieForm(FlaskForm):
     movie_name = StringField(validators=[
                            InputRequired(), Length(min=1, max=50)], render_kw={"placeholder": "Movie Name"})
 
-    movie_review = TextField(validators=[
-                             InputRequired()], render_kw={"placeholder": "What did you think of the movie?"})
+    movie_review = TextAreaField(validators=[
+                             InputRequired(), Length(min=1, max=200)], render_kw={"placeholder": "What did you think of the movie?"})
+
+    
+    view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today())
 
     submit = SubmitField('Add to My Movies')

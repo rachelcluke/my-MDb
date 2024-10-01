@@ -83,3 +83,5 @@ def addMoviePage():
         db.session.commit()
         return redirect(url_for("main"))
     return render_template("/pages/addMoviePage.html")
+
+#TODO add validation for entry (ex, movie duplicate, match with API)
