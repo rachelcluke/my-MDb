@@ -34,31 +34,33 @@ const formatHeader = () => {
 */
 
 //Event Click
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", () => {
 
-    movieCardImgRef.addEventListener("click",  () => {
+    movieCardImgRef?.addEventListener("click",  () => {
         movieCardDialogRef.showModal();
+
     });
 
-    closeDialogBtnRef.addEventListener("click",  () => {
+    closeDialogBtnRef?.addEventListener("click",  () => {
         movieCardDialogRef.close();
     });
 
-    cancelBtnRef.addEventListener("click",  () => {
-        warningCancelDialogRef.showModal();
+    cancelBtnRef?.addEventListener("click",  () => {
         console.log("cancel btn hit");
+        warningCancelDialogRef.showModal();
     });
 
-    closeCancelDialogBtnRef.addEventListener("click",  () => {
+    closeCancelDialogBtnRef?.addEventListener("click",  () => {
         warningCancelDialogRef.close();
     });
 
-    deleteMovieBtnRef.addEventListener("click",  () => {
+    deleteMovieBtnRef?.addEventListener("click",  () => {
         warningDeleteDialogRef.showModal();
     });
 
-    closeDeleteDialogBtnRef.addEventListener("click",  () => {
+    closeDeleteDialogBtnRef?.addEventListener("click",  () => {
         warningDeleteDialogRef.close();
     });
 
 });
+
