@@ -74,6 +74,12 @@ def logout():
     session.pop("user")
     return redirect(url_for("auth"))
 
-@app.route("/addMoviePage")
+@app.route("/addMoviePage", methods=["GET", "POST"])
 def addMoviePage():
+    form = AddMovieForm()
+    if request.method == "POST":
+        movie = Movie(movie_name=request.form.get("movie_name"))
+        db.session.add(movie)
+        db.session.commit()
+        return redirect(url_for("main"))
     return render_template("/pages/addMoviePage.html")
