@@ -46,11 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     cancelBtnRef?.addEventListener("click",  () => {
-        console.log("cancel btn hit");
         warningCancelDialogRef.showModal();
     });
 
     closeCancelDialogBtnRef?.addEventListener("click",  () => {
+        console.log("cancel FINAL btn hit");
         warningCancelDialogRef.close();
     });
 

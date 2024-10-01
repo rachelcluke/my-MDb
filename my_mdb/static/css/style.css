@@ -366,7 +366,11 @@ dialog p {
     height: auto;
 }
 
-#movie-user-info {
+#movie-user-info, #warning-cancel-message {
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+#warning-cancel-message {
+    padding-top: 1rem;
 }
