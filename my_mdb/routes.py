@@ -16,14 +16,15 @@ def auth():
     form = LoginForm()
     if request.method=='POST':
         existing_user = User.query.filter(User.username == \
-                                    request.form.get("username").lower()).all()
+                                    request.form.get("username").lower()).first()
 
         if existing_user:
             print(request.form.get("username"))
 
             if check_password_hash(
-                    existing_user[0].password, request.form.get("password")):
+                    existing_user.password, request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
+                        session["user_id"] = existing_user.id
                         return redirect(url_for(
                             "main", username=session["user"]))
             else:
@@ -64,6 +65,8 @@ def register():
 @app.route("/main", methods=("GET", "POST"))
 def main():
     if "user" in session:
+        print(session["user"])
+        print(session["user_id"])
         return render_template("/pages/main.html", username=session["user"])
     return render_template("/pages/main.html", title='My Movies')
 
@@ -82,7 +85,8 @@ def addMoviePage():
         new_movie = Movie(
             movie_name=request.form.get("movie_name"),
             movie_review=request.form.get("movie_review"),
-            view_date=request.form.get("view_date")
+            view_date=request.form.get("view_date"),
+            user_id=session["user_id"]
         )
 
         db.session.add(new_movie)
