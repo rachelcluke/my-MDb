@@ -72,4 +72,4 @@ class AddMovieForm(FlaskForm):
     
     view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today())
 
-    submit = SubmitField('Add to My Movies')
+    submit = SubmitField('Save to My Movies')

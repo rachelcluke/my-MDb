@@ -212,13 +212,13 @@ a, a:visited {
     font-weight: 400;
 }
 
-#edit-btn, #cancel-btn, #cancel-final-btn, #delete-final-btn {
+#edit-btn, #cancel-final-btn, #delete-final-btn {
     background-color: var(--supernova);
     color: var(--jetblack);
     padding: .1rem 2rem .1rem 2rem;
 }
 
-#delete-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
+#delete-btn, #cancel-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
     background-color: var(--jetblack);
     color: var(--offwhite);
     padding: .1rem 1rem .1rem 1rem;
@@ -366,11 +366,15 @@ dialog p {
     height: auto;
 }
 
-#movie-user-info, #warning-cancel-message {
+#movie-user-info, #warning-cancel-message, #div-cancel-btn, #form-add-div {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-#warning-cancel-message {
+#warning-cancel-message, .form-add-row {
     padding-top: 1rem;
+}
+
+#add-date-row {
+    padding-top: 3rem;
 }
