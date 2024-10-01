@@ -16,9 +16,22 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(300), nullable=False)
+    movies = db.relationship("Movie", backref="user", cascade="all, delete", lazy=True)
 
     def __repr__(self):
         return  self.id, self.username, self.password
+
+class Movie(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    movie_name = db.Column(db.String(50), unique=True, nullable=False)
+    movie_review = db.Column(db.Text, nullable=False)
+    view_date = db.Column(db.Date, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"), nullable=False)
+
+    def __repr__(self):
+        def _repr__(self):
+            return self.id, self.movie_name, self.movie_review, self.view_date
+
 
 class RegisterForm(FlaskForm):
     username = StringField(validators=[

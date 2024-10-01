@@ -4,7 +4,7 @@
 const navMainLinkRef = document.querySelector('#nav-main-link');
 const navCommunityLinkRef = document.querySelector('#nav-community-link');
 const movieCardImgRef = document.querySelector('.movie-card-poster');
-const dialogRef = document.querySelector('dialog');
+const movieCardDialogRef = document.querySelector('#movie-card-dialog');
 const closeDialogBtnRef = document.querySelector('#close-dialog-btn-div');
 
 //CONSTANTS
@@ -29,7 +29,7 @@ const formatHeader = () => {
 
 //Event Click
 movieCardImgRef.addEventListener("click", () => {
-    dialogRef.showModal();
+    movieCardDialogRef.showModal();
 });
 
 closeDialogBtnRef.addEventListener("click", () => {
