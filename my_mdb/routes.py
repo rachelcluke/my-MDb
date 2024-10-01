@@ -78,10 +78,17 @@ def logout():
 def addMoviePage():
     form = AddMovieForm()
     if request.method == "POST":
-        movie = Movie(movie_name=request.form.get("movie_name"))
-        db.session.add(movie)
+        
+        new_movie = Movie(
+            movie_name=request.form.get("movie_name"),
+            movie_review=request.form.get("movie_review"),
+            view_date=request.form.get("view_date")
+        )
+
+        db.session.add(new_movie)
         db.session.commit()
         return redirect(url_for("main"))
-    return render_template("/pages/addMoviePage.html")
+        
+    return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
 
 #TODO add validation for entry (ex, movie duplicate, match with API)

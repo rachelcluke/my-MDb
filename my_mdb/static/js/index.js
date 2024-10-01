@@ -17,10 +17,11 @@ const closeDeleteDialogBtnRef = document.querySelector('#close-delete-warning-di
 const currentUrl = window.location.href;
 
 //Functions
+/*
 const formatHeader = () => {
     console.log(currentUrl);
     //TODO - add check for which page is active
-    /*
+
     //if on Main page
     navMainLinkRef.classList.add("nav-is-active");
     navCommunityLinkRef.classList.remove("nav-is-active");
@@ -28,32 +29,36 @@ const formatHeader = () => {
     //if on Community Page
     navMainLinkRef.classList.remove("nav-is-active");
     navCommunityLinkRef.classList.add("nav-is-active");
-    */
+    
 
-};
-
+*/
 
 //Event Click
-movieCardImgRef.addEventListener("click", () => {
-    movieCardDialogRef.showModal();
-});
+document.addEventListener('DOMContentLoaded', function() {
 
-closeDialogBtnRef.addEventListener("click", () => {
-    movieCardDialogRef.close();
-  });
+    movieCardImgRef.addEventListener("click",  () => {
+        movieCardDialogRef.showModal();
+    });
 
-cancelBtnRef.addEventListener("click", () => {
-    warningCancelDialogRef.showModal();
-});
+    closeDialogBtnRef.addEventListener("click",  () => {
+        movieCardDialogRef.close();
+    });
 
-closeCancelDialogBtnRef.addEventListener("click", () => {
-    warningCancelDialogRef.close();
-});
+    cancelBtnRef.addEventListener("click",  () => {
+        warningCancelDialogRef.showModal();
+        console.log("cancel btn hit");
+    });
 
-deleteMovieBtnRef.addEventListener("click", () => {
-    warningDeleteDialogRef.showModal();
-  });
+    closeCancelDialogBtnRef.addEventListener("click",  () => {
+        warningCancelDialogRef.close();
+    });
 
-closeDeleteDialogBtnRef.addEventListener("click", () => {
-    warningDeleteDialogRef.close();
+    deleteMovieBtnRef.addEventListener("click",  () => {
+        warningDeleteDialogRef.showModal();
+    });
+
+    closeDeleteDialogBtnRef.addEventListener("click",  () => {
+        warningDeleteDialogRef.close();
+    });
+
 });

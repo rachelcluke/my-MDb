@@ -17,7 +17,8 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(300), nullable=False)
-    movies = db.relationship("Movie", backref="user", cascade="all, delete", lazy=True)
+    movies = db.relationship('Movie', backref='User', cascade="all, delete", lazy='dynamic',
+                        primaryjoin="User.id == Movie.user_id")
 
     def __repr__(self):
         return  self.id, self.username, self.password
@@ -30,8 +31,7 @@ class Movie(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
-        def _repr__(self):
-            return self.id, self.movie_name
+        return self.id, self.movie_name
 
 
 class RegisterForm(FlaskForm):
