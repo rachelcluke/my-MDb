@@ -207,18 +207,18 @@ a, a:visited {
     font-weight: 400;
 }
 
-#edit-btn, #delete-btn, #cancel-btn, #cancel-final-btn, #close-cancel-warning-dialog-btn{
+#edit-btn, #delete-btn, #cancel-btn, #cancel-final-btn, #close-cancel-warning-dialog-btn, #delete-final-btn, #close-delete-warning-dialog-btn{
     border-radius: 1rem 1rem;
     font-weight: 400;
 }
 
-#edit-btn, #cancel-btn, #cancel-final-btn {
+#edit-btn, #cancel-btn, #cancel-final-btn, #delete-final-btn {
     background-color: var(--supernova);
     color: var(--jetblack);
     padding: .1rem 2rem .1rem 2rem;
 }
 
-#delete-btn, #close-cancel-warning-dialog-btn {
+#delete-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
     background-color: var(--jetblack);
     color: var(--offwhite);
     padding: .1rem 1rem .1rem 1rem;
