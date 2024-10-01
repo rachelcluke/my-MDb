@@ -4,7 +4,7 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, log
 from flask_bcrypt import Bcrypt 
 from werkzeug.security import generate_password_hash, check_password_hash
 from my_mdb import app, db
-from my_mdb.models import User, LoginForm, RegisterForm
+from my_mdb.models import User, Movie, LoginForm, RegisterForm, AddMovieForm
 
 @app.route("/")
 def index():
@@ -73,3 +73,7 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("auth"))
+
+@app.route("/addMoviePage")
+def addMoviePage():
+    return render_template("/pages/addMoviePage.html")

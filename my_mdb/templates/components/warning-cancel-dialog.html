@@ -1,0 +1,12 @@
+<!-- Dialog to warn user before cancelling entry (that has not been added to database yet)  -->
+<dialog id="warning-cancel-dialog">
+    <div class="row">
+        <p>Are you sure you want to cancel your movie submission? This action cannot be undone.</p>
+    </div>
+
+    <div class="row" id="dialog-btn-row">
+        {% include "components/button-cancel-final.html" %}
+        {% include "components/button-close-cancel-dialog.html" %}
+    </div> 
+
+</dialog>

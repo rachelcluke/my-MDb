@@ -30,7 +30,7 @@ class Movie(db.Model):
 
     def __repr__(self):
         def _repr__(self):
-            return self.id, self.movie_name, self.movie_review, self.view_date
+            return self.id, self.movie_name
 
 
 class RegisterForm(FlaskForm):
@@ -60,3 +60,12 @@ class LoginForm(FlaskForm):
                              InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
 
     submit = SubmitField('Login')
+
+class AddMovieForm(FlaskForm):
+    movie_name = StringField(validators=[
+                           InputRequired(), Length(min=1, max=50)], render_kw={"placeholder": "Movie Name"})
+
+    movie_review = TextField(validators=[
+                             InputRequired()], render_kw={"placeholder": "What did you think of the movie?"})
+
+    submit = SubmitField('Add to My Movies')
