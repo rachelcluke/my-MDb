@@ -4,36 +4,4 @@
         {{ form.password }}
         {{ form.submit }}
     </form>
-    <!--
-    <form method = "POST" action="{{ url_for ('main') }}">
-        <div>
-            <div class="row">
-                <div class="column" id="register-name-column">
-                    <label for="username">First Name:</label>
-                    <input type="text" name="firstname" placeholder="First Name"/>
-                </div>
-                <div class="column">
-                </div>
-                <div class="column">
-                    <label for="username">Last Name:</label>
-                    <input type="text" name="lastname" placeholder="Last Name"/>
-                </div>
-            </div>
-            <div class="column">
-                <label for="username">New Username:</label>
-                <input type="username" name="username" placeholder="Enter a New Username"/>
-            </div>
-            <div class="column">
-                <label for="password">New Password:</label>
-                <input type="password" name="password" placeholder="Enter a New Password"/>
-            </div>
-            <div class="centre">
-                <button type="submit" class="auth-btn" href="{{url_for('main')}}">Register</button>
-            </div>
-        </div>
-    </form>
-    {% if error %}
-    <p class="error"><strong>Error:</strong> {{ error }}
-    {% endif %}
-    -->
 </div>
