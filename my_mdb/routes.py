@@ -12,7 +12,7 @@ def index():
 
 #Login
 @app.route("/login", methods=['GET', 'POST'])
-def auth():
+def login():
     form = LoginForm()
     if request.method=='POST':
         existing_user = User.query.filter(User.username == \
@@ -62,8 +62,8 @@ def register():
 
     return render_template("/pages/register.html", title='Register',form=form)
 
-@app.route("/my-movies", methods=("GET", "POST"))
-def main():
+@app.route("/my_movies", methods=("GET", "POST"))
+def my_movies():
     if "user" in session:
         print(session["user"])
         print(session["user_id"])
@@ -75,10 +75,10 @@ def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("auth"))
+    return redirect(url_for("login"))
 
-@app.route("/add-movie", methods=["GET", "POST"])
-def addMoviePage():
+@app.route("/add_movie", methods=["GET", "POST"])
+def add_movie():
     form = AddMovieForm()
     if request.method == "POST":
         
