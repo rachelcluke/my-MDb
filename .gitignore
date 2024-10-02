@@ -5,7 +5,7 @@ __pycache__/
 *.py[cod]
 node_modules/
 .github/
-env.py
 cloudinary_python.txt
 *.db
+env.py
 settings.json
