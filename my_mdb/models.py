@@ -71,5 +71,6 @@ class AddMovieForm(FlaskForm):
 
     
     view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today())
+    #TODO add validation so that date cannot be future
 
     submit = SubmitField('Save to My Movies')
