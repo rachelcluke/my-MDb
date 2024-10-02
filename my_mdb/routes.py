@@ -11,7 +11,7 @@ def index():
     return render_template("/pages/launch.html")
 
 #Login
-@app.route("/auth", methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def auth():
     form = LoginForm()
     if request.method=='POST':
@@ -58,11 +58,11 @@ def register():
         db.session.commit()
 
         session["user"] = request.form.get("username").lower()
-        return redirect(url_for("main", username=session["user"]))
+        return redirect(url_for("my-movies", username=session["user"]))
 
     return render_template("/pages/register.html", title='Register',form=form)
 
-@app.route("/main", methods=("GET", "POST"))
+@app.route("/my-movies", methods=("GET", "POST"))
 def main():
     if "user" in session:
         print(session["user"])
@@ -77,7 +77,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("auth"))
 
-@app.route("/addMoviePage", methods=["GET", "POST"])
+@app.route("/add-movie", methods=["GET", "POST"])
 def addMoviePage():
     form = AddMovieForm()
     if request.method == "POST":
@@ -91,7 +91,7 @@ def addMoviePage():
 
         db.session.add(new_movie)
         db.session.commit()
-        return redirect(url_for("main"))
+        return redirect(url_for("my-movies"))
         
     return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
 
