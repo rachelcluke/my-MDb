@@ -11,10 +11,11 @@ login_manager.login_view = 'login'
 
 @login_manager.user_loader
 def load_user(user_id):
+    """Get User ID"""
     return User.query.get(int(user_id))
 
 class User(db.Model):
-    """User Class contains id, username, password, relationship with Movies"""
+    """User Class contains id, username, password, db relationship with Movies"""
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(300), nullable=False)
@@ -25,6 +26,7 @@ class User(db.Model):
         return  self.id, self.username, self.password
 
 class Movie(db.Model):
+    """Movie Class contains id, movie_name, movie_review, view_date and relational user_id"""
     id = db.Column(db.Integer, primary_key=True)
     movie_name = db.Column(db.String(50), unique=True, nullable=False)
     movie_review = db.Column(db.Text, nullable=False)
@@ -36,6 +38,7 @@ class Movie(db.Model):
 
 
 class RegisterForm(FlaskForm):
+    """Register Flask Form with inputs: username, password, submit to register new users"""
     username = StringField(validators=[
                            InputRequired(), Length(min=4, max=15)], render_kw={"placeholder": "New Username"})
 
@@ -55,6 +58,7 @@ class RegisterForm(FlaskForm):
         
 
 class LoginForm(FlaskForm):
+    """Login Flask Form with inputs: username, password, submit to login existing users"""
     username = StringField(validators=[
                            InputRequired(), Length(min=4, max=15)], render_kw={"placeholder": "Username"})
 
@@ -64,6 +68,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class AddMovieForm(FlaskForm):
+    """Add Movie Flask Form with inputs: movie_name, movie_review, view_date and submit"""
     movie_name = StringField(validators=[
                            InputRequired(), Length(min=1, max=50)], render_kw={"placeholder": "Movie Name"})
 
