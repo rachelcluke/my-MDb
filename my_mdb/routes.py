@@ -65,9 +65,10 @@ def register():
 @app.route("/my_movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
-        movies = list(Movie.query.order_by(Movie.view_date).all())
         return render_template("/pages/main.html", username=session["user"])
-    return render_template("/pages/main.html", title='My Movies')
+
+    movies = list(Movie.query.order_by(Movie.view_date).all())
+    return render_template("/pages/main.html", title='My Movies', movies=movies)
 
 @app.route("/logout")
 def logout():
