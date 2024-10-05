@@ -26,16 +26,16 @@ def login():
                         session["user"] = request.form.get("username").lower()
                         session["user_id"] = existing_user.id
                         return redirect(url_for(
-                            "main", username=session["user"]))
+                            "my_movies", username=session["user"]))
             else:
                 # case - password mismatch
                 flash("Incorrect Username and/or Password")
-                return redirect(url_for("auth"))
+                return redirect(url_for("login"))
 
         else:
             # case - username does not exist
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("auth"))
+            return redirect(url_for("login"))
 
     return render_template("/pages/auth.html", title='Login', form=form)
 
@@ -58,15 +58,14 @@ def register():
         db.session.commit()
 
         session["user"] = request.form.get("username").lower()
-        return redirect(url_for("my-movies", username=session["user"]))
+        return redirect(url_for("my_movies", username=session["user"]))
 
     return render_template("/pages/register.html", title='Register',form=form)
 
 @app.route("/my_movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
-        print(session["user"])
-        print(session["user_id"])
+        movies = list(Movie.query.order_by(Movie.view_date).all())
         return render_template("/pages/main.html", username=session["user"])
     return render_template("/pages/main.html", title='My Movies')
 
@@ -91,7 +90,7 @@ def add_movie():
 
         db.session.add(new_movie)
         db.session.commit()
-        return redirect(url_for("my-movies"))
+        return redirect(url_for("my_movies"))
         
     return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
 
