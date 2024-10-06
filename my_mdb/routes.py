@@ -105,15 +105,16 @@ def delete_movie(movie_id):
 
 @app.route("/edit_movie/<int:movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
+    form = EditMovieForm()
     movie = Movie.query.get_or_404(movie_id)
+
     if request.method == "POST":
-        movie.movie_name = request.form.get("movie_name")
         movie_review=request.form.get("movie_review"),
         view_date=request.form.get("view_date"),
         db.session.commit()
         return redirect(url_for("my_movies"))
-        
-    return render_template("editMoviePage.html", movie=movie)
+
+    return render_template("/pages/editMoviePage.html",title='Edit Movie', form=form, movie=movie)
 
 #TODO add validation for entry (ex, movie duplicate, match with API)
 

@@ -1,0 +1,17 @@
+<div class="centre column" id="form-add-div"></div>
+    <form method="POST" action="{{ url_for('edit_movie') }}">
+        <div class="row form-add-row">
+            {#<!--{{ form.movie_name }}-->#}
+            <p>{{ movie.movie_name }}</p>
+        </div>
+        <div class="row form-add-row">
+            {{ form.movie_review }}
+        </div>
+        <div class="row form-add-row" id="add-date-row">
+            {{ form.view_date }}
+        </div>
+        <div class="row form-add-row">
+            {{ form.submit }}
+        </div>
+    </form>
+</div>

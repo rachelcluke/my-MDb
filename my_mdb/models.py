@@ -80,3 +80,15 @@ class AddMovieForm(FlaskForm):
     #TODO add validation so that date cannot be future
 
     submit = SubmitField('Save to My Movies')
+
+class EditMovieForm(FlaskForm):
+    """Edit Movie Flask Form with inputs: movie_review, view_date and submit"""
+    #user will not be able to edit movie_name (as it will have API implications)
+
+    movie_review = TextAreaField(validators=[
+                             InputRequired(), Length(min=1, max=200)], render_kw={"placeholder": "What did you think of the movie?"})
+
+    view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today())
+    #TODO add validation so that date cannot be future
+
+    submit = SubmitField('Update my Movie Entry')
