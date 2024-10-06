@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     closeCancelDialogBtnRef?.addEventListener("click",  () => {
-        console.log("cancel FINAL btn hit");
         warningCancelDialogRef.close();
     });
 
