@@ -1,5 +1,5 @@
 <div id="div-delete-final-btn">
-    <button type="submit" id="delete-final-btn" class="auth-btn" href="{{ url_for('my_movies') }}">Yes, Delete</button>
+    <a type="submit" id="delete-final-btn" class="auth-btn" href="{{ url_for('delete_movie', movie_id=movie.id) }}">Yes, Delete</a>
 </div>
 
 <!-- TODO: Add delete functionality here -->

@@ -65,8 +65,8 @@ def register():
 @app.route("/my_movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
-        #movies = list(Movie.query.order_by(Movie.view_date).all())
-        movies = list(Movie.query.filter_by(user_id=session["user_id"]))
+        movies = list(Movie.query.order_by(Movie.view_date).all())
+        #movies = list(Movie.query.filter_by(user_id=session["user_id"]))
         return render_template("/pages/main.html", username=session["user"], movies=movies)
 
     return render_template("/pages/main.html", title='My Movies', movies=movies)
@@ -95,6 +95,13 @@ def add_movie():
         return redirect(url_for("my_movies"))
         
     return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
+
+@app.route("/delete_movie/<int:movie_id>")
+def delete_movie(movie_id):
+    movie = Movie.query.get_or_404(movie_id)
+    db.session.delete(movie)
+    db.session.commit()
+    return redirect(url_for("my_movies"))
 
 #TODO add validation for entry (ex, movie duplicate, match with API)
 
