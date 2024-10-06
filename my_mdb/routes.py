@@ -66,7 +66,7 @@ def register():
 def my_movies():
     if "user" in session:
         movies = list(Movie.query.order_by(Movie.view_date).all())
-        return render_template("/pages/main.html", username=session["user"])
+        return render_template("/pages/main.html", username=session["user"], movies=movies)
 
     return render_template("/pages/main.html", title='My Movies', movies=movies)
 
