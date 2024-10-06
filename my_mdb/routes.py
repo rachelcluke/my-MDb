@@ -65,9 +65,9 @@ def register():
 @app.route("/my_movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
+        movies = list(Movie.query.order_by(Movie.view_date).all())
         return render_template("/pages/main.html", username=session["user"])
 
-    movies = list(Movie.query.order_by(Movie.view_date).all())
     return render_template("/pages/main.html", title='My Movies', movies=movies)
 
 @app.route("/logout")
@@ -96,3 +96,6 @@ def add_movie():
     return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
 
 #TODO add validation for entry (ex, movie duplicate, match with API)
+
+#TODO - for community page (to view all user's movies today/ yesterday)
+#movies = list(Movie.query.order_by(Movie.view_date).all())

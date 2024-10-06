@@ -27,8 +27,8 @@ class User(db.Model):
 
 class Movie(db.Model):
     """Movie Class contains id, movie_name, movie_review, view_date and relational user_id"""
-    id = db.Column(db.Integer, primary_key=True)
-    movie_name = db.Column(db.String(50), unique=True, nullable=False)
+    id = db.Column(db.Integer,  unique=True, primary_key=True)
+    movie_name = db.Column(db.String(50), nullable=False)
     movie_review = db.Column(db.Text, nullable=False)
     view_date = db.Column(db.Date, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"), nullable=False)
