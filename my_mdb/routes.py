@@ -4,7 +4,7 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, log
 from flask_bcrypt import Bcrypt 
 from werkzeug.security import generate_password_hash, check_password_hash
 from my_mdb import app, db
-from my_mdb.models import User, Movie, LoginForm, RegisterForm, AddMovieForm
+from my_mdb.models import User, Movie, LoginForm, RegisterForm, AddMovieForm, EditMovieForm
 
 @app.route("/")
 def index():
