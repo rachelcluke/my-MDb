@@ -65,7 +65,7 @@ def register():
 @app.route("/my_movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
-        movies = list(Movie.query.order_by(Movie.view_date).all())
+        movies = list(Movie.query.order_by(Movie.id.desc()).all())
         #movies = list(Movie.query.filter_by(user_id=session["user_id"]))
         return render_template("/pages/main.html", username=session["user"], movies=movies)
 
@@ -109,9 +109,12 @@ def edit_movie(movie_id):
     form = EditMovieForm()
 
     if request.method == "POST":
-        movie_review=request.form.get("movie_review"),
-        view_date=request.form.get("view_date"),
+        movie.movie_review=request.form.get("movie_review"),
+        movie.view_date=request.form.get("view_date"),
         db.session.commit()
+        #testing purposes
+        #changed_review = list(Movie.query.filter_by(id=movie_id).first())
+        #print(changed_review)
         return redirect(url_for("my_movies"))
 
     return render_template("/pages/editMoviePage.html",title='Edit Movie', form=form, movie=movie)

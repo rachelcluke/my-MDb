@@ -16,7 +16,7 @@
     </figure>
     <div class="column" id="movie-api-description">
       <div class="row" id="dialog-movie-name">
-        <p>Movie Name</p>
+        <p>{{ movie.movie_name }}</p>
       </div>
       <div class="row">
         <p>[ api info ]</p>
@@ -27,7 +27,10 @@
   <!-- Information below the poster -->
   <div class="column" id ="movie-user-info">
     <div class="row">
-      <p>[ editable - user review ]</p>
+      <p>{{ movie.view_date }}</p>
+    </div>
+    <div class="row">
+      <p>{{ movie.movie_review }}</p>
     </div>
     <div class="row">
       <p>[ editable - user rating ]</p>
