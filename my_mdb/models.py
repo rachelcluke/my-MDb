@@ -86,7 +86,7 @@ class EditMovieForm(FlaskForm):
     #user will not be able to edit movie_name (as it will have API implications)
 
     movie_review = TextAreaField(validators=[
-                             InputRequired(), Length(min=1, max=200)])
+                             InputRequired(), Length(min=1, max=200)], render_kw={"placeholder": "TODO-display previous value"})
     #TODO make all defaults as current entry's data
     
     view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today())
