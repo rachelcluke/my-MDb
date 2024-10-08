@@ -13,6 +13,8 @@
             </div>
         </div>
     </div>
-    {% include "components/movie-dialog.html" %}
+    {% for movie in movies %}
+        {% include "components/movie-dialog.html" %}
+    {% endfor %}
     {% include "components/warning-delete-dialog.html" %}
 </div>
