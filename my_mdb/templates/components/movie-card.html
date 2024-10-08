@@ -2,7 +2,7 @@
     <div id="movie-card-column" class="column" >
         <!-- TODO: remove placeholders -->
          <figure>
-            <img class="movie-card-poster" src="/static/img/joker-poster.jpg" alt="Movie Poster">
+            <img class="movie-card-poster" src="/static/img/joker-poster.jpg" alt="Movie Poster" data-movie-name="{{ movie.movie_name}}" data-movie-date="{{ movie.view_date}}" data-movie-review="{{ movie.movie_review}}" onclick="getMovieDataforDialog(this)">
         </figure>
         <div id="main-movie-caption" class="column">
             <div class="movie-card-name"> 
@@ -13,8 +13,7 @@
             </div>
         </div>
     </div>
-    {% for movie in movies %}
-        {% include "components/movie-dialog.html" %}
-    {% endfor %}
-    {% include "components/warning-delete-dialog.html" %}
+    {#{% include "components/movie-dialog.html" %}#}
+
+    {#{% include "components/warning-delete-dialog.html" %}#}
 </div>

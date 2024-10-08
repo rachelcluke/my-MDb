@@ -12,11 +12,32 @@ const deleteMovieBtnRef = document.querySelector('#div-delete-btn');
 const cancelBtnRef = document.querySelector('#cancel-btn');
 const closeCancelDialogBtnRef = document.querySelector('#close-cancel-warning-dialog-btn');
 const closeDeleteDialogBtnRef = document.querySelector('#close-delete-warning-dialog-btn');
+const cardMovieNameRef = document.querySelector(".movie-card-name");
+const dialogMovieNameRef = document.querySelector("#dialog-movie-name");
+const dialogMovieDateRef = document.querySelector("#dialog-movie-date");
+const dialogMovieReviewRef = document.querySelector("#dialog-movie-review");
 
 //CONSTANTS
 const currentUrl = window.location.href;
 
+//Variables
+let currentMovieName;
+let currentMovieDate;
+let currentMovieReview;
+
 //Functions
+function getMovieDataforDialog(obj) {
+    currentMovieName = obj.dataset.movieName;
+    currentMovieDate = obj.dataset.movieDate;
+    currentMovieReview = obj.dataset.movieReview;
+}
+
+function setMovieDataforDialog() {
+    dialogMovieNameRef.textContent = currentMovieName;
+    dialogMovieDateRef.textContent = currentMovieDate;
+    dialogMovieReviewRef.textContent = currentMovieReview;
+}
+
 /*
 const formatHeader = () => {
     console.log(currentUrl);
@@ -42,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for( var i=0; i<movieCardImgRef.length; i++){
         movieCardImgRef[i].addEventListener("click", () => { 
+            setMovieDataforDialog();
             movieCardDialogRef.showModal();
         });
     }
