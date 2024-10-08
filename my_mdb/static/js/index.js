@@ -3,8 +3,8 @@
 //Query Selectors
 const navMainLinkRef = document.querySelector('#nav-main-link');
 const navCommunityLinkRef = document.querySelector('#nav-community-link');
-const movieCardImgRef = document.querySelector('.movie-card-poster');
-const movieCardDialogRef = document.querySelector('#movie-card-dialog');
+const movieCardImgRef = document.querySelectorAll('.movie-card-poster');
+const movieCardDialogRef = document.querySelector('.movie-card-dialog');
 const warningCancelDialogRef = document.querySelector('#warning-cancel-dialog');
 const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
 const closeDialogBtnRef = document.querySelector('#close-dialog-btn-div');
@@ -36,10 +36,15 @@ const formatHeader = () => {
 //Event Click
 document.addEventListener("DOMContentLoaded", () => {
 
-    movieCardImgRef?.addEventListener("click",  () => {
+    /*movieCardImgRef?.addEventListener("click",  () => {
         movieCardDialogRef.showModal();
+    });*/
 
-    });
+    for( var i=0; i<movieCardImgRef.length; i++){
+        movieCardImgRef[i].addEventListener("click", () => { 
+            movieCardDialogRef.showModal();
+        });
+    }
 
     closeDialogBtnRef?.addEventListener("click",  () => {
         movieCardDialogRef.close();
