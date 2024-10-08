@@ -284,11 +284,11 @@ form .auth-btn {
     padding-left: 0.5rem;
 }
 
-#movie-card-column, #div-add-btn {
+#movie-card-column, #movie-card-community-column, #div-add-btn {
     padding-left: 1.5rem;
 }
 
-#movie-card-column figure img {
+#movie-card-column, #movie-card-community-column figure img {
     width: 40%;
     height: 70%;
 	opacity: 1;
