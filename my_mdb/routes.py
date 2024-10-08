@@ -65,8 +65,10 @@ def register():
 @app.route("/my_movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
-        movies = list(Movie.query.order_by(Movie.id.desc()).all())
-        #movies = list(Movie.query.filter_by(user_id=session["user_id"]))
+        movies = list(Movie.query.order_by(Movie.id.desc()))
+        #movies = list(Movie.query.filter(Movie.user_id==session["user_id"]). \
+                                 #Movie.query.order_by(Movie.id.desc()))
+        #movies = list(Movie.query.filter_by(Movie.user_id=session["user_id"]))
         return render_template("/pages/main.html", username=session["user"], movies=movies)
 
     return render_template("/pages/main.html", title='My Movies', movies=movies)
@@ -112,14 +114,16 @@ def edit_movie(movie_id):
         movie.movie_review=request.form.get("movie_review"),
         movie.view_date=request.form.get("view_date"),
         db.session.commit()
-        #testing purposes
-        #changed_review = list(Movie.query.filter_by(id=movie_id).first())
-        #print(changed_review)
         return redirect(url_for("my_movies"))
 
     return render_template("/pages/editMoviePage.html",title='Edit Movie', form=form, movie=movie)
 
 #TODO add validation for entry (ex, movie duplicate, match with API)
 
-#TODO - for community page (to view all user's movies today/ yesterday)
-#movies = list(Movie.query.order_by(Movie.view_date).all())
+@app.route("/community", methods=("GET", "POST"))
+def community():
+    if "user" in session:
+        movies = list(Movie.query.order_by(Movie.view_date.desc()).all())
+        return render_template("/pages/community.html", username=session["user"], movies=movies)
+
+    return render_template("/pages/community.html", title='My Movies', movies=movies)

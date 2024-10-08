@@ -10,6 +10,10 @@
             </div>
         </div>
 
+        {% for movie in movies %}
+            {% include "components/movie-card.html" %}
+        {% endfor %}
+
         {% include "components/flash-msg.html" %}
 
         <script src="{{ url_for('static', filename='js/index.js') }}"></script>

@@ -34,7 +34,7 @@ class Movie(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
-        return self.id, self.movie_name
+        return self.id, self.movie_name, self.user_id
 
 
 class RegisterForm(FlaskForm):
