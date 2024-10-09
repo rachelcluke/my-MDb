@@ -1,10 +1,10 @@
 <div class="centre row">
     <form method="POST" action="{{ url_for('login') }}">
         <div class="row">
-            {{ form.username }}
+            {{ form.username(class="field-username") }}
         </div>
         <div class="row">
-            {{ form.password }}
+            {{ form.password(class="field-password")}}
         </div>
         <div class="row" id="login-btn-row">
             {{ form.submit(class="login-btn") }}
