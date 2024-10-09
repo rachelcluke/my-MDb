@@ -1,7 +1,13 @@
-<div class="centre">
+<div class="centre row">
     <form method="POST" action="{{ url_for('login') }}">
-        {{ form.username }}
-        {{ form.password }}
-        {{ form.submit }}
+        <div class="row">
+            {{ form.username }}
+        </div>
+        <div class="row">
+            {{ form.password }}
+        </div>
+        <div class="row" id="login-btn-row">
+            {{ form.submit(class="login-btn") }}
+        </div>
     </form>
 </div>

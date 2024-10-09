@@ -89,19 +89,14 @@ class EditMovieForm(FlaskForm):
     #user will not be able to edit movie_name (as it will have API implications)
 
     movie_review = TextAreaField(validators=[
-                             InputRequired(), Length(min=1, max=200)], render_kw={"placeholder": "TODO-display previous value"})
+                             InputRequired(), Length(min=1, max=200)])#, render_kw={Movie.movie_review})
     #TODO make all defaults as current entry's data
     
-    view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today())
+    view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today()) #, validators=[validate_date()])
 
     submit = SubmitField('Update my Movie Entry')
-
-    #retrieving previously saved data to display to user in fields
-    #def get_movie_review(self, username):
-        #existing_movie_review = Movie.query.filter_by(username=username.data).first()
     
     #TODO - fix validation
     def validate_date(self, view_date):
-        today = datetime.date.today()
         if (view_date.data > today):
             raise ValidationError("The date cannot be in the future!")
