@@ -417,8 +417,12 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password  {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
         font-size: 3rem;
+    }
+
+    #secondary-header li {
+        padding-right: 3rem;
     }
 
     form {
@@ -436,6 +440,22 @@ dialog p {
         padding: 1rem 7rem 1rem 7rem;
         letter-spacing: -10%;
         font-size: 2.5rem;
+    }
+
+    /*My Movies*/
+    #div-add-btn {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    #main-movie-caption, #main-movie-community-caption {
+        padding-left: .5rem;
+        padding-bottom: 2rem;
+        margin-top: -10rem;
+    }
+
+    #community-main-title {
+        padding-bottom: 10%;
     }
 
 }
