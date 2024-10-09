@@ -261,6 +261,14 @@ form .auth-btn {
     padding-right: 7rem;
 }
 
+#form-add-div, #form-edit-div {
+    padding-top: 2rem;
+}
+
+#form-edit-movie-name p {
+    color: var(--heathergray);
+}
+
 #new-user-text-row {
     padding-right: 2rem;
 }
@@ -367,7 +375,7 @@ dialog p {
     height: auto;
 }
 
-#movie-user-info, #warning-cancel-message, #div-cancel-btn, #form-add-div {
+#movie-user-info, #warning-cancel-message, #div-cancel-btn, #form-add-div, #form-edit-div {
     padding-left: 1rem;
     padding-right: 1rem;
 }
