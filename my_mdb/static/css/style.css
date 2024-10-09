@@ -379,3 +379,66 @@ dialog p {
 #add-date-row {
     padding-top: 3rem;
 }
+
+/* Media Query */
+/* Default design - Mobile - 375 x 667 px */
+
+/* Media Query 01 - Tablet - 768 x 959 px */
+@media (min-width: 768px) {
+
+    body {
+        padding-left: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    #logo-text a{
+        font-size: 5rem;
+    }
+
+    #launch-title-column {
+        padding-top: 15%;
+    }
+
+    #launch-subheading-row h3 {
+        font-size: 4rem;
+    }
+
+    #launch-subheading-row {
+        padding-top: 2rem;
+    }
+
+    #launch-auth-btn-row {
+        padding-top: 3rem;
+    }
+
+    .page-title {
+        font-size: 6rem;
+        padding: 10rem 0rem 1rem 1rem;
+    }
+
+    #new-user-row, #sign-up-link, .auth-btn, #error-msg-row  {
+        font-size: 3rem;
+    }
+
+    form {
+        font-size: 3rem;
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    form input {
+        margin: 1rem 10rem 1rem 10rem;
+    }
+
+    .auth-btn{
+        padding: 1rem 10rem 1rem 10rem;
+        font-weight: 600;
+        letter-spacing: -5%;
+    }
+    
+    form .auth-btn {
+        padding-left: 7rem;
+        padding-right: 7rem;
+    }
+
+}
