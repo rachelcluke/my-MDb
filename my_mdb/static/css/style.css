@@ -115,6 +115,7 @@ a, a:visited {
     color: var(--offwhite);
     letter-spacing: -5%;
     padding-left: 1rem;
+    opacity: 100%;
 }
 
 #secondary-header {
