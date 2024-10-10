@@ -421,6 +421,7 @@ dialog p {
         padding-top: 3rem;
     }
 
+    /*Login*/
     .page-title {
         font-size: 6rem;
         padding: 10rem 0rem 1rem 1rem;
@@ -444,7 +445,6 @@ dialog p {
         margin: 1rem 10rem 1rem 10rem;
     }
 
-    /*Login*/
     .login-btn, .register-btn {
         padding: 1rem 7rem 1rem 7rem;
         letter-spacing: -10%;
@@ -540,6 +540,38 @@ dialog p {
     #launch-login-btn {
         padding-left: 15%;
         padding-right: 15%;
+    }
+
+    /*Login*/
+    .page-title {
+        font-size: 10rem;
+        padding-top: 8%;
+    }
+
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+        font-size: 5rem;
+    }
+
+    form {
+        font-size: 5rem;
+        padding-top: 6rem;
+        padding-bottom: 8rem;
+    }
+
+    form input {
+        margin: 2rem 10rem 2rem 10rem;
+    }
+
+    .login-btn, .register-btn {
+        padding: 1rem 15rem 1rem 15rem;
+        letter-spacing: -10%;
+        font-size: 4rem;
+    }
+
+    /*My Movie*/
+
+    #secondary-header li {
+        padding-right: 3rem;
     }
 
 
