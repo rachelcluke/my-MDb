@@ -26,6 +26,7 @@ const currentUrl = window.location.href;
 let currentMovieName;
 let currentMovieDate;
 let currentMovieReview;
+let currentPage;
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth() + 1;
@@ -57,28 +58,26 @@ function formatDateField() {
      formDateFieldRef.setAttribute("max", today);
 }
 
-/*
-const formatHeader = () => {
-    console.log(currentUrl);
+function getCurrentPage(obj) {
     //TODO - add check for which page is active
+    currentPage = obj.dataset.currentPage;
+    console.log("function hit");
 
-    //if on Main page
-    navMainLinkRef.classList.add("nav-is-active");
-    navCommunityLinkRef.classList.remove("nav-is-active");
+    if (currentPage = "community") {
+        //if on Community Page
+        navMainLinkRef.classList.remove("nav-is-active");
+        navCommunityLinkRef.classList.add("nav-is-active");
+        console.log("community");
+    } else {
+        //if on Main Page
+        navMainLinkRef.classList.remove("nav-is-active");
+        navCommunityLinkRef.classList.add("nav-is-active");
+        console.log("main");
+    }
+}
 
-    //if on Community Page
-    navMainLinkRef.classList.remove("nav-is-active");
-    navCommunityLinkRef.classList.add("nav-is-active");
-    
-
-*/
-
-//Event Click
+//DOM Events
 document.addEventListener("DOMContentLoaded", () => {
-
-    /*movieCardImgRef?.addEventListener("click",  () => {
-        movieCardDialogRef.showModal();
-    });*/
 
     for( var i=0; i<movieCardImgRef.length; i++){
         movieCardImgRef[i].addEventListener("click", () => { 

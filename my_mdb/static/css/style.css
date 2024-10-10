@@ -136,9 +136,9 @@ a, a:visited {
     color: var(--supernova);
 }
 
-/*TODO: to be added in js for active pages */
 .nav-is-active {
     opacity: 80%;
+    color: var(--supernova);
 }
 
 /* Launch Page */
