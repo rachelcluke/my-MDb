@@ -79,11 +79,6 @@ class AddMovieForm(FlaskForm):
 
     submit = SubmitField('Save to My Movies')
 
-    #TODO - fix validation
-    def validate_view_date(form, view_date):
-        if datetime.date.today() < form.view_date.data:
-            raise ValidationError("End date must not be earlier than start date.")
-
 class EditMovieForm(FlaskForm):
     """Edit Movie Flask Form with inputs: movie_review, view_date and submit"""
     #user will not be able to edit movie_name (as it will have API implications)
@@ -95,8 +90,3 @@ class EditMovieForm(FlaskForm):
     view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today()) #, validators=[validate_date()])
 
     submit = SubmitField('Update my Movie Entry')
-    
-    #TODO - fix validation
-    def validate_date(self, view_date):
-        if (view_date.data > today):
-            raise ValidationError("The date cannot be in the future!")
