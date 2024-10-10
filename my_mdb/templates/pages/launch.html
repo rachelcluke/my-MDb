@@ -3,15 +3,19 @@
     {% include "components/header.html" %}
     <body>
         {% include "components/navbar-launch.html" %}
-        {% include "components/launch-title.html" %}
+        <div id="launch-desktop-row">
+            <div class="desktop-column">
+                <div class="desktop-row">
+                    {% include "components/launch-title.html" %}
+                </div>
+                <div id ="launch-auth-btn-row" class="div-auth-btn">
+                    <a class="auth-btn" id="launch-login-btn" href="{{ url_for('login') }}">Login</a>
+                </div>
+            </div>
 
-        <!-- btn configured here and not component included to specify href -->
-        <div id ="launch-auth-btn-row" class="div-auth-btn">
-            <a class="auth-btn" id="launch-login-btn" href="{{ url_for('login') }}">Login</a>
-        </div>
-
-        <div id = "div-launch-poster" class=“d-flex align-items-center”>
-            <img id="launch-movie-poster"  src="/static/img/launch-movie-poster.jpeg" alt="Rogue One Movie Poster">
+            <div id="div-launch-poster" class="desktop-column">
+                <img id="launch-movie-poster"  src="/static/img/launch-movie-poster.jpeg" alt="Rogue One Movie Poster">
+            </div>
         </div>
         <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     </body>

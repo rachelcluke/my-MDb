@@ -469,3 +469,79 @@ dialog p {
 
 }
 
+/* Media Query 02 - Laptop - 1920 x 1080 px */
+@media (min-width: 1920px) {
+    body {
+        padding: 10rem, 10rem, 10rem, 10rem;
+    }
+
+    #logo-text a{
+        font-size: 7rem;
+    }
+
+    #header {
+        padding-top: 2%;
+    }
+
+    #header,  #launch-title-column {
+        padding-left: 3%;
+    }
+
+    /*Launch */
+    #launch-title-column {
+        padding-top: 12%;
+        font-size: 8rem;
+    }
+
+    #launch-subheading-row h3 {
+        font-size: 6rem;
+    }
+
+    #launch-subheading-row, #launch-auth-btn-row {
+        justify-content: center;
+        max-width: 50%;
+        padding-top: 3rem;
+    }
+
+    #launch-title-02-row {
+        margin-left: -7%;
+        padding-top: 1%;
+    }
+
+    #launch-title-03-row {
+        margin-left: -20%;
+        padding-top: 2%;
+    }
+
+    .page-title {
+        font-size: 5rem;
+        padding: 10rem 0rem 1rem 1rem;
+    }
+
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+        font-size: 5rem;
+    }
+
+    .desktop-column {
+        flex-direction: column;
+    }
+
+    .desktop-row {
+        flex-direction: row;
+    }
+
+    #launch-desktop-row {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        max-width: 100%;
+
+    }
+
+    #launch-login-btn {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+
+}
+
