@@ -1,8 +1,6 @@
 /*jshint esversion: 6 */
 
 //Query Selectors
-const navMainLinkRef = document.querySelector('#nav-main-link');
-const navCommunityLinkRef = document.querySelector('#nav-community-link');
 const movieCardImgRef = document.querySelectorAll('.movie-card-poster');
 const movieCardDialogRef = document.querySelector('.movie-card-dialog');
 const warningCancelDialogRef = document.querySelector('#warning-cancel-dialog');
@@ -26,7 +24,6 @@ const currentUrl = window.location.href;
 let currentMovieName;
 let currentMovieDate;
 let currentMovieReview;
-let currentPage;
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth() + 1;
@@ -56,24 +53,6 @@ function formatDateField() {
          
      today = yyyy + '-' + mm + '-' + dd;
      formDateFieldRef.setAttribute("max", today);
-}
-
-function getCurrentPage(obj) {
-    //TODO - add check for which page is active
-    currentPage = obj.dataset.currentPage;
-    console.log("function hit");
-
-    if (currentPage = "community") {
-        //if on Community Page
-        navMainLinkRef.classList.remove("nav-is-active");
-        navCommunityLinkRef.classList.add("nav-is-active");
-        console.log("community");
-    } else {
-        //if on Main Page
-        navMainLinkRef.classList.remove("nav-is-active");
-        navCommunityLinkRef.classList.add("nav-is-active");
-        console.log("main");
-    }
 }
 
 //DOM Events

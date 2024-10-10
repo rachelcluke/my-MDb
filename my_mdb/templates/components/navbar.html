@@ -11,4 +11,11 @@
       <li><a href="{{url_for('community')}}" id="nav-community-link" aria-label="Go to Community page" style="text-decoration: none">Community</a></li>
       <li><a href="{{url_for('logout')}}" id="nav-logout-link" aria-label="Logout" style="text-decoration: none">Logout</a></li>
     </div>
+    <script>
+      for (var i = 0; i < document.links.length; i++) {
+          if (document.links[i].href == document.URL) {
+              document.links[i].className = 'nav-is-active';
+          }
+      }
+    </script>
 </nav>
