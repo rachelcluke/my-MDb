@@ -28,13 +28,12 @@ def login():
                         return redirect(url_for(
                             "my_movies", username=session["user"]))
             else:
-                # case - password mismatch
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
             # case - username does not exist
-            flash("Incorrect Username and/or Password")
+            flash("Username does not exist")
             return redirect(url_for("login"))
 
     return render_template("/pages/auth.html", title='Login', form=form)
@@ -62,7 +61,7 @@ def register():
 
     return render_template("/pages/register.html", title='Register',form=form)
 
-@app.route("/my_movies", methods=("GET", "POST"))
+@app.route("/my-movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
         movies = list(Movie.query.filter(Movie.user_id==session["user_id"]).order_by(Movie.view_date.desc()))
@@ -72,12 +71,11 @@ def my_movies():
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
-    flash("You have been logged out")
     session.pop("user")
+    flash("You have been logged out")
     return redirect(url_for("login"))
 
-@app.route("/add_movie", methods=["GET", "POST"])
+@app.route("/add-movie", methods=["GET", "POST"])
 def add_movie():
     form = AddMovieForm()
     if request.method == "POST":
@@ -95,14 +93,14 @@ def add_movie():
         
     return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
 
-@app.route("/delete_movie/<int:movie_id>")
+@app.route("/delete-movie/<int:movie_id>")
 def delete_movie(movie_id):
     movie = Movie.query.get_or_404(movie_id)
     db.session.delete(movie)
     db.session.commit()
     return redirect(url_for("my_movies"))
 
-@app.route("/edit_movie/<int:movie_id>", methods=["GET", "POST"])
+@app.route("/edit-movie/<int:movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
     movie = Movie.query.get_or_404(movie_id)
     form = EditMovieForm()

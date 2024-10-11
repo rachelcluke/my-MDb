@@ -85,7 +85,6 @@ class EditMovieForm(FlaskForm):
 
     movie_review = TextAreaField(validators=[
                              InputRequired(), Length(min=1, max=200)])#, render_kw={Movie.movie_review})
-    #TODO make all defaults as current entry's data
     
     view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today()) #, validators=[validate_date()])
 
