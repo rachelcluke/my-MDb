@@ -442,10 +442,6 @@ dialog p {
         padding-bottom: 8rem;
     }
 
-    form input {
-        margin: 1rem 10rem 1rem 10rem;
-    }
-
     .login-btn, .register-btn {
         padding: 1rem 7rem 1rem 7rem;
         letter-spacing: -10%;
@@ -466,15 +462,6 @@ dialog p {
 
     #community-main-title {
         padding-bottom: 10%;
-    }
-
-    /*Add Movie Form*/
-    #form-add {
-        margin-left: -10rem;
-    }
-
-    #add-movie-review-row {
-        padding-left: 10rem;
     }
 
 }
@@ -566,10 +553,6 @@ dialog p {
         font-size: 5rem;
         padding-top: 6rem;
         padding-bottom: 8rem;
-    }
-
-    form input {
-        margin: 2rem 10rem 2rem 10rem;
     }
 
     .login-btn, .register-btn {
