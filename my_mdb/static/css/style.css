@@ -409,7 +409,7 @@ dialog p {
         font-size: 5rem;
     }
 
-    /*Launch */
+    /*Media Query 01 - Tablet - Launch */
     #launch-title-column {
         padding-top: 15%;
     }
@@ -426,7 +426,7 @@ dialog p {
         padding-top: 3rem;
     }
 
-    /*Login*/
+    /*Media Query 01 - Tablet - Login*/
     .page-title {
         font-size: 6rem;
         padding: 10rem 0rem 1rem 1rem;
@@ -452,7 +452,7 @@ dialog p {
         font-size: 2.5rem;
     }
 
-    /*My Movies*/
+    /*Media Query 01 - Tablet - My Movies*/
     #div-add-btn {
         padding-top: 2rem;
         padding-bottom: 3rem;
@@ -468,7 +468,7 @@ dialog p {
         padding-bottom: 10%;
     }
 
-    /* Add Movie Form */
+    /* Media Query 01 - Tablet - Add Movie Form */
     form input {
         padding: 2rem 4rem 2rem 4rem;
         font-size: 2.5rem;
@@ -499,7 +499,7 @@ dialog p {
         padding-left: 3%;
     }
 
-    /*Launch */
+    /*Media Query 02 (Laptop) - Launch */
     #launch-title-column {
         padding-top: 12%;
         font-size: 8rem;
@@ -546,7 +546,6 @@ dialog p {
         flex-direction: row;
         flex-wrap: nowrap;
         max-width: 100%;
-
     }
 
     #launch-login-btn {
@@ -554,7 +553,7 @@ dialog p {
         padding-right: 15%;
     }
 
-    /*Login*/
+    /*Media Query 02 (Laptop) - Login*/
     .page-title {
         font-size: 11rem;
         padding-top: 8%;
@@ -571,12 +570,12 @@ dialog p {
     }
 
     .login-btn, .register-btn {
-        padding: 1rem 15rem 1rem 15rem;
+        padding: 2rem 15rem 2rem 15rem;
         letter-spacing: -10%;
         font-size: 4rem;
     }
 
-    /*My Movie*/
+    /*Media Query 02 (Laptop) - My Movie*/
     #secondary-header li {
         padding-right: 3rem;
     }
@@ -591,6 +590,26 @@ dialog p {
         margin-top: -13rem;
     }
 
+    /*Media Query 02 (Laptop) - Community*/
+    #movie-card-community-column {
+        margin-top: -10rem;
+        padding-bottom: 20rem;
+    }
+
+    /*Media Query 02 (Laptop) - Add Movie Form */
+    form input, form textarea {
+        padding: 2rem 4rem 2rem 4rem;
+        font-size: 3.5rem;
+    }
+
+    form input {
+        padding: 2rem 10rem 2rem 10rem;
+    }
+
+    form textarea {
+        padding: 2rem 14rem 2rem 10rem;
+    }
 
 }
+
 
