@@ -556,7 +556,7 @@ dialog p {
 
     /*Login*/
     .page-title {
-        font-size: 10rem;
+        font-size: 11rem;
         padding-top: 8%;
     }
 
@@ -577,9 +577,18 @@ dialog p {
     }
 
     /*My Movie*/
-
     #secondary-header li {
         padding-right: 3rem;
+    }
+
+    #movie-card-column figure img, #movie-card-community-column figure img {
+        width: 35%;
+    }
+
+    #main-movie-caption, #main-movie-community-caption {
+        padding-left: .5rem;
+        padding-bottom: 2rem;
+        margin-top: -13rem;
     }
 
 
