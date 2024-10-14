@@ -467,6 +467,15 @@ dialog p {
         padding-bottom: 10%;
     }
 
+    /*Add Movie Form*/
+    #form-add-div {
+        margin-left: 0rem;
+    }
+
+    #add-movie-row{
+        margin-left: -2rem;
+    }
+
 }
 
 /* Media Query 02 - Laptop - 1920 x 1080 px */
