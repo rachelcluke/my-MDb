@@ -274,10 +274,6 @@ form .auth-btn {
     padding-right: 2rem;
 }
 
-#add-movie-review-row form input {
-    margin-right: 5rem;
-}
-
 
 #div-form-login, #form-register-div {
     justify-content: center;
