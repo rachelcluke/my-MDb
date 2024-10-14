@@ -469,11 +469,11 @@ dialog p {
 
     /*Add Movie Form*/
     #form-add-div {
-        margin-left: -2rem;
+        margin-left: 0rem;
     }
 
     #add-movie-row{
-        margin-left: 0rem;
+        margin-left: -2rem;
     }
 
 }
