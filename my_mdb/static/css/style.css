@@ -274,6 +274,11 @@ form .auth-btn {
     padding-right: 2rem;
 }
 
+#add-movie-review-row form input {
+    margin-right: 5rem;
+}
+
+
 #div-form-login, #form-register-div {
     justify-content: center;
 }
@@ -468,12 +473,12 @@ dialog p {
     }
 
     /*Add Movie Form*/
-    #form-add-div {
-        margin-left: 0rem;
+    #form-add {
+        margin-left: -10rem;
     }
 
-    #add-movie-row{
-        margin-left: -2rem;
+    #add-movie-review-row {
+        padding-left: 12rem;
     }
 
 }
