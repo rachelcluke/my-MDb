@@ -612,4 +612,133 @@ dialog p {
 
 }
 
+/* Media Query 03 - Desktop - 2560 x 1440 px */
+@media (min-width: 1920px) {
+    body {
+        padding: 10rem, 10rem, 10rem, 10rem;
+    }
 
+    #logo-text a{
+        font-size: 7rem;
+    }
+
+    #header {
+        padding-top: 2%;
+    }
+
+    #header,  #launch-title-column {
+        padding-left: 3%;
+    }
+
+    /*Media Query 03 - Desktop - Launch */
+    #launch-title-column {
+        padding-top: 12%;
+        font-size: 8rem;
+    }
+
+    #launch-subheading-row h3 {
+        font-size: 6rem;
+    }
+
+    #launch-subheading-row, #launch-auth-btn-row {
+        justify-content: center;
+        max-width: 50%;
+        padding-top: 3rem;
+    }
+
+    #launch-title-02-row {
+        margin-left: -7%;
+        padding-top: 1%;
+    }
+
+    #launch-title-03-row {
+        margin-left: -20%;
+        padding-top: 2%;
+    }
+
+    .page-title {
+        font-size: 5rem;
+        padding: 10rem 0rem 1rem 1rem;
+    }
+
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+        font-size: 5rem;
+    }
+
+    .desktop-column {
+        flex-direction: column;
+    }
+
+    .desktop-row {
+        flex-direction: row;
+    }
+
+    #launch-desktop-row {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        max-width: 100%;
+    }
+
+    #launch-login-btn {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    /*Media Query 03 - Desktop - Login*/
+    .page-title {
+        font-size: 11rem;
+        padding-top: 8%;
+    }
+
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+        font-size: 5rem;
+    }
+
+    form {
+        font-size: 5rem;
+        padding-top: 6rem;
+        padding-bottom: 8rem;
+    }
+
+    .login-btn, .register-btn {
+        padding: 2rem 15rem 2rem 15rem;
+        letter-spacing: -10%;
+        font-size: 4rem;
+    }
+
+    /*Media Query 03 - Desktop - My Movie*/
+    #secondary-header li {
+        padding-right: 3rem;
+    }
+
+    #movie-card-column figure img, #movie-card-community-column figure img {
+        width: 35%;
+    }
+
+    #main-movie-caption, #main-movie-community-caption {
+        padding-left: .5rem;
+        padding-bottom: 2rem;
+        margin-top: -13rem;
+    }
+
+    /*Media Query 03 - Desktop - Community*/
+    #movie-card-community-column {
+        margin-top: -10rem;
+        padding-bottom: 20rem;
+    }
+
+    /*Media Query 03 - Desktop - Add Movie Form */
+    form input, form textarea {
+        padding: 2rem 4rem 2rem 4rem;
+        font-size: 3.5rem;
+    }
+
+    form input {
+        padding: 2rem 10rem 2rem 10rem;
+    }
+
+    form textarea {
+        padding: 2rem 14rem 2rem 10rem;
+    }
+
+}
