@@ -635,12 +635,12 @@ dialog p {
 
     /*Media Query 03 - Desktop - Launch */
     #launch-title-column {
-        padding-top: 12%;
-        font-size: 8rem;
+        padding-top: 15%;
+        font-size: 10rem;
     }
 
     #launch-subheading-row h3 {
-        font-size: 6rem;
+        font-size: 8rem;
     }
 
     #launch-subheading-row, #launch-auth-btn-row {
@@ -649,13 +649,17 @@ dialog p {
         padding-top: 3rem;
     }
 
+    #launch-title-01-row {
+        padding-left: 3rem;
+    }
+
     #launch-title-02-row {
-        margin-left: -7%;
+        margin-left: -5%;
         padding-top: 1%;
     }
 
     #launch-title-03-row {
-        margin-left: -20%;
+        margin-left: -15%;
         padding-top: 2%;
     }
 
