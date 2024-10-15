@@ -598,7 +598,6 @@ dialog p {
 
     /*Media Query 02 (Laptop) - Add Movie Form */
     form input, form textarea {
-        padding: 2rem 4rem 2rem 4rem;
         font-size: 3.5rem;
     }
 
@@ -615,7 +614,7 @@ dialog p {
 /* Media Query 03 - Desktop - 2560 x 1440 px */
 @media (min-width: 1920px) {
     body {
-        padding: 10rem, 10rem, 10rem, 10rem;
+        padding: 7rem 7rem 7rem 7rem;
     }
 
     #logo-text a{
@@ -661,8 +660,12 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+    #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
         font-size: 7rem;
+    }
+
+    #secondary-header {
+        font-size: 8rem;
     }
 
     .desktop-column {
@@ -711,13 +714,13 @@ dialog p {
     }
 
     #movie-card-column figure img, #movie-card-community-column figure img {
-        width: 35%;
+        width: 50%;
     }
 
     #main-movie-caption, #main-movie-community-caption {
         padding-left: .5rem;
-        padding-bottom: 2rem;
-        margin-top: -13rem;
+        padding-bottom: 5rem;
+        margin-top: -17rem;
     }
 
     /*Media Query 03 - Desktop - Community*/
@@ -728,16 +731,19 @@ dialog p {
 
     /*Media Query 03 - Desktop - Add Movie Form */
     form input, form textarea {
-        padding: 2rem 4rem 2rem 4rem;
-        font-size: 3.5rem;
+        font-size: 5rem;
     }
 
     form input {
-        padding: 2rem 10rem 2rem 10rem;
+        padding: 2.5rem 12rem 2.5rem 12.5rem;
     }
 
     form textarea {
-        padding: 2rem 14rem 2rem 10rem;
+        padding: 2.5rem 16.5rem 2.5rem 12.5rem;
+    }
+
+    #delete-btn, #cancel-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
+        padding: .5rem 2rem .5rem 2rem;
     }
 
 }
