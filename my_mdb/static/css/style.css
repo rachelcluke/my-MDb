@@ -619,7 +619,7 @@ dialog p {
     }
 
     #logo-text a{
-        font-size: 7rem;
+        font-size: 11rem;
     }
 
     #header {
@@ -657,12 +657,12 @@ dialog p {
     }
 
     .page-title {
-        font-size: 5rem;
+        font-size: 13rem;
         padding: 10rem 0rem 1rem 1rem;
     }
 
     #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
-        font-size: 5rem;
+        font-size: 7rem;
     }
 
     .desktop-column {
@@ -701,9 +701,8 @@ dialog p {
     }
 
     .login-btn, .register-btn {
-        padding: 2rem 15rem 2rem 15rem;
-        letter-spacing: -10%;
-        font-size: 4rem;
+        padding: 2.5rem 20rem 2.5rem 20rem;
+        font-size: 6rem;
     }
 
     /*Media Query 03 - Desktop - My Movie*/
