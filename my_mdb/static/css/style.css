@@ -691,7 +691,7 @@ dialog p {
     }
 
     #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
-        font-size: 5rem;
+        font-size: 7rem;
     }
 
     form {
