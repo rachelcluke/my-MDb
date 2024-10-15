@@ -629,6 +629,10 @@ dialog p {
         padding-left: 3%;
     }
 
+    #nav-main-link, #nav-community-link {
+        padding-right: 15rem;
+    }
+
     /*Media Query 03 - Desktop - Launch */
     #launch-title-column {
         padding-top: 12%;
@@ -742,8 +746,8 @@ dialog p {
         padding: 2.5rem 16.5rem 2.5rem 12.5rem;
     }
 
-    #delete-btn, #cancel-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
-        padding: .5rem 2rem .5rem 2rem;
+    #delete-btn, #edit-btn, #cancel-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
+        padding: .5rem 4rem .5rem 4rem;
     }
 
 }
