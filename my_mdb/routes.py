@@ -42,9 +42,9 @@ def login():
 def register():
     form = RegisterForm()
     if request.method=='POST':
-        existing_user = User.query.filter(User.username == form_username.lower()).all()
         form_username = request.form.get("username")
         form_password = request.form.get("password")
+        existing_user = User.query.filter(User.username == form_username.lower()).all()
     
         if existing_user:
             flash("This username already exists.")
