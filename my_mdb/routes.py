@@ -45,6 +45,7 @@ def register():
         existing_user = User.query.filter(User.username == form_username.lower()).all()
         is_username_empty = check_for_empty_field(form_username)
         is_password_empty = check_for_empty_field(form_password)
+        is_username_length_validated = check_input_length(form_username,4,15)
         is_password_length_validated = check_input_length(form_password,8,20)
     
         if existing_user:
@@ -57,6 +58,10 @@ def register():
 
         if (is_password_length_validated == False):
             flash("Password must be between 8-20 characters.")
+            return redirect(url_for("register"))
+        
+        if (is_username_length_validated == False):
+            flash("Username must be between 4-15 characters.")
             return redirect(url_for("register"))
 
         new_user = User(
