@@ -1,4 +1,4 @@
-# TODO - Validate data via backend before displaying data to frontend
+from flask import flash, render_template, request, redirect, url_for, session
 
 def check_for_empty_field(string, redirect_link):
     if string == "":

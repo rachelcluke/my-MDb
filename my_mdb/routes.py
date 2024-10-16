@@ -33,7 +33,6 @@ def login():
                 return redirect(url_for("login"))
 
         else:
-            # case - username does not exist
             flash("Username does not exist")
             return redirect(url_for("login"))
 
