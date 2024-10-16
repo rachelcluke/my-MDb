@@ -87,17 +87,24 @@ def logout():
 def add_movie():
     form = AddMovieForm()
     if request.method == "POST":
-        
-        new_movie = Movie(
-            movie_name=request.form.get("movie_name"),
-            movie_review=request.form.get("movie_review"),
-            view_date=request.form.get("view_date"),
-            user_id=session["user_id"]
-        )
 
-        db.session.add(new_movie)
-        db.session.commit()
-        return redirect(url_for("my_movies"))
+        is_movie_name_empty = check_for_empty_field(request.form.get("movie_name"))
+        is_review_empty = check_for_empty_field(request.form.get("movie_review"))
+        is_date_empty = check_for_empty_field(("view_date"))
+
+        if (is_movie_name_empty == True) | (is_review_empty == True) | (is_date_empty == True):
+            flash("All fields must not be empty.")
+        else: 
+            new_movie = Movie(
+                movie_name=request.form.get("movie_name"),
+                movie_review=request.form.get("movie_review"),
+                view_date=request.form.get("view_date"),
+                user_id=session["user_id"]
+            )
+
+            db.session.add(new_movie)
+            db.session.commit()
+            return redirect(url_for("my_movies"))
         
     return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
 
