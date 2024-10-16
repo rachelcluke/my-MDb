@@ -42,16 +42,18 @@ def login():
 def register():
     form = RegisterForm()
     if request.method=='POST':
-        form_username = request.form.get("username")
         existing_user = User.query.filter(User.username == form_username.lower()).all()
+        form_username = request.form.get("username")
+        form_password = request.form.get("password")
     
         if existing_user:
             flash("This username already exists.")
             return redirect(url_for("register"))
         
-        is_field_empty = check_for_empty_field(form_username)
-        if (is_field_empty == True):
-            flash("Username cannot be empty.")
+        is_username_empty = check_for_empty_field(form_username)
+        is_password_empty = check_for_empty_field(form_password)
+        if (is_username_empty == True)|(is_password_empty == True):
+            flash("Username/ Password cannot be empty.")
             return redirect(url_for("register"))
 
         new_user = User(
