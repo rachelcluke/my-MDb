@@ -59,16 +59,15 @@ def register():
             flash("Password must be between 8-20 characters.")
             return redirect(url_for("register"))
 
-        if (is_password_length_validated == True):
-            new_user = User(
-                username=request.form.get("username").lower(),
-                password=generate_password_hash(request.form.get("password"))
-            )
-            db.session.add(new_user)
-            db.session.commit()
+        new_user = User(
+            username=request.form.get("username").lower(),
+            password=generate_password_hash(request.form.get("password"))
+        )
+        db.session.add(new_user)
+        db.session.commit()
 
-            session["user"] = request.form.get("username").lower()
-            return redirect(url_for("my_movies", username=session["user"]))
+        session["user"] = request.form.get("username").lower()
+        return redirect(url_for("my_movies", username=session["user"]))
 
     return render_template("/pages/register.html", title='Register',form=form)
 
