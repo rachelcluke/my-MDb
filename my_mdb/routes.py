@@ -5,6 +5,7 @@ from flask_bcrypt import Bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 from my_mdb import app, db
 from my_mdb.models import User, Movie, LoginForm, RegisterForm, AddMovieForm, EditMovieForm
+from validation import check_for_empty_field
 
 @app.route("/")
 def index():
@@ -42,11 +43,14 @@ def login():
 def register():
     form = RegisterForm()
     if request.method=='POST':
-        existing_user = User.query.filter(User.username == request.form.get("username").lower()).all()
+        form_username = request.form.get("username")
+        existing_user = User.query.filter(User.username == form_username.lower()).all()
     
         if existing_user:
             flash("This username already exists.")
             return redirect(url_for("register"))
+        
+        check_for_empty_field(form_username,"register")
 
         new_user = User(
             username=request.form.get("username").lower(),
