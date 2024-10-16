@@ -121,10 +121,16 @@ def edit_movie(movie_id):
     form = EditMovieForm()
 
     if request.method == "POST":
-        movie.movie_review=request.form.get("movie_review"),
-        movie.view_date=request.form.get("view_date"),
-        db.session.commit()
-        return redirect(url_for("my_movies"))
+        is_review_empty = check_for_empty_field(request.form.get("movie_review"))
+        is_date_empty = check_for_empty_field(("view_date"))
+
+        if (is_review_empty == True) | (is_date_empty == True):
+            flash("All fields must not be empty.")
+        else: 
+            movie.movie_review=request.form.get("movie_review"),
+            movie.view_date=request.form.get("view_date"),
+            db.session.commit()
+            return redirect(url_for("my_movies"))
 
     return render_template("/pages/editMoviePage.html",title='Edit Movie', form=form, movie=movie)
 
