@@ -5,13 +5,12 @@ from flask_bcrypt import Bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 from my_mdb import app, db
 from my_mdb.models import User, Movie, LoginForm, RegisterForm, AddMovieForm, EditMovieForm
-from validation import check_for_empty_field
+from validation import check_for_empty_field, check_input_length
 
 @app.route("/")
 def index():
     return render_template("/pages/launch.html")
 
-#Login
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -31,7 +30,6 @@ def login():
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
-
         else:
             flash("Username does not exist")
             return redirect(url_for("login"))
@@ -45,27 +43,32 @@ def register():
         form_username = request.form.get("username")
         form_password = request.form.get("password")
         existing_user = User.query.filter(User.username == form_username.lower()).all()
+        is_username_empty = check_for_empty_field(form_username)
+        is_password_empty = check_for_empty_field(form_password)
+        is_password_length_validated = check_input_length(form_password,8,20)
     
         if existing_user:
             flash("This username already exists.")
             return redirect(url_for("register"))
         
-        is_username_empty = check_for_empty_field(form_username)
-        is_password_empty = check_for_empty_field(form_password)
         if (is_username_empty == True)|(is_password_empty == True):
             flash("Username/ Password cannot be empty.")
             return redirect(url_for("register"))
 
-        new_user = User(
-            username=request.form.get("username").lower(),
-            password=generate_password_hash(request.form.get("password"))
-        )
+        if (is_password_length_validated == False):
+            flash("Password must be between 8-20 characters.")
+            return redirect(url_for("register"))
 
-        db.session.add(new_user)
-        db.session.commit()
+        if (is_password_length_validated == True):
+            new_user = User(
+                username=request.form.get("username").lower(),
+                password=generate_password_hash(request.form.get("password"))
+            )
+            db.session.add(new_user)
+            db.session.commit()
 
-        session["user"] = request.form.get("username").lower()
-        return redirect(url_for("my_movies", username=session["user"]))
+            session["user"] = request.form.get("username").lower()
+            return redirect(url_for("my_movies", username=session["user"]))
 
     return render_template("/pages/register.html", title='Register',form=form)
 
