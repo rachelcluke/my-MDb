@@ -51,28 +51,25 @@ def register():
         if existing_user:
             flash("This username already exists.")
             return redirect(url_for("register"))
-        
-        #if (is_username_empty == True)|(is_password_empty == True):
-            #flash("Username/ Password cannot be empty.")
-            #return redirect(url_for("register"))
-
-        if (is_password_length_validated == False):
+        elif (is_username_empty == True)|(is_password_empty == True):
+            flash("Username/ Password cannot be empty.")
+            return redirect(url_for("register"))
+        elif (is_password_length_validated == False):
             flash("Password must be between 8-20 characters.")
             return redirect(url_for("register"))
-        
-        if (is_username_length_validated == False):
+        elif (is_username_length_validated == False):
             flash("Username must be between 4-15 characters.")
             return redirect(url_for("register"))
+        else:
+            new_user = User(
+                username=request.form.get("username").lower(),
+                password=generate_password_hash(request.form.get("password"))
+            )
+            db.session.add(new_user)
+            db.session.commit()
 
-        new_user = User(
-            username=request.form.get("username").lower(),
-            password=generate_password_hash(request.form.get("password"))
-        )
-        db.session.add(new_user)
-        db.session.commit()
-
-        session["user"] = request.form.get("username").lower()
-        return redirect(url_for("my_movies", username=session["user"]))
+            session["user"] = request.form.get("username").lower()
+            return redirect(url_for("my_movies", username=session["user"]))
 
     return render_template("/pages/register.html", title='Register',form=form)
 
@@ -98,9 +95,15 @@ def add_movie():
         is_movie_name_empty = check_for_empty_field(request.form.get("movie_name"))
         is_review_empty = check_for_empty_field(request.form.get("movie_review"))
         is_date_empty = check_for_empty_field(("view_date"))
+        is_movie_name_length_validated = check_input_length((request.form.get("movie_name"),1,50))
+        is_movie_review_length_validated = check_input_length((request.form.get("movie_review"),1,200))
 
         if (is_movie_name_empty == True) | (is_review_empty == True) | (is_date_empty == True):
             flash("All fields must not be empty.")
+        elif (is_movie_name_length_validated == False):
+            flash("Movie name must be 1-50 characters.")
+        elif (is_movie_review_length_validated == False):
+            flash("Movie review must be 1-200 characters.")
         else: 
             new_movie = Movie(
                 movie_name=request.form.get("movie_name"),
