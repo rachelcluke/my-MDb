@@ -1,6 +1,5 @@
-from flask import flash, render_template, request, redirect, url_for, session
-
-def check_for_empty_field(string, redirect_link):
+def check_for_empty_field(string):
     if string == "":
-        flash("Field cannot be empty")
-        return redirect(url_for(redirect_link))
+        return False
+    else :
+        return True

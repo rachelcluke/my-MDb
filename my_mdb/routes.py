@@ -49,7 +49,10 @@ def register():
             flash("This username already exists.")
             return redirect(url_for("register"))
         
-        check_for_empty_field(form_username,"register")
+        is_field_empty = check_for_empty_field(form_username)
+        if (is_field_empty == True):
+            flash("Username cannot be empty.")
+            return redirect(url_for("register"))
 
         new_user = User(
             username=request.form.get("username").lower(),
