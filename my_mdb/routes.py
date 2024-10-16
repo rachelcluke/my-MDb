@@ -52,9 +52,9 @@ def register():
             flash("This username already exists.")
             return redirect(url_for("register"))
         
-        if (is_username_empty == True)|(is_password_empty == True):
-            flash("Username/ Password cannot be empty.")
-            return redirect(url_for("register"))
+        #if (is_username_empty == True)|(is_password_empty == True):
+            #flash("Username/ Password cannot be empty.")
+            #return redirect(url_for("register"))
 
         if (is_password_length_validated == False):
             flash("Password must be between 8-20 characters.")

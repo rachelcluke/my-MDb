@@ -8,8 +8,6 @@ def check_for_empty_field(string):
 def check_input_length(input,min,max):
     """ Validation function to check the length of an input field (returns True or False) """
     if (( len(input) > min) & ( len(input) < max)):
-        print("length true")
         return True
     else:
-        print("length false")
         return False
