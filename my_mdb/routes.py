@@ -107,7 +107,7 @@ def add_movie():
         if (is_movie_review_length_validated == False):
             flash("Movie review must be 1-200 characters.")
         if (is_date_format_validated == False):
-            flash("Incorrect data format, should be DD-MM-YYYY")
+            flash("Incorrect data format, should be YYYY-MM-DD")
         if (is_date_entry_validated == False):
             flash("View date cannot be in the future or beyond a 100 years ago.")
         else: 

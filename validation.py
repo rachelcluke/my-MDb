@@ -16,9 +16,9 @@ def check_input_length(input,min,max):
         return False
 
 def check_date_format(date_input):
-    """Validation function to check the format of date is DD-MM-YYYY"""
+    """Validation function to check if entry is a date"""
     try:
-        test = bool(datetime.strptime(date_input, "%d-%m-%Y"))
+        test = bool(datetime.strptime(date_input, "%Y-%m-%d"))
         result = "true"
     except ValueError:
         result = "false"
