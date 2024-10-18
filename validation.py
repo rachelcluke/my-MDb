@@ -19,10 +19,11 @@ def check_date_format(date_input):
     """Validation function to check the format of date is DD-MM-YYYY"""
     try:
         test = bool(datetime.strptime(date_input, "%d-%m-%Y"))
+        result = "true"
     except ValueError:
-        test = False
+        result = "false"
 
-    if test == true :
+    if result == "true" :
         return True
     else:
         return False
