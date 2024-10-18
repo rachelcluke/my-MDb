@@ -98,7 +98,7 @@ def add_movie():
         is_movie_name_length_validated = check_input_length((request.form.get("movie_name")),1,50)
         is_movie_review_length_validated = check_input_length((request.form.get("movie_review")),1,20)
         is_date_format_validated = check_date_format(request.form.get("view_date"))
-        is_date_entry_validated = check_date_format(request.form.get("view_date"))
+        is_date_entry_validated = check_date_entry(request.form.get("view_date"))
 
         if (is_movie_name_filled == False) | (is_review_filled == False) | (is_date_filled == False):
             flash("All fields must not be empty.")
