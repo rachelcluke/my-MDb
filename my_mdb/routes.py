@@ -5,7 +5,7 @@ from flask_bcrypt import Bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 from my_mdb import app, db
 from my_mdb.models import User, Movie, LoginForm, RegisterForm, AddMovieForm, EditMovieForm
-from validation import check_for_empty_field, check_input_length
+from validation import check_for_empty_field, check_input_length, check_date_format, check_date_entry
 
 @app.route("/")
 def index():
@@ -97,13 +97,20 @@ def add_movie():
         is_date_empty = check_for_empty_field(("view_date"))
         is_movie_name_length_validated = check_input_length((request.form.get("movie_name"),1,50))
         is_movie_review_length_validated = check_input_length((request.form.get("movie_review"),1,200))
+        is_date_format_validated = check_date_format((request.form.get("view_date")))
+        is_date_entry_validated = check_date_format((request.form.get("view_date")))
 
         if (is_movie_name_empty == True) | (is_review_empty == True) | (is_date_empty == True):
             flash("All fields must not be empty.")
-        elif (is_movie_name_length_validated == False):
-            flash("Movie name must be 1-50 characters.")
-        elif (is_movie_review_length_validated == False):
-            flash("Movie review must be 1-200 characters.")
+
+            if (is_movie_name_length_validated == False):
+                flash("Movie name must be 1-50 characters.")
+            if (is_movie_review_length_validated == False):
+                flash("Movie review must be 1-200 characters.")
+            if (is_date_format_validated == False):
+                flash("Incorrect data format, should be YYYY-MM-DD")
+            if (is_date_entry_validated == False):
+                flash("View date cannot be in the future or beyond a 100 years ago.")
         else: 
             new_movie = Movie(
                 movie_name=request.form.get("movie_name"),
@@ -133,9 +140,15 @@ def edit_movie(movie_id):
     if request.method == "POST":
         is_review_empty = check_for_empty_field(request.form.get("movie_review"))
         is_date_empty = check_for_empty_field(("view_date"))
+        is_movie_name_length_validated = check_input_length((request.form.get("movie_name"),1,50))
+        is_movie_review_length_validated = check_input_length((request.form.get("movie_review"),1,200))
 
         if (is_review_empty == True) | (is_date_empty == True):
             flash("All fields must not be empty.")
+            if (is_movie_name_length_validated == False):
+                flash("Movie name must be 1-50 characters.")
+            if (is_movie_review_length_validated == False):
+                flash("Movie review must be 1-200 characters.")
         else: 
             movie.movie_review=request.form.get("movie_review"),
             movie.view_date=request.form.get("view_date"),

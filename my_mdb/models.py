@@ -47,8 +47,8 @@ class RegisterForm(FlaskForm):
 
     submit = SubmitField('Register')
 
-    #checking if username already exists in db
     def validate_username(self, username):
+        """Function to validate if username already exists in the database"""
         existing_user_username = User.query.filter_by(
             username=username.data).first()
 
@@ -81,11 +81,10 @@ class AddMovieForm(FlaskForm):
 
 class EditMovieForm(FlaskForm):
     """Edit Movie Flask Form with inputs: movie_review, view_date and submit"""
-    #user will not be able to edit movie_name (as it will have API implications)
 
     movie_review = TextAreaField(validators=[
                              InputRequired(), Length(min=1, max=200)])#, render_kw={Movie.movie_review})
     
-    view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today()) #, validators=[validate_date()])
+    view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today()) 
 
     submit = SubmitField('Update my Movie Entry')
