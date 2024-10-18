@@ -1,5 +1,5 @@
 #This file contains additional validation functions 
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 def check_for_empty_field(string):
     """Validation function to check if a field is empty (returns True or False)"""
@@ -31,7 +31,7 @@ def check_date_format(date_input):
 def check_date_entry(date_input):
     """Validation function to check that the date entered is not in the future and not more than 100 years ago"""
     today = date.today()
-    cutoff_date = today - relativedelta(years=100)
+    cutoff_date = today - timedelta(years=100)
     if (date_input <= today) and (date_input >= cutoff_date ):
         return True
     else:
