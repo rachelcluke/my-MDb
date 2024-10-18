@@ -1,6 +1,5 @@
 #This file contains additional validation functions 
-import datetime
-from datetime import date
+from datetime import datetime, date
 
 def check_for_empty_field(string):
     """Validation function to check if a field is empty (returns True or False)"""
@@ -18,7 +17,12 @@ def check_input_length(input,min,max):
 
 def check_date_format(date_input):
     """Validation function to check the format of date is DD-MM-YYYY"""
-    if (date_input == datetime.strptime(date_input, '%d%m%Y')):
+    try:
+        test = bool(datetime.strptime(date_input, "%d-%m-%Y"))
+    except ValueError:
+        test = False
+
+    if test == true :
         return True
     else:
         return False
