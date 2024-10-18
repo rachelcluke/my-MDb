@@ -102,15 +102,14 @@ def add_movie():
 
         if (is_movie_name_empty == True) | (is_review_empty == True) | (is_date_empty == True):
             flash("All fields must not be empty.")
-
-            if (is_movie_name_length_validated == False):
-                flash("Movie name must be 1-50 characters.")
-            if (is_movie_review_length_validated == False):
-                flash("Movie review must be 1-200 characters.")
-            if (is_date_format_validated == False):
-                flash("Incorrect data format, should be YYYY-MM-DD")
-            if (is_date_entry_validated == False):
-                flash("View date cannot be in the future or beyond a 100 years ago.")
+        if (is_movie_name_length_validated == False):
+            flash("Movie name must be 1-50 characters.")
+        if (is_movie_review_length_validated == False):
+            flash("Movie review must be 1-200 characters.")
+        if (is_date_format_validated == False):
+            flash("Incorrect data format, should be DD-MM-YYYY")
+        if (is_date_entry_validated == False):
+            flash("View date cannot be in the future or beyond a 100 years ago.")
         else: 
             new_movie = Movie(
                 movie_name=request.form.get("movie_name"),
