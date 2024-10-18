@@ -30,9 +30,10 @@ def check_date_format(date_input):
 
 def check_date_entry(date_input):
     """Validation function to check that the date entered is not in the future and not more than 100 years ago"""
+    formatted_date_input = datetime.strptime(date_input, "%Y-%m-%d").date()
     today = date.today()
     cutoff_date = today - timedelta(days=(365*100))
-    if (date_input <= today) and (date_input >= cutoff_date ):
+    if (formatted_date_input <= today) and (formatted_date_input >= cutoff_date ):
         return True
     else:
         return False
