@@ -73,7 +73,7 @@ class AddMovieForm(FlaskForm):
                            InputRequired(), Length(min=1, max=50)], render_kw={"placeholder": "Movie Name"})
 
     movie_review = TextAreaField(validators=[
-                             InputRequired(), Length(min=1, max=200)], render_kw={"placeholder": "What did you think of the movie?"})
+                             InputRequired(), Length(min=1, max=200)], render_kw={"placeholder": "What did you think of the movie? (Max: 200 characers)"})
     
     view_date = DateField('Date', format='%Y-%m-%d', default=_datetime.date.today())
 

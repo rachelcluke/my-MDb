@@ -92,15 +92,15 @@ def add_movie():
     form = AddMovieForm()
     if request.method == "POST":
 
-        is_movie_name_empty = check_for_empty_field(request.form.get("movie_name"))
-        is_review_empty = check_for_empty_field(request.form.get("movie_review"))
-        is_date_empty = check_for_empty_field(("view_date"))
+        is_movie_name_filled = check_for_empty_field(request.form.get("movie_name"))
+        is_review_filled = check_for_empty_field(request.form.get("movie_review"))
+        is_date_filled = check_for_empty_field(("view_date"))
         is_movie_name_length_validated = check_input_length((request.form.get("movie_name")),1,50)
         is_movie_review_length_validated = check_input_length((request.form.get("movie_review")),1,20)
         is_date_format_validated = check_date_format(request.form.get("view_date"))
         is_date_entry_validated = check_date_format(request.form.get("view_date"))
 
-        if (is_movie_name_empty == True) | (is_review_empty == True) | (is_date_empty == True):
+        if (is_movie_name_filled == False) | (is_review_filled == False) | (is_date_filled == False):
             flash("All fields must not be empty.")
         if (is_movie_name_length_validated == False):
             flash("Movie name must be 1-50 characters.")
