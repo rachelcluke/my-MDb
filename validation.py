@@ -1,4 +1,5 @@
 #This file contains additional validation functions 
+import datetime
 from datetime import date
 
 def check_for_empty_field(string):
@@ -16,8 +17,8 @@ def check_input_length(input,min,max):
         return False
 
 def check_date_format(date_input):
-    """Validation function to check the format of date is YYYY-MM-DD"""
-    if (datetime.date.fromisoformat(date_input)):
+    """Validation function to check the format of date is DD-MM-YYYY"""
+    if (date_input == datetime.strptime(date_input, '%d%m%Y')):
         return True
     else:
         return False
