@@ -13,9 +13,9 @@
         {% for movie in movies %}
             {% include "components/movie-card-community.html" %}
         {% endfor %}
-
+        
         {% include "components/flash-msg.html" %}
-
         <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     </body>
+    {% include "components/footer.html" %}
 </html>
