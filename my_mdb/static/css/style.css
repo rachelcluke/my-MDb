@@ -296,7 +296,7 @@ form .auth-btn {
     justify-content: center;
 }
 
-#error-msg-row, #error-main-msg-row {
+#error-msg-row h4, #error-main-msg-row h4 {
     font-family: var(--font-web);
     font-size: 1.6rem;
     color: var(--supernova);
@@ -449,7 +449,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #error-msg-row, #error-main-msg-row    {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 3rem;
     }
 
@@ -485,26 +485,12 @@ dialog p {
         padding-bottom: 10%;
     }
 
-    /*TODO-update*/
-    #error-msg-row {
-        padding-top: 3rem;
-    }
-    
-    /*TODO-update*/
     #error-main-msg-row {
-        margin-top: -15%;
+        margin-top: -10%;
     }
 
-    /*TODO-update*/
     #warning-cancel-dialog, #warning-delete-dialog {
-        height: 80%;
-        width: 75%;
-        margin-left: 10%;
-    }
-    
-    /*TODO-update*/
-    #warning-cancel-message p, #warning-delete-message p{
-        font-size: 1.6rem;
+        height: 70%;
     }
 
     /* Media Query 01 - Tablet - Add Movie Form */
@@ -569,7 +555,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 5rem;
     }
 
@@ -646,6 +632,21 @@ dialog p {
 
     form textarea {
         padding: 2rem 14rem 2rem 10rem;
+    }
+
+    /*TODO-update*/
+    #error-msg-row {
+        padding-top: 3rem;
+    }
+    
+    /*TODO-update*/
+    #error-main-msg-row {
+        margin-top: -10%;
+    }
+
+    /*TODO-update*/
+    #warning-cancel-dialog, #warning-delete-dialog {
+        height: 70%;
     }
 
 }
