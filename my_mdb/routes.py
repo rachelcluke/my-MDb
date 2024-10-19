@@ -140,6 +140,7 @@ def delete_movie(movie_id):
 def edit_movie(movie_id):
     movie = Movie.query.get_or_404(movie_id)
     form = EditMovieForm()
+    current_movie_id = movie_id
 
     if request.method == "POST":
         is_review_filled = check_for_empty_field(request.form.get("movie_review"))
@@ -150,16 +151,16 @@ def edit_movie(movie_id):
 
         if (is_review_filled == False) | (is_date_filled == False):
             flash("All fields must not be empty.")
-            return redirect(url_for("edit_movie/<int:movie_id>"))
+            return redirect(url_for("edit_movie/<current_movie_id>"))
         elif (is_movie_review_length_validated == False):
             flash("Movie review must be 1-200 characters.")
-            return redirect(url_for("edit_movie/<int:movie_id>"))
+            return redirect(url_for("edit_movie/<current_movie_id>"))
         elif (is_date_format_validated == False):
             flash("Incorrect data format, should be YYYY-MM-DD")
-            return redirect(url_for("edit_movie/<int:movie_id>"))
+            return redirect(url_for("edit_movie/<current_movie_id>"))
         elif (is_date_entry_validated == False):
             flash("View date cannot be in the future or beyond a 100 years ago.")
-            return redirect(url_for("edit_movie/<int:movie_id>"))
+            return redirect(url_for("edit_movie/<current_movie_id>"))
         else: 
             movie.movie_review=request.form.get("movie_review"),
             movie.view_date=request.form.get("view_date"),
