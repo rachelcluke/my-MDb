@@ -346,7 +346,7 @@ dialog {
     width: 70%;
 }
 
-#warning-cancel-message, #warning-delete-message {
+#warning-cancel-message p, #warning-delete-message p{
     font-size: 2rem;
 }
 
