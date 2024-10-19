@@ -342,12 +342,13 @@ dialog {
 }
 
 #warning-cancel-dialog, #warning-delete-dialog {
-    height: 25%;
-    width: 70%;
+    height: 80%;
+    width: 75%;
+    margin-left: 10%;
 }
 
 #warning-cancel-message p, #warning-delete-message p{
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 #movie-api-description{
@@ -475,6 +476,18 @@ dialog p {
 
     #community-main-title {
         padding-bottom: 10%;
+    }
+
+    /*TODO-update*/
+    #warning-cancel-dialog, #warning-delete-dialog {
+        height: 80%;
+        width: 75%;
+        margin-left: 10%;
+    }
+    
+    /*TODO-update*/
+    #warning-cancel-message p, #warning-delete-message p{
+        font-size: 1.6rem;
     }
 
     /* Media Query 01 - Tablet - Add Movie Form */
