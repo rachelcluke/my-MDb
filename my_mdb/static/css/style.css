@@ -409,12 +409,12 @@ dialog p {
     height: auto;
 }
 
-#movie-user-info, #warning-cancel-message, #div-cancel-btn, #form-add-div, #form-edit-div {
+#movie-user-info, #warning-cancel-message, #warning-delete-message, #div-cancel-btn, #form-add-div, #form-edit-div {
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
-#warning-cancel-message, .form-add-row {
+#warning-cancel-message, #warning-delete-message, .form-add-row {
     padding-top: 1rem;
 }
 
@@ -859,12 +859,12 @@ dialog p {
         justify-content: space-around;
     }
 
-    #warning-cancel-message {
+    #warning-cancel-message, #warning-delete-message {
         justify-content: center;
     }
 
     #dialog-btn-row a, #dialog-btn-row button, #dialog-warning-btn-row a, #dialog-warning-btn-row button {
-        margin-left: 15rem;
+        margin-left: 30rem;
     }
 
     dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p {
