@@ -150,16 +150,16 @@ def edit_movie(movie_id):
 
         if (is_review_filled == False) | (is_date_filled == False):
             flash("All fields must not be empty.")
-            return redirect(url_for("edit_movie"))
+            return redirect(url_for("edit_movie/<int:movie_id>"))
         elif (is_movie_review_length_validated == False):
             flash("Movie review must be 1-200 characters.")
-            return redirect(url_for("edit_movie"))
+            return redirect(url_for("edit_movie/<int:movie_id>"))
         elif (is_date_format_validated == False):
             flash("Incorrect data format, should be YYYY-MM-DD")
-            return redirect(url_for("add_movie"))
+            return redirect(url_for("edit_movie/<int:movie_id>"))
         elif (is_date_entry_validated == False):
             flash("View date cannot be in the future or beyond a 100 years ago.")
-            return redirect(url_for("add_movie"))
+            return redirect(url_for("edit_movie/<int:movie_id>"))
         else: 
             movie.movie_review=request.form.get("movie_review"),
             movie.view_date=request.form.get("view_date"),
