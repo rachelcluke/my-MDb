@@ -37,10 +37,11 @@ body {
     padding-bottom: 2rem;
 }
 
-footer {
+#footer-row {
     flex-direction: row;
     justify-content: center;
     font-family: var(--font-roboto);
+    font-weight: 200;
     font-size: 1.6rem;
 }
 
@@ -498,7 +499,7 @@ dialog p {
         height: 70%;
     }
 
-    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p, footer {
+    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p, #footer-row {
         font-size: 3rem;
     }
 
@@ -697,7 +698,7 @@ dialog p {
         margin-left: 5%;
     }
 
-    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p, footer {
+    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p, #footer-row {
         font-size: 5rem;
     }
 }
@@ -792,7 +793,7 @@ dialog p {
         padding-top: 8%;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption, footer   {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #footer-row   {
         font-size: 7rem;
     }
 
