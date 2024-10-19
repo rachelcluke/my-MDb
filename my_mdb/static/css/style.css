@@ -626,6 +626,18 @@ dialog p {
         margin-top: -13rem;
     }
 
+    dialog {
+        height: 80%;
+        width: 90%;
+        margin-top: 7%;
+        margin-left: 5%;
+    }
+
+    #movie-api-info img {
+        width: 35%;
+        height: auto;
+    }
+
     /*Media Query 02 (Laptop) - Community*/
     #movie-card-community-column {
         margin-top: -10rem;
@@ -659,6 +671,9 @@ dialog p {
         margin-left: 5%;
     }
 
+    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
+        font-size: 5rem;
+    }
 }
 
 /* Media Query 03 - Desktop - 2560 x 1440 px */
@@ -803,5 +818,4 @@ dialog p {
     #delete-btn, #edit-btn, #cancel-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
         padding: .5rem 4rem .5rem 4rem;
     }
-
 }
