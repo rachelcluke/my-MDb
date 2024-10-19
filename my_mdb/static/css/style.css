@@ -27,6 +27,7 @@ html {
     background: rgb(13,46,81);
     background: linear-gradient(180deg, rgba(13,46,81,1) 0%, rgba(49,101,138,1) 50%);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body {
@@ -508,11 +509,11 @@ dialog p {
 
 /* Media Query 02 - Laptop - 1920 x 1080 px */
 @media (min-width: 1920px) {
-
     html {
         min-height: 100% !important;
         height: 100% !important;
         background-size: cover !important;
+        background-repeat: no-repeat;
     }
 
     body {
