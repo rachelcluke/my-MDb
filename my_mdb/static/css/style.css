@@ -856,13 +856,23 @@ dialog p {
     }
 
     #dialog-warning-btn-row {
+        justify-content: space-around;
+    }
+
+    #warning-cancel-message {
         justify-content: center;
-        padding-top: 10rem;
-        padding-right: 10rem;
     }
 
     #dialog-btn-row a, #dialog-btn-row button, #dialog-warning-btn-row a, #dialog-warning-btn-row button {
         margin-left: 15rem;
+    }
+
+    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p {
+        font-size: 6rem;
+    }
+
+    #warning-cancel-dialog p, #warning-delete-dialog p {
+        padding: 10rem 2rem 5rem 2rem;
     }
 
     /*Media Query 03 - Desktop - Community*/
@@ -886,5 +896,11 @@ dialog p {
 
     #delete-btn, #edit-btn, #cancel-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
         padding: .5rem 4rem .5rem 4rem;
+    }
+
+    /*Footer*/
+    #footer-row {
+        font-size: 4rem;
+        padding-bottom: 8rem;
     }
 }
