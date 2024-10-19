@@ -341,6 +341,11 @@ dialog {
     margin-left: 15%;
 }
 
+#warning-cancel-dialog, #warning-delete-dialog {
+    height: 25%;
+    width: 70%;
+}
+
 #movie-api-description{
     padding-left: -50%;
 }
