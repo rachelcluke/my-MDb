@@ -449,7 +449,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption {
         font-size: 3rem;
     }
 
@@ -491,6 +491,10 @@ dialog p {
 
     #warning-cancel-dialog, #warning-delete-dialog {
         height: 70%;
+    }
+
+    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
+        font-size: 3rem;
     }
 
     /* Media Query 01 - Tablet - Add Movie Form */
