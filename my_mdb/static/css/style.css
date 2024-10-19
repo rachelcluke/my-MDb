@@ -346,6 +346,10 @@ dialog {
     width: 70%;
 }
 
+#warning-cancel-message, #warning-delete-message {
+    font-size: 2rem;
+}
+
 #movie-api-description{
     padding-left: -50%;
 }
