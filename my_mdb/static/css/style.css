@@ -295,7 +295,6 @@ form .auth-btn {
     justify-content: center;
 }
 
-/*Flask Error Messages*/
 h4 { 
     font-family: var(--font-web);
     font-size: 1.6rem;
@@ -494,7 +493,7 @@ dialog p {
         height: 70%;
     }
 
-    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p {
+    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 3rem;
     }
 
@@ -657,7 +656,7 @@ dialog p {
 }
 
 /* Media Query 03 - Desktop - 2560 x 1440 px */
-@media (min-width: 1920px) {
+@media (min-width: 2560px) {
     body {
         padding: 7rem 7rem 7rem 7rem;
     }
