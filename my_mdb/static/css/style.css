@@ -296,11 +296,18 @@ form .auth-btn {
     justify-content: center;
 }
 
-#error-msg-row {
+#error-msg-row, #error-main-msg-row {
     font-family: var(--font-web);
     font-size: 1.6rem;
     color: var(--supernova);
+}
+
+#error-msg-row {
     padding-top: 3rem;
+}
+
+#error-main-msg-row {
+    margin-top: -15%;
 }
 
 /* My Movies Page */
@@ -442,7 +449,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #error-msg-row, #error-main-msg-row    {
         font-size: 3rem;
     }
 
@@ -476,6 +483,16 @@ dialog p {
 
     #community-main-title {
         padding-bottom: 10%;
+    }
+
+    /*TODO-update*/
+    #error-msg-row {
+        padding-top: 3rem;
+    }
+    
+    /*TODO-update*/
+    #error-main-msg-row {
+        margin-top: -15%;
     }
 
     /*TODO-update*/
