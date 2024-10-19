@@ -382,7 +382,7 @@ dialog p {
     font-family: var(--font-web);
 }
 
-#dialog-btn-row {
+#dialog-btn-row, #dialog-warning-btn-row {
     flex-wrap: nowrap;
     justify-content: space-around;
     padding-top: 1rem;
@@ -658,7 +658,13 @@ dialog p {
         padding-right: 5rem;
     }
 
-    #dialog-btn-row a, #dialog-btn-row button {
+    #dialog-warning-btn-row {
+        justify-content: center;
+        padding-top: 10rem;
+        padding-right: 10rem;
+    }
+
+    #dialog-btn-row a, #dialog-btn-row button, #dialog-warning-btn-row a, #dialog-warning-btn-row button {
         margin-left: 15rem;
     }
 
@@ -674,6 +680,10 @@ dialog p {
     #edit-btn, #delete-btn, #cancel-btn, #cancel-final-btn, #close-cancel-warning-dialog-btn, #delete-final-btn, #close-delete-warning-dialog-btn {
         padding: .2rem 7rem .2rem 7rem;
     }   
+
+    #warning-cancel-dialog p, #warning-delete-dialog p {
+        padding: 5rem;
+    }
 
     /*Media Query 02 (Laptop) - Community*/
     #movie-card-community-column {
@@ -743,7 +753,7 @@ dialog p {
 
     /*Media Query 03 - Desktop - Launch */
     #launch-title-column {
-        padding-top: 15%;
+        padding-top: 10%;
         font-size: 10rem;
     }
 
@@ -806,7 +816,7 @@ dialog p {
     /*Media Query 03 - Desktop - Login*/
     .page-title {
         font-size: 11rem;
-        padding-top: 8%;
+        padding-top: 6.5%;
     }
 
     #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
@@ -837,6 +847,22 @@ dialog p {
         padding-left: .5rem;
         padding-bottom: 5rem;
         margin-top: -17rem;
+    }
+
+    #dialog-btn-row {
+        justify-content: flex-end;
+        padding-top: 5rem;
+        padding-right: 5rem;
+    }
+
+    #dialog-warning-btn-row {
+        justify-content: center;
+        padding-top: 10rem;
+        padding-right: 10rem;
+    }
+
+    #dialog-btn-row a, #dialog-btn-row button, #dialog-warning-btn-row a, #dialog-warning-btn-row button {
+        margin-left: 15rem;
     }
 
     /*Media Query 03 - Desktop - Community*/

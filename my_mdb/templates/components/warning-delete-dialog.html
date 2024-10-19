@@ -1,10 +1,10 @@
 <!-- Dialog to warn user before deleting entry (that already exists in database)  -->
 <dialog id="warning-delete-dialog">
     <div class="row">
-        <p>Are you sure you want to delete your movie entry? This action is permanent and cannot be undone.</p>
+        <p>Are you sure you want to delete your movie entry?<br>This action cannot be undone.</p>
     </div>
 
-    <div class="row" id="dialog-btn-row">
+    <div class="row" id="dialog-warning-btn-row">
         {% include "components/button-delete-final.html" %}
         {% include "components/button-close-delete-dialog.html" %}
     </div> 
