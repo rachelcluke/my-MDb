@@ -555,7 +555,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #movie-card-dialog, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 5rem;
     }
 
