@@ -840,7 +840,11 @@ dialog p {
     }
 
     #movie-card-column figure img, #movie-card-community-column figure img {
-        width: 50%;
+        width: 45%;
+    }
+
+    #movie-user-info {
+        padding-left: 23%;
     }
 
     #main-movie-caption, #main-movie-community-caption {
@@ -851,8 +855,7 @@ dialog p {
 
     #dialog-btn-row {
         justify-content: flex-end;
-        padding-top: 5rem;
-        padding-right: 5rem;
+        padding: 5rem 5rem 5rem 0rem;
     }
 
     #dialog-warning-btn-row {
@@ -864,7 +867,11 @@ dialog p {
     }
 
     #dialog-btn-row a, #dialog-btn-row button, #dialog-warning-btn-row a, #dialog-warning-btn-row button {
-        margin-left: 30rem;
+        margin-left: 25rem;
+    }
+
+    #dialog-btn-row button {
+        padding-right: 10rem;
     }
 
     dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p {
@@ -895,7 +902,7 @@ dialog p {
     }
 
     #delete-btn, #edit-btn, #cancel-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
-        padding: .5rem 4rem .5rem 4rem;
+        padding: 1rem 6rem 1rem 6rem;
     }
 
     /*Footer*/
