@@ -144,16 +144,12 @@ def edit_movie(movie_id):
     if request.method == "POST":
         is_review_filled = check_for_empty_field(request.form.get("movie_review"))
         is_date_filled = check_for_empty_field(request.form.get("view_date"))
-        is_movie_name_length_validated = check_input_length((request.form.get("movie_name")),1,50)
         is_movie_review_length_validated = check_input_length((request.form.get("movie_review")),1,200)
         is_date_format_validated = check_date_format(request.form.get("view_date"))
         is_date_entry_validated = check_date_entry(request.form.get("view_date"))
 
         if (is_review_filled == False) | (is_date_filled == False):
             flash("All fields must not be empty.")
-            return redirect(url_for("edit_movie"))
-        elif (is_movie_name_length_validated == False):
-            flash("Movie name must be 1-50 characters.")
             return redirect(url_for("edit_movie"))
         elif (is_movie_review_length_validated == False):
             flash("Movie review must be 1-200 characters.")
