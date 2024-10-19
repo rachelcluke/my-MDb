@@ -17,7 +17,7 @@
             {% include "components/movie-dialog.html" %}
             {% include "components/warning-delete-dialog.html" %}
         {% endfor %}
+        {% include "components/footer.html" %}
         <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     </body>
-    {% include "components/footer.html" %}
 </html>
