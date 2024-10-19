@@ -490,7 +490,7 @@ dialog p {
         height: 70%;
     }
 
-    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
+    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 3rem;
     }
 
@@ -562,7 +562,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #movie-card-dialog, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #movie-card-dialog, h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 5rem;
     }
 
@@ -633,10 +633,28 @@ dialog p {
         margin-left: 5%;
     }
 
+    #dialog-btn-row {
+        justify-content: flex-end;
+        padding-top: 5rem;
+        padding-right: 5rem;
+    }
+
+    #dialog-btn-row a, #dialog-btn-row button {
+        margin-left: 15rem;
+    }
+
     #movie-api-info img {
         width: 35%;
         height: auto;
     }
+
+    #movie-user-info {
+        padding-left: 25rem;
+    }
+
+    #edit-btn, #delete-btn, #cancel-btn, #cancel-final-btn, #close-cancel-warning-dialog-btn, #delete-final-btn, #close-delete-warning-dialog-btn {
+        padding: .2rem 7rem .2rem 7rem;
+    }   
 
     /*Media Query 02 (Laptop) - Community*/
     #movie-card-community-column {
@@ -671,7 +689,7 @@ dialog p {
         margin-left: 5%;
     }
 
-    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, #error-msg-row h4, #error-main-msg-row h4, #warning-cancel-message p, #warning-delete-message p {
+    dialog p, #dialog-movie-name, #dialog-movie-date, #dialog-movie-review, #close-dialog-btn-div button, h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 5rem;
     }
 }
