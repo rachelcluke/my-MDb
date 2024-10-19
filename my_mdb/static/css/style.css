@@ -143,7 +143,6 @@ a, a:visited {
 }
 
 /* Launch Page */
-
 .page-title {
     font-family: var(--font-rubik);
     transition: 0.30s ease-in-out;
@@ -240,7 +239,6 @@ a, a:visited {
 }
 
 /* Forms */
-
 form {
     font-family: var(--font-web);
     font-size: 1.6rem;
@@ -416,7 +414,6 @@ dialog p {
 
 /* Media Query 01 - Tablet - 768 x 959 px */
 @media (min-width: 768px) {
-
     body {
         padding-left: 2rem;
         padding-bottom: 4rem;
@@ -507,11 +504,17 @@ dialog p {
         padding: 2rem 7rem 2rem 4rem;
         font-size: 2.5rem;
     }
-
 }
 
 /* Media Query 02 - Laptop - 1920 x 1080 px */
 @media (min-width: 1920px) {
+
+    html {
+        min-height: 100% !important;
+        height: 100% !important;
+        background-size: cover !important;
+    }
+
     body {
         padding: 10rem, 10rem, 10rem, 10rem;
     }
@@ -582,10 +585,14 @@ dialog p {
         padding-right: 15%;
     }
 
+    #new-user-row {
+        margin-top: -2%;
+    }
+
     /*Media Query 02 (Laptop) - Login*/
     .page-title {
         font-size: 11rem;
-        padding-top: 8%;
+        padding-top: 5%;
     }
 
     #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
@@ -606,7 +613,7 @@ dialog p {
 
     /*Media Query 02 (Laptop) - My Movie*/
     #secondary-header li {
-        padding-right: 3rem;
+        padding-right: 10rem;
     }
 
     #movie-card-column figure img, #movie-card-community-column figure img {
@@ -638,19 +645,18 @@ dialog p {
         padding: 2rem 14rem 2rem 10rem;
     }
 
-    /*TODO-update*/
     #error-msg-row {
         padding-top: 3rem;
     }
     
-    /*TODO-update*/
     #error-main-msg-row {
-        margin-top: -10%;
+        margin-top: -3%;
     }
 
-    /*TODO-update*/
     #warning-cancel-dialog, #warning-delete-dialog {
-        height: 70%;
+        height: 75%;
+        width: 85%;
+        margin-left: 5%;
     }
 
 }
