@@ -12,11 +12,13 @@
 
         {% include "components/button-add.html" %}
 
-        {% for movie in movies %}
-            {% include "components/movie-card.html" %}
-            {% include "components/movie-dialog.html" %}
-            {% include "components/warning-delete-dialog.html" %}
-        {% endfor %}
+        <div class="desktop-row">
+            {% for movie in movies %}
+                {% include "components/movie-card.html" %}
+                {% include "components/movie-dialog.html" %}
+                {% include "components/warning-delete-dialog.html" %}
+            {% endfor %}
+        </div>
         {% include "components/footer.html" %}
         <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     </body>
