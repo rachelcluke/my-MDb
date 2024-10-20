@@ -558,21 +558,23 @@ dialog p {
 
     #launch-subheading-row h3 {
         font-size: 6rem;
+        flex: none;
     }
 
     #launch-subheading-row, #launch-auth-btn-row {
         justify-content: center;
         max-width: 50%;
         padding-top: 3rem;
+        padding-left: 50%;
     }
 
     #launch-title-02-row {
-        margin-left: -7%;
+        margin-left: 15%;
         padding-top: 1%;
     }
 
     #launch-title-03-row {
-        margin-left: -20%;
+        margin-left: 35%;
         padding-top: 2%;
     }
 
@@ -606,11 +608,12 @@ dialog p {
         flex-direction: row;
         flex-wrap: nowrap;
         max-width: 100%;
+        justify-content: center;
     }
 
     #launch-login-btn {
-        padding-left: 15%;
-        padding-right: 15%;
+        padding-left: 40%;
+        padding-right: 40%;
     }
 
     #new-user-row {
