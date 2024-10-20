@@ -70,11 +70,11 @@ The last update to this file was: **October 20th, 2024**
 
 ## User Stories
 
-1. As a user, I want to find this art quiz website aesthetic and appealing. 
-2. As a user, I want to be able to choose the difficulty of the quiz.
-3. As a user, I want to be able to easily navigate through the website.
-4. As a user, I want to be able to know if my chosen quiz answers are correct.
-5. As a user, I want to know what my final quiz score is.
+1. As a user, I want to be able to login/ register my account.
+2. As a user, I want to be able to create, read, update and delete my movie entries.
+3. As a user, I want to be able to view other users' entries.
+4. As a user, I want to be able to navigate around the website easily.
+5. As a user, I want to be able to logout of my account.
 
 ## Site Owners Goals
 
@@ -270,6 +270,69 @@ The initial phase of testing consisted of checking through the stories. Below, I
 \
 &nbsp;
 
+1. As a user, I want to be able to login/ register my account.
+      \
+    &nbsp;
+    ![Login Page](TBD)
+
+    ![Register Page](TBD)
+  \
+  &nbsp;
+    Before the user can access their account, they must login. If the user does not have an account, there is also an option for them to create an account. Both Login and Register pages allow users to easily navigate between the two.
+    \
+    &nbsp;
+
+2. As a user, I want to be able to create, read, update and delete my movie entries.
+      \
+    &nbsp;
+    ![Add Movie Feature](TBD)
+
+    ![My Movies Page](TBD)
+
+    ![Edit Movie Feature](TBD)
+
+    ![Delete Movie Feature](TBD)
+  \
+  &nbsp;
+    The user's account 'My Movies' is where the user can view their movies and also fill a (flask) form to add a movie to their database. When they click on their respective movie entry, a dialog appears showing the respective movie's info and also providing the option to the user to edit or delete the movie entry.
+    \
+    &nbsp;
+    
+3. As a user, I want to be able to view other users' entries.
+    &nbsp;
+    ![Community Page](TBD)
+  \
+  &nbsp;
+    Aside from My Movies page, there is another page called Community, where the user can see what movies other users have been watching.
+    \
+    &nbsp;
+
+4. As a user, I want to be able to navigate around the website easily.
+    &nbsp;
+    ![Header](TBD)
+  \
+  &nbsp;
+    The website has a clear and clean navigation layout to make it intuitive for the user to navigate around the website. One of the features is a header, which indicates which page is active. Another feature is when users hover over interactable UI components, there are visual effects (for example change of colour, opacity etc.)
+    \
+    &nbsp;
+
+5. As a user, I want to be able to logout of my account.
+    &nbsp;
+    ![Header](TBD)
+
+    ![Logged Out Flask Message](TBD)
+  \
+  &nbsp;
+    On the top right-hand corner, one of the options in the navigation header is to 'Logout'. When clicked, the user is logged out and directed back to the login page.
+    \
+    &nbsp;
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 ## Debugging
 
 These are the issues that emerged throughout the project development, and how I resolved them:
@@ -285,7 +348,9 @@ These are the issues that emerged throughout the project development, and how I 
 
 ## Unfixed Bugs 
 
-- TBD
+- In the Edit Movie page section, the user's current 'movie review' and 'view date' should be displayed  in the Flask form fields for the user to edit, however they are not. Currently only shows empty 'movie review' textarea field and today's date in 'view date'.
+
+- Some pages have white spaces (when scrolled horizontally, vertically or both).
 
 \
 &nbsp;
