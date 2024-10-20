@@ -349,12 +349,6 @@ h4 {
     opacity: 60%;
 }
 
-#movies-row, #community-movies-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
 dialog {
     background-color: var(--applegreen);
     border-color: var(--applegreen);
@@ -679,6 +673,12 @@ dialog p {
     #movie-column-parent, #community-movie-column-parent{
         display:flex;
         flex-direction: column;
+    }
+
+    .desktop-movies-row, .desktop-community-movies-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
     }
 
     dialog {
