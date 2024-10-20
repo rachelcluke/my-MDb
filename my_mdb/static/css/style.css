@@ -322,11 +322,11 @@ h4 {
 }
 
 /* My Movies Page */
-#movie-card-column, #movie-card-community-column, #div-add-btn {
+.movie-card-column, #movie-card-community-column, #div-add-btn {
     padding-left: 1.5rem;
 }
 
-#movie-card-column figure img, #movie-card-community-column figure img {
+.movie-card-column figure img, #movie-card-community-column figure img {
     width: 40%;
     height: 70%;
 	opacity: 1;
@@ -335,7 +335,7 @@ h4 {
     padding: 3rem 0 3rem 0;
 }
 
-#movie-card-column figure:hover img {
+.movie-card-column figure:hover img {
 	opacity: .6;
 }
 
@@ -465,7 +465,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, .movie-card-column p, #main-movie-community-caption {
         font-size: 3rem;
     }
 
@@ -601,7 +601,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, #movie-card-column p, #main-movie-community-caption, #movie-card-dialog, h4, #warning-cancel-message p, #warning-delete-message p {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, .movie-card-column p, #main-movie-community-caption, #movie-card-dialog, h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 5rem;
     }
 
@@ -637,7 +637,7 @@ dialog p {
         padding-top: 5%;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, #main-movie-community-caption   {
         font-size: 5rem;
     }
 
@@ -658,7 +658,7 @@ dialog p {
         padding-right: 10rem;
     }
 
-    #movie-card-column figure img, #movie-card-community-column figure img {
+    .movie-card-column figure img, #movie-card-community-column figure img {
         width: 35%;
     }
 
@@ -825,7 +825,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+    #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, #main-movie-community-caption   {
         font-size: 7rem;
     }
 
@@ -858,7 +858,7 @@ dialog p {
         padding-top: 6.5%;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, #movie-card-column p, #main-movie-community-caption   {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, #main-movie-community-caption   {
         font-size: 7rem;
     }
 
@@ -878,7 +878,7 @@ dialog p {
         padding-right: 3rem;
     }
 
-    #movie-card-column figure img, #movie-card-community-column figure img {
+    .movie-card-column figure img, #movie-card-community-column figure img {
         width: 45%;
     }
 
