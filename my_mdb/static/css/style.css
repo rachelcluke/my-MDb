@@ -349,6 +349,12 @@ h4 {
     opacity: 60%;
 }
 
+#movies-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 dialog {
     background-color: var(--applegreen);
     border-color: var(--applegreen);
