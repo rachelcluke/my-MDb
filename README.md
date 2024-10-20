@@ -335,13 +335,25 @@ The initial phase of testing consisted of checking through the stories. Below, I
 
 ## Debugging
 
-These are the issues that emerged throughout the project development, and how I resolved them:
+These are the key issues that emerged throughout the project development, and how I resolved them:
 
-- auth.html
-  - TBD
+- routes.py
+  - For register(), when implementing the existing user validation, there was an Unbound Local Error due to a User query calling a variable that was only declared afterwards. This was resolved by reordering the local variables.
+  - For my_movies(), initially all the movies were showing up in the user's My Movies page, which was not the intended experience, as it should have only been displaying the user's movies. To resolve this, a multiple query was used (i) to order the movies by their 'view date' and (ii) to filter movies by the user in session's ID. 
+  - For edit_movie(), when an error validation was being caught, there was a werkzeug error when redirecting the url. This was resolved by passing and including the respective movie id within the url.
+  - The app route names have all been modified to be user-friendly for ther users to type in the url (i.e., only lowercase and dashes used).
 
-- style.css
-  - TBD
+- validation.py
+  - When running check_date_entry(), the website would crash and display ```"TypeError: '>=' not supported between instances of 'str' and 'datetime.datetime"```. This was resolved by using Python's strptime() method which formats the string to a datetime object.
+
+- run.py
+  - There was initially an operational error when running ```from my_mdb import db``` in a terminal. This was due to a misspelling of the app's name (i.e.,'mymdb' was written and not 'my_mdb') which imported the app so this was amended. 
+
+- .gitignore
+  - Initially, the env.py was not included in this file, and was getting committed to the respository. To rectify this, ```git rm -r --cached .env``` was ran in a terminal and env.py was added to the .gitignore file. Additionally, a new secret key was created from running the command ```openssl rand -hex 32```.
+
+- miscellaneous
+  - There was an issue near the beginning of the project when the style.css was not getting read. This was resolved by creating a 'static' folder (which contains the css, favicons, img and js file), within my project folder.
 
 \
 &nbsp;
