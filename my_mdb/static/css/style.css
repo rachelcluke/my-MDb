@@ -586,10 +586,12 @@ dialog p {
     }
 
     .desktop-column {
+        display: flex;
         flex-direction: column;
     }
 
     .desktop-row {
+        display: flex;
         flex-direction: row;
     }
 
