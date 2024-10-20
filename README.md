@@ -209,6 +209,8 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 - [Flask](https://flask.palletsprojects.com/en/2.3.x/templating/ "Flask")
 
+- [PostgreSQL](https://www.postgresql.org/ "PostgreSQL")
+
 ## Tools
 
 - [Mila Note](https://milanote.com/ "Mila Note")
