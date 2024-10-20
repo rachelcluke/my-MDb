@@ -662,6 +662,12 @@ dialog p {
         margin-top: -13rem;
     }
 
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
     dialog {
         height: 80%;
         width: 90%;
