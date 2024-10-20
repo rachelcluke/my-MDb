@@ -343,7 +343,7 @@ h4 {
     margin-top: -4rem;
 }
 
-.movie-card-name {
+.movie-card-name, .main-movie-community-caption p {
     font-style: var(--font-web);
     color: var(--offwhite);
     opacity: 60%;
