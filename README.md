@@ -21,7 +21,7 @@ The following are high-level details of this project:
 - There are no passwords or secret keys in the project repository. 
 
 
-The last update to this file was: **July 24th, 2024**
+The last update to this file was: **October 20th, 2024**
 
 # Table of Contents
 
@@ -171,4 +171,66 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 # Features 
 
-## Existing Features 
+## Existing Features
+
+## Future Actions 
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Technologies used
+
+## Languages
+
+- [HTML](https://en.wikipedia.org/wiki/HTML "HTML")
+  
+- [CSS](https://en.wikipedia.org/wiki/CSS "CSS")
+
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript")
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Python")
+
+## IDE
+
+- [Codeanywhere](https://codeanywhere.com/ "Codeanywhere")
+
+- [GitPod](https://www.gitpod.io/ "GitPod")
+
+## Libraries & Framework
+
+- [Google Fonts](https://fonts.google.com/ "Google Fonts")
+  
+- [Font Awesome library](https://fontawesome.com/ "Font Awesome")
+
+- [Favicon](https://favicon.io/ "Favicon")
+
+- [Flask](https://flask.palletsprojects.com/en/2.3.x/templating/ "Flask")
+
+## Tools
+
+- [Mila Note](https://milanote.com/ "Mila Note")
+  
+- [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq")
+
+- [CI Full Template](https://github.com/Code-Institute-Org/ci-full-template "CI Full Template")
+  
+- [Coolers](https://coolors.co/ "coolers")
+  
+- [Am I Responsive](https://ui.dev/amiresponsive "Am I Responsive")
+
+- [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
+  
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
+
+- [W3C JS Validation Service](https://jshint.com "JSHint JS") 
+
+- [Snyk Python Check Service](https://snyk.io/code-checker/python/ "Snyk Python")
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
