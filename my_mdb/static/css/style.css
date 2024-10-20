@@ -774,6 +774,10 @@ dialog p {
         font-size: 10rem;
     }
 
+    #launch-first-column {
+        margin-top: 20rem;
+    }
+
     #launch-subheading-row h3 {
         font-size: 8rem;
     }
@@ -789,13 +793,13 @@ dialog p {
     }
 
     #launch-title-02-row {
-        margin-left: -5%;
-        padding-top: 1%;
+        margin-left: 20%;
+        padding-top: 3%;
     }
 
     #launch-title-03-row {
-        margin-left: -15%;
-        padding-top: 2%;
+        margin-left: 45%;
+        padding-top: 4%;
     }
 
     .page-title {
@@ -826,8 +830,8 @@ dialog p {
     }
 
     #launch-login-btn {
-        padding-left: 15%;
-        padding-right: 15%;
+        padding-left: 50%;
+        padding-right: 50%;
     }
 
     /*Media Query 03 - Desktop - Login*/
