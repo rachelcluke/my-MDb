@@ -44,7 +44,7 @@ The last update to this file was: **October 20th, 2024**
   - [Mockups](#mockups)
 - [Features](#features)
   - [Existing Features](#existing-features)
-   - [Future actions - Features to be Implemented](#future-actions)
+   - [Future Features - to be implemented](#future-features)
 - [Technologies used](#technologies-used)
   - [Languages](#languages)
   - [IDE](#ide)
@@ -175,7 +175,14 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 ## Existing Features
 
-## Future Actions 
+## Future Features (to be implemented)
+
+- Integrate [OMDb API](https://www.omdbapi.com/ "OMDb API") so user can search for movies and import their respective movie's information including movie poster, genre, IMDb rating, plot etc. This would also act as a validation if the user has typed in an actual movie.
+
+- Dynamic star ratings entered by the user. To be displayed within the movie cards, specifically under the movie posters, where it will display 0-5 stars based on the user's personal movie rating.
+
+- More filters within the My Movies and Community pages to allow the user to search for specific movies, view dates, potential star ratings (for example, 0-1 stars, 1-2 stars etc).
+
 
 \
 &nbsp;
