@@ -576,6 +576,13 @@ dialog p {
         padding-top: 2%;
     }
 
+    #launch-movie-poster {
+        resize: inherit;
+        max-width: 40%;
+        padding-block-start: 5%;
+        margin-right: -30%;
+    }
+
     .page-title {
         font-size: 5rem;
         padding: 10rem 0rem 1rem 1rem;
