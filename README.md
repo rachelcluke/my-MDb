@@ -53,6 +53,8 @@ The last update to this file was: **October 20th, 2024**
 - [Validating](#validating)
 - [Testing](#testing)
 - [Deployment](#deployment)
+ -[Heroku](#heroku)
+ -[How to run this project localy](#run-locally)
 - [Credits](#credits)
 
 
@@ -229,10 +231,118 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 - [W3C JS Validation Service](https://jshint.com "JSHint JS") 
 
-- [Snyk Python Check Service](https://snyk.io/code-checker/python/ "Snyk Python")
+- [Python PEP8 checker](http://ww7.pep8online.com/?usid=27&utid=8834820127 "Python PEP8 checker")
 
 \
 &nbsp;
 [Back to Top](#table-of-contents)
 \
 &nbsp;
+
+# Validating
+
+## HTML Validation
+
+## CSS Validation
+
+## JS Validation
+
+## Python PEP8 checker
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Testing
+
+## Testing User Stories
+
+The initial phase of testing consisted of checking through the stories. Below, I have listed the user stories along with their respective screenshots and descriptions, explaining how they each have been met.
+\
+&nbsp;
+
+## Debugging
+
+These are the issues that emerged throughout the project development, and how I resolved them:
+
+- auth.html
+  - TBD
+
+- style.css
+  - TBD
+
+\
+&nbsp;
+
+## Unfixed Bugs 
+
+- TBD
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Deployment
+
+## Heroku 
+
+This project was deployed via Heroku, using the following steps:
+
+1. Generated requirements.txt and Procfile (containing command: "web: python run.py")
+2. Modified __init__.py file so that SQLAlchemy can also read our external database
+3. Saved, added, committed and pushed changes to GitHub.
+4. Logged in Heroku website, created a new app and added Config Vars.
+5. In the 'Deployment method' section, connected to GitHub (and also Enable Automatic Deploys).
+6. Run console and imported Postgres database.
+7. The website deployed and the link is [My Mdb Website](https://my-mdb-eadb6d03939b.herokuapp.com/ "My Mdb")
+8. If any changes were required, they could be done, commited and pushed to GitHub and the changes would automatically be updated and deployed.
+
+## How to Run this Project Locally 
+
+To work on this project within your local IDE such as VSCode, Pycharm etc:
+  1. Follow this link to the [Project GitHub repository](https://github.com/rachelcluke/my-MDb "Project GitHub respository")
+  2. Under 'Code', copy the Clone URL for the repository.
+  3. In your local IDE, open a terminal.
+  4. Navigate into the desired working directory.
+  5. Type ```git clone``` and then paste the URL you copied in Step 2.
+  6. Hit Enter and your local clone will be created.
+
+For further reference on cloning a respository from GitHub, click [here.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository "Cloning a repository")
+
+
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Credits
+
+For mentoring, code advising and project reviewing:
+
+- [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin")
+
+For technical support and guidance:
+
+- [Tutors at Code Institute](https://codeinstitute.net/blog/meet-our-support-teams/ "Code Institute Support")
+
+For content and design inspiration:
+
+- [IMDb](https://www.imdb.com/ "IMDb")
+
+- [Uizard](https://uizard.io/templates/tablet-templates/movie-streaming-tablet-app/ "Uizard")
+
+- [Colorlib](https://colorlib.com/wp/html5-and-css3-login-forms/ "Colorlib")
+
+Finally, a big shoutout to my family, friends and loved ones for their unwavering encouragement and support.
+
+---
+
+Thank you, from Rachel Luke.
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
