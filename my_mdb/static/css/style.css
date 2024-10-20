@@ -322,11 +322,11 @@ h4 {
 }
 
 /* My Movies Page */
-.movie-card-column, #movie-card-community-column, #div-add-btn {
+.movie-card-column, .movie-card-community-column, #div-add-btn {
     padding-left: 1.5rem;
 }
 
-.movie-card-column figure img, #movie-card-community-column figure img {
+.movie-card-column figure img, .movie-card-community-column figure img {
     width: 40%;
     height: 70%;
 	opacity: 1;
@@ -339,7 +339,7 @@ h4 {
 	opacity: .6;
 }
 
-#main-movie-caption {
+.main-movie-caption {
     margin-top: -4rem;
 }
 
@@ -349,7 +349,7 @@ h4 {
     opacity: 60%;
 }
 
-#movies-row {
+#movies-row, #community-movies-row {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -465,7 +465,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, .movie-card-column p, #main-movie-community-caption {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, .movie-card-column p, .main-movie-community-caption {
         font-size: 3rem;
     }
 
@@ -491,7 +491,7 @@ dialog p {
         padding-bottom: 3rem;
     }
 
-    #main-movie-caption, #main-movie-community-caption {
+    .main-movie-caption, .main-movie-community-caption {
         padding-left: .5rem;
         padding-bottom: 2rem;
         margin-top: -10rem;
@@ -601,7 +601,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, .movie-card-column p, #main-movie-community-caption, #movie-card-dialog, h4, #warning-cancel-message p, #warning-delete-message p {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, .field-username, .field-password, .movie-card-column p, .main-movie-community-caption, #movie-card-dialog, h4, #warning-cancel-message p, #warning-delete-message p {
         font-size: 5rem;
     }
 
@@ -637,7 +637,7 @@ dialog p {
         padding-top: 5%;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, #main-movie-community-caption   {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, .main-movie-community-caption   {
         font-size: 5rem;
     }
 
@@ -658,11 +658,11 @@ dialog p {
         padding-right: 10rem;
     }
 
-    .movie-card-column figure img, #movie-card-community-column figure img {
+    .movie-card-column figure img, .movie-card-community-column figure img {
         width: 35%;
     }
 
-    #main-movie-caption, #main-movie-community-caption {
+    .main-movie-caption, .main-movie-community-caption {
         padding-left: .5rem;
         padding-bottom: 2rem;
         margin-top: -13rem;
@@ -676,8 +676,9 @@ dialog p {
         flex-wrap: inherit;
     }
 
-    #movie-column-parent{
+    #movie-column-parent, #community-movie-column-parent{
         display:flex;
+        flex-direction: column;
     }
 
     dialog {
@@ -721,7 +722,7 @@ dialog p {
     }
 
     /*Media Query 02 (Laptop) - Community*/
-    #movie-card-community-column {
+    .movie-card-community-column {
         margin-top: -10rem;
         padding-bottom: 20rem;
     }
@@ -825,7 +826,7 @@ dialog p {
         padding: 10rem 0rem 1rem 1rem;
     }
 
-    #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, #main-movie-community-caption   {
+    #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, .main-movie-community-caption   {
         font-size: 7rem;
     }
 
@@ -858,7 +859,7 @@ dialog p {
         padding-top: 6.5%;
     }
 
-    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, #main-movie-community-caption   {
+    #secondary-header, #new-user-row, #sign-up-link, .auth-btn, #error-msg-row,.field-username, .field-password, .movie-card-column p, .main-movie-community-caption   {
         font-size: 7rem;
     }
 
@@ -878,7 +879,7 @@ dialog p {
         padding-right: 3rem;
     }
 
-    .movie-card-column figure img, #movie-card-community-column figure img {
+    .movie-card-column figure img, .movie-card-community-column figure img {
         width: 45%;
     }
 
@@ -886,7 +887,7 @@ dialog p {
         padding-left: 23%;
     }
 
-    #main-movie-caption, #main-movie-community-caption {
+    .main-movie-caption, .main-movie-community-caption {
         padding-left: .5rem;
         padding-bottom: 5rem;
         margin-top: -17rem;
@@ -922,7 +923,7 @@ dialog p {
     }
 
     /*Media Query 03 - Desktop - Community*/
-    #movie-card-community-column {
+    .movie-card-community-column {
         margin-top: -10rem;
         padding-bottom: 20rem;
     }

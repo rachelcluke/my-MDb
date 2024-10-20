@@ -1,14 +1,17 @@
 <!--Similar to movie-card.html except no interactive dialogues + edit/ delete functionality -->
-
-<div class="row left-end">
-    <div id="movie-card-community-column" class="column" >
-         <figure>
-            <img class="movie-card-poster-community" src="/static/img/joker-poster.jpg" alt="Movie Poster">
-        </figure>
-        <div id="main-movie-community-caption" class="column">
-            <div class="movie-card-name"> 
-                <p>{{ movie.movie_name }}</p>
-            </div>
+<div class="movie-card-community-column column" >
+        <figure>
+        <img class="movie-card-poster-community" src="/static/img/joker-poster.jpg" alt="Movie Poster">
+    </figure>
+    <div class="main-movie-community-caption column">
+        <div class="movie-card-name"> 
+            <p>{{ movie.movie_name }}</p>
+        </div>
+        <div class="row"> 
+            <p>Viewed: {{ movie.view_date }}</p>
+        </div>
+        <div class="row"> 
+            <p>User Id: {{ movie.user_id }}</p>
         </div>
     </div>
 </div>
