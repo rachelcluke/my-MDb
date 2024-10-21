@@ -330,6 +330,10 @@ h4 {
     padding: 3rem 0 3rem 0;
 }
 
+.card-container {
+    flex-direction: column;
+}
+
 .movie-card-column figure:hover img {
 	opacity: .6;
 }
@@ -659,13 +663,16 @@ dialog p {
     }
 
     .card-container {
+        /*
         display: flexbox;
         grid-template-columns: repeat(4, 1fr);
         gap: 3rem;
         justify-content: space-around;
-        flex-wrap: inherit;
+        flex-wrap: inherit; */
+        flex-direction: row;
     }
 
+    /*
     #movie-column-parent, #community-movie-column-parent{
         display:flex;
         flex-direction: column;
@@ -675,7 +682,8 @@ dialog p {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-    }
+    } 
+    */
 
     dialog {
         height: 80%;
