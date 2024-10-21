@@ -1,16 +1,16 @@
 <!--Similar to movie-card.html except no interactive dialogues + edit/ delete functionality -->
-<div class="movie-card-community-column column" >
+<div class="movie-card-community-column flex column" >
         <figure>
         <img class="movie-card-poster-community" src="/static/img/joker-poster.jpg" alt="Movie Poster">
     </figure>
-    <div class="main-movie-community-caption column">
+    <div class="main-movie-community-caption flex column">
         <div class="movie-card-name"> 
             <p>{{ movie.movie_name }}</p>
         </div>
-        <div class="row"> 
+        <div class="flex row"> 
             <p>Viewed: {{ movie.view_date }}</p>
         </div>
-        <div class="row"> 
+        <div class="flex row"> 
             <p>User Id: {{ movie.user_id }}</p>
         </div>
     </div>

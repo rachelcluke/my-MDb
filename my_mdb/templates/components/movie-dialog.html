@@ -1,35 +1,35 @@
 <!-- Dialog when user clicks on movie poster to edit/ delete entry -->
 <dialog class="movie-card-dialog">
   <!-- Top row of edit, delete + close dialog btns -->
-  <div class="row" id="dialog-btn-row">
+  <div class="flex row" id="dialog-btn-row">
     {% include "components/button-edit.html" %}
     {% include "components/button-delete.html" %}
-    <div class="right-end" id="close-dialog-btn-div">
+    <div class="flex right-end" id="close-dialog-btn-div">
       <button autofocus> X </button>
     </div>
   </div> 
 
   <!-- Row with movie poster + api info -->
-  <div class="row" id="movie-api-info">
+  <div class="flex row" id="movie-api-info">
     <figure>
       <img class="movie-card-poster" src="/static/img/joker-poster.jpg" alt="Movie Poster">
     </figure>
-    <div class="column" id="movie-api-description">
-      <div class="row" id="dialog-movie-name">
+    <div class="flex column" id="movie-api-description">
+      <div class="flex row" id="dialog-movie-name">
         <p>{{ movie.movie_name }}</p>
       </div>
-      <div class="row">
+      <div class="flex row">
         <p>[ api info ]</p>
       </div>
     </div>
   </div>
 
   <!-- Information below the poster -->
-  <div class="column" id ="movie-user-info">
+  <div class="flex column" id ="movie-user-info">
     <div class="row" id="dialog-movie-date">
       <p>{{ movie.view_date }}</p>
     </div>
-    <div class="row" id="dialog-movie-review">
+    <div class="flex row" id="dialog-movie-review">
       <p>{{ movie.movie_review }}</p>
     </div>
   </div>

@@ -59,33 +59,28 @@ body {
     z-index: 1000;
 }
 
-.centre {
+.flex {
     display: flex;
+}
+
+.row {
     flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.centre {
     justify-content: center;
 }
 
 .left-end {
-    display: flex;
-    flex-direction: row;
     justify-content: flex-start;
 }
 
 .right-end {
-    display: flex;
-    flex-direction: row;
     justify-content: flex-end;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
 }
 
 /* Components */
@@ -227,7 +222,7 @@ a, a:visited {
     font-weight: 400;
 }
 
-#edit-btn, #delete-btn, #cancel-btn, #cancel-final-btn, #close-cancel-warning-dialog-btn, #delete-final-btn, #close-delete-warning-dialog-btn{
+.dialog-btn {
     border-radius: 1rem 1rem;
     font-weight: 400;
 }
@@ -714,7 +709,7 @@ dialog p {
         padding-left: 25rem;
     }
 
-    #edit-btn, #delete-btn, #cancel-btn, #cancel-final-btn, #close-cancel-warning-dialog-btn, #delete-final-btn, #close-delete-warning-dialog-btn {
+    .dialog-btn  {
         padding: .2rem 7rem .2rem 7rem;
     }   
 
@@ -942,7 +937,7 @@ dialog p {
         padding: 2.5rem 16.5rem 2.5rem 12.5rem;
     }
 
-    #delete-btn, #edit-btn, #cancel-btn, #close-cancel-warning-dialog-btn, #close-delete-warning-dialog-btn {
+    .dialog-btn {
         padding: 1rem 6rem 1rem 6rem;
     }
 
