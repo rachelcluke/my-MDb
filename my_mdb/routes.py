@@ -49,7 +49,7 @@ def register():
         is_password_length_validated = check_input_length(form_password,8,20)
     
         if existing_user:
-            flash("This username already exists.")
+            flash("This user already exists.")
             return redirect(url_for("register"))
         elif (is_username_empty == True)|(is_password_empty == True):
             flash("Username/ Password cannot be empty.")
@@ -169,8 +169,6 @@ def edit_movie(movie_id):
             return redirect(url_for("my_movies"))
 
     return render_template("/pages/editMoviePage.html",title='Edit Movie', form=form, movie=movie)
-
-#TODO add validation for entry (ex, movie duplicate, match with API)
 
 @app.route("/community", methods=("GET", "POST"))
 def community():

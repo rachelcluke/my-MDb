@@ -2,21 +2,30 @@
 from datetime import datetime, date, timedelta
 
 def check_for_empty_field(string):
-    """Validation function to check if a field is empty (returns True or False)"""
+    """
+    Validation function to check 
+    if a field is empty (returns True or False)
+    """
     if string == "":
         return False
     else:
         return True
 
 def check_input_length(input,min,max):
-    """Validation function to check the length of an input field (returns True or False)"""
+    """
+    Validation function to check the 
+    length of an input field (returns True or False)
+    """
     if (( len(input) > min) and ( len(input) < max)):
         return True
     else:
         return False
 
 def check_date_format(date_input):
-    """Validation function to check if entry is a date"""
+    """
+    Validation function to check 
+    if entry is a date
+    """
     try:
         test = bool(datetime.strptime(date_input, "%Y-%m-%d"))
         result = "true"
@@ -29,7 +38,11 @@ def check_date_format(date_input):
         return False
 
 def check_date_entry(date_input):
-    """Validation function to check that the date entered is not in the future and not more than 100 years ago"""
+    """
+    Validation function to check that 
+    the date entered is not in the future 
+    and not more than 100 years ago
+    """
     formatted_date_input = datetime.strptime(date_input, "%Y-%m-%d").date()
     today = date.today()
     cutoff_date = today - timedelta(days=(365*100))
