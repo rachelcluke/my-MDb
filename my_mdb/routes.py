@@ -139,7 +139,8 @@ def delete_movie(movie_id):
 @app.route("/edit-movie/<int:movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
     movie = Movie.query.get_or_404(movie_id)
-    form = EditMovieForm()
+    #passing in movie_id to pre-populate the form for user to edit
+    form = EditMovieForm(movie_id)
 
     if request.method == "POST":
         is_review_filled = check_for_empty_field(request.form.get("movie_review"))
