@@ -43,15 +43,15 @@ def register():
         form_username = request.form.get("username")
         form_password = request.form.get("password")
         existing_user = User.query.filter(User.username == form_username.lower()).all()
-        is_username_empty = check_for_empty_field(form_username)
-        is_password_empty = check_for_empty_field(form_password)
+        is_username_filled = check_for_empty_field(form_username)
+        is_password_filled = check_for_empty_field(form_password)
         is_username_length_validated = check_input_length(form_username,4,15)
         is_password_length_validated = check_input_length(form_password,8,20)
     
         if existing_user:
             flash("This user already exists.")
             return redirect(url_for("register"))
-        elif (is_username_empty == True)|(is_password_empty == True):
+        elif (is_username_filled == False)|(is_password_filled == False):
             flash("Username/ Password cannot be empty.")
             return redirect(url_for("register"))
         elif (is_password_length_validated == False):
