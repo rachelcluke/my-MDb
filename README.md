@@ -185,11 +185,57 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
     \
     &nbsp;
   
-  - Also, the screen layout adjusts depending on the user's screen size to ensure the readability/ aesthetics are maintained.
+  - Also, the screen layout adjusts depending on the user's screen size to ensure the readability/ aesthetics are maintained. The photo above is for mobile (default), whereas the photo below is for the website's laptop media query design.
   \
     &nbsp;
 
     ![Landing Page - Laptop](docs/features/launch-laptop-page.png)
+
+    \
+    &nbsp;
+
+### Login Page
+
+- Login Authentication Form
+  - There are two form fields with placeholders to indicate to the user what should be entered (i.e., Username and Password). 
+  \
+    &nbsp;
+
+    ![Landing Page - Laptop](docs/features/login-laptop-page.png)
+
+    \
+    &nbsp;
+
+- Front-end (Flask) Validation
+  - When the user logins, there are validations to ensure the user enters the necessary data in the correct format. 
+  - For Username, an entry of 4-15 characters is required.
+  - For Password, an entry of 8-20 characters is required.
+  - If they validations are not met, a respective flask pop up appears. An example of this is shown below.
+  \
+    &nbsp;
+
+    ![Login - Frontend Validation](docs/features/login-mobile-flask-validation.png)
+
+    \
+    &nbsp;
+
+- Backend (Python) Validation
+  - The same validations mentioned above are also checked in the backend before the user can successfully login. This is to ensure that even if the user were to maliciously change the HTML of the website, they will still not be able to login without the correct credentials.
+  - For example, for the Password field, if I were to remove the 'required' attribute within the HTML, this error message is displayed to the user:
+  \
+    &nbsp;
+
+    ![Login - Backend Validation](docs/features/login-mobile-python-validation.png)
+
+    \
+    &nbsp;
+
+- Easy Navigation to Register
+  - Within the login page, there is a link for new users to register. When the user hovers over the link, the link becomes less opaque to indicate to the user it is interactive.
+  \
+    &nbsp;
+
+    ![Launch - Sign Up Hover](docs/features/login-mobile-signup-hover.png)
 
     \
     &nbsp;
@@ -295,7 +341,7 @@ The initial phase of testing consisted of checking through the stories. Below, I
 1. As a user, I want to be able to login/ register my account.
       \
     &nbsp;
-    ![Login Page](TBD)
+    ![Login Page](docs/features/login-laptop-page.png)
 
     ![Register Page](TBD)
   \
@@ -384,6 +430,8 @@ These are the key issues that emerged throughout the project development, and ho
 ## Unfixed Bugs 
 
 - The first time, 'My Movies' page is launched (main.html), the 'My Movies' in the header is not transculent as it should be to indicate it is active. This feature only works when the navigation link is clicked on.
+
+- Flask field validation pop-ups should be adjusted according to media queries.
 
 - Some pages have white spaces (when scrolled horizontally, vertically or both).
 
