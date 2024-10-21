@@ -16,7 +16,7 @@ def check_input_length(input,min,max):
     Validation function to check the 
     length of an input field (returns True or False)
     """
-    if (( len(input) > min) and ( len(input) < max)):
+    if (( len(input) >= min) and ( len(input) <= max)):
         return True
     else:
         return False
