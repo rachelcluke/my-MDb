@@ -235,10 +235,34 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
   \
     &nbsp;
 
-    ![Launch - Sign Up Hover](docs/features/login-mobile-signup-hover.png)
+    ![Login - Sign Up Hover](docs/features/login-mobile-signup-hover.png)
 
     \
     &nbsp;
+
+### Register Page
+
+- Register Authentication Form
+  - Akin to the Login page, the Register page also has (i) the hover feature when returning to the Login page, (ii) placeholders in the form fields, (iii) front-end validation and (iv) backend validation.
+  \
+    &nbsp;
+
+    ![Register Page - Mobile](docs/features/register-mobile-page.png)
+
+    \
+    &nbsp;
+
+- Backend Validation
+  - Before creating a new user, the Register Form checks if the username already exists, and the username and password are within the correct range of characters. Below, is an example of this when a user tries to create an account with a username that already exists in the My MDb database.
+  \
+    &nbsp;
+
+    ![Register Page - Validation](docs/features/register-tablet-backend-validation.png)
+
+    \
+    &nbsp;
+
+  - When these backend validations have been checked through, only then can a new user be registered. Another feature, which is not shown on the interface is that the password gets hashed in the backend.
 
 
 
