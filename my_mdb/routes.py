@@ -66,17 +66,20 @@ def register():
             db.session.add(new_user)
             db.session.commit()
             session["user"] = request.form.get("username").lower()
-            return redirect(url_for("my_movies", username=session["user"]))
+            current_user = session["user"]
+            return redirect(url_for("my_movies", username=session["user"], user_id=session["user_id"]))
 
     return render_template("/pages/register.html", title='Register',form=form)
 
 @app.route("/my-movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
-        current_user = session["user"]
+        #current_user = User.query.filter(User.username == session["user"])
+        #qcurrent_user = User.query.get_or_404(id).filter_by(User.username == session["user"])
         #current_user_id = User.query.get_or_404(id).filter_by(User.username==current_user)
-        print("user_id:", session["user_id"], "user:", session["user"])
         movies = list(Movie.query.filter(Movie.user_id==session["user_id"]).order_by(Movie.view_date.desc()))
+        #movies = list(Movie.query.filter(Movie.user_id==current_user.id).order_by(Movie.view_date.desc()))
+        print("user_id:", session["user_id"], "user:", session["user"], "current_user:", current_user)
         return render_template("/pages/main.html", username=session["user"], movies=movies)
 
     return render_template("/pages/main.html", title='My Movies', movies=movies)

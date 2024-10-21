@@ -14,12 +14,15 @@ const cardMovieNameRef = document.querySelector(".movie-card-name");
 const dialogMovieNameRef = document.querySelector("#dialog-movie-name");
 const dialogMovieDateRef = document.querySelector("#dialog-movie-date");
 const dialogMovieReviewRef = document.querySelector("#dialog-movie-review");
+const dialogMovieIdRef = document.querySelector("#dialog-movie-id");
 const formDateFieldRef = document.querySelector("#datefield");
 
 const currentUrl = window.location.href;
 let currentMovieName;
 let currentMovieDate;
 let currentMovieReview;
+let currentMovieId;
+
 let today = new Date();
 let dd = today.getDate();
 let mm = today.getMonth() + 1;
@@ -30,12 +33,14 @@ function getMovieDataforDialog(obj) {
     currentMovieName = obj.dataset.movieName;
     currentMovieDate = obj.dataset.movieDate;
     currentMovieReview = obj.dataset.movieReview;
+    currentMovieId =  obj.dataset.movieId;
 }
 
 function setMovieDataforDialog() {
     dialogMovieNameRef.textContent = currentMovieName;
     dialogMovieDateRef.textContent = currentMovieDate;
     dialogMovieReviewRef.textContent = currentMovieReview;
+    dialogMovieIdRef.textContent = currentMovieId;
 }
 
 function formatDateField() {
