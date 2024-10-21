@@ -421,9 +421,18 @@ For content and design inspiration:
 
 - [Colorlib](https://colorlib.com/wp/html5-and-css3-login-forms/ "Colorlib")
 
+\
+&nbsp;
+
 Finally, a big shoutout to my family, friends and loved ones for their unwavering encouragement and support.
 
+\
+&nbsp;
+
 ---
+
+\
+&nbsp;
 
 Thank you, from Rachel Luke.
 
