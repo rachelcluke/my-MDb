@@ -16,18 +16,14 @@ const dialogMovieDateRef = document.querySelector("#dialog-movie-date");
 const dialogMovieReviewRef = document.querySelector("#dialog-movie-review");
 const formDateFieldRef = document.querySelector("#datefield");
 
-//CONSTANTS
 const currentUrl = window.location.href;
-
-
-//Variables
 let currentMovieName;
 let currentMovieDate;
 let currentMovieReview;
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1;
-var yyyy = today.getFullYear();
+let today = new Date();
+let dd = today.getDate();
+let mm = today.getMonth() + 1;
+let yyyy = today.getFullYear();
 
 //Functions
 function getMovieDataforDialog(obj) {
@@ -55,7 +51,6 @@ function formatDateField() {
      formDateFieldRef.setAttribute("max", today);
 }
 
-//DOM Events
 document.addEventListener("DOMContentLoaded", () => {
 
     for( var i=0; i<movieCardImgRef.length; i++){
@@ -86,4 +81,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
