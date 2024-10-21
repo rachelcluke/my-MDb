@@ -13,13 +13,13 @@
         {% include "components/button-add.html" %}
 
         {% for movie in movies %}
-            <div class="flex card-container"> <!--desktop-row card-container-->
+            <div class="flex card-container">
                 {% include "components/movie-card.html" %}
             </div>
             {% include "components/movie-dialog.html" %}
             {% include "components/warning-delete-dialog.html" %}
         {% endfor %}
-        
+
         {% include "components/footer.html" %}
         <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     </body>

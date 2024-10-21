@@ -1,15 +1,15 @@
 <div class="flex centre column" id="form-edit-div">
     <form method="POST" action="{{ url_for('edit_movie', movie_id=movie.id) }}">
-        <div class="row form-add-row" id="form-edit-movie-name">
+        <div class="flex row form-add-row" id="form-edit-movie-name">
             <p>{{ movie.movie_name }}</p>
         </div>
-        <div class="row form-add-row">
+        <div class="flex row form-add-row">
             {{ form.movie_review }} 
         </div>
-        <div class="row form-add-row" id="edit-date-row">
+        <div class="flex row form-add-row" id="edit-date-row">
             {{ form.view_date(id="datefield", type='date', min='1960-01-01', max='2050-13-13', onclick="formatDateField(this)") }}
         </div>
-        <div class="row form-add-row" id="edit-submit-row">
+        <div class="flex row form-add-row" id="edit-submit-row">
             {{ form.submit(class="register-btn")}}
         </div>
     </form>

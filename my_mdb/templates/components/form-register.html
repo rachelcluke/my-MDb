@@ -1,12 +1,12 @@
 <div class="flex centre" id="form-register-div">
     <form method="POST" action="{{ url_for('register') }}">
-        <div class="row">  
+        <div class="flex row">  
             {{ form.username(class="field-username")  }}
         </div>
-        <div class="row">
+        <div class="flex row">
             {{ form.password(class="field-username")  }}
         </div>
-        <div class="row centre" id="register-btn-row">
+        <div class="flex row centre" id="register-btn-row">
             {{ form.submit(class="register-btn") }}
         </div>
     </form>
