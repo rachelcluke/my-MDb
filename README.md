@@ -361,6 +361,8 @@ These are the key issues that emerged throughout the project development, and ho
 
 ## Unfixed Bugs 
 
+- The first time, 'My Movies' page is launched (main.html), the 'My Movies' in the header is not transculent as it should be to indicate it is active. This feature only works when the navigation link is clicked on.
+
 - Some pages have white spaces (when scrolled horizontally, vertically or both).
 
 \
