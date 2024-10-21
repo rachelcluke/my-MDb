@@ -12,13 +12,14 @@
 
         {% include "components/button-add.html" %}
 
-        <div class="flex card-container"> <!--desktop-row card-container-->
-            {% for movie in movies %}
+        {% for movie in movies %}
+            <div class="flex card-container"> <!--desktop-row card-container-->
                 {% include "components/movie-card.html" %}
-                {% include "components/movie-dialog.html" %}
-                {% include "components/warning-delete-dialog.html" %}
-            {% endfor %}
-        </div>
+            </div>
+            {% include "components/movie-dialog.html" %}
+            {% include "components/warning-delete-dialog.html" %}
+        {% endfor %}
+        
         {% include "components/footer.html" %}
         <script src="{{ url_for('static', filename='js/index.js') }}"></script>
     </body>
