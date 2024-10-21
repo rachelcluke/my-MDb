@@ -173,14 +173,38 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 ## Existing Features
 
+### Landing Page
+
+- Intuitive User Experience
+  - When the website launches for the first time, the user is directed to a page, which 'sets the scene'. The website logo, some description to indicate what the website can be used for and an image all help the user understand on-the-spot what this website's purpose is. Moreover, there is an eye-catching, call-to-action 'login' button.
+  \
+    &nbsp;
+
+    ![Landing Page - Mobile](docs/features/launch-mobile-page.png)
+
+    \
+    &nbsp;
+  
+  - Also, the screen layout adjusts depending on the user's screen size to ensure the readability/ aesthetics are maintained.
+  \
+    &nbsp;
+
+    ![Landing Page - Laptop](docs/features/launch-laptop-page.png)
+
+    \
+    &nbsp;
+
+
+
 ## Future Features (to be implemented)
+
+- Within the Login page, there should be a 'Forgot Password?' option for users, for them to reset their password if needed.
 
 - Integrate [OMDb API](https://www.omdbapi.com/ "OMDb API") so user can search for movies and import their respective movie's information including movie poster, genre, IMDb rating, plot etc. This would also act as a validation if the user has typed in an actual movie.
 
 - Dynamic star ratings entered by the user. To be displayed within the movie cards, specifically under the movie posters, where it will display 0-5 stars based on the user's personal movie rating.
 
 - More filters within the My Movies and Community pages to allow the user to search for specific movies, view dates, potential star ratings (for example, 0-1 stars, 1-2 stars etc).
-
 
 \
 &nbsp;
