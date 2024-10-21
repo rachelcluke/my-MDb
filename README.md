@@ -21,7 +21,7 @@ The following are high-level details of this project:
 - There are no passwords or secret keys in the project repository. 
 
 
-The last update to this file was: **October 20th, 2024**
+The last update to this file was: **October 21st, 2024**
 
 # Table of Contents
 
@@ -342,6 +342,7 @@ These are the key issues that emerged throughout the project development, and ho
   - For my_movies(), initially all the movies were showing up in the user's My Movies page, which was not the intended experience, as it should have only been displaying the user's movies. To resolve this, a multiple query was used (i) to order the movies by their 'view date' and (ii) to filter movies by the user in session's ID. 
   - For edit_movie(), when an error validation was being caught, there was a werkzeug error when redirecting the url. This was resolved by passing and including the respective movie id within the url.
   - The app route names have all been modified to be user-friendly for ther users to type in the url (i.e., only lowercase and dashes used).
+  - When using the Edit Movie form, the user's current 'movie review' and 'view date' were not being displayed in the Flask form fields for the user to edit. This was resolved by getting and setting the data to the fields in edit_movie(), right after the form variable was declared.
 
 - validation.py
   - When running check_date_entry(), the website would crash and display ```"TypeError: '>=' not supported between instances of 'str' and 'datetime.datetime"```. This was resolved by using Python's strptime() method which formats the string to a datetime object.
@@ -359,8 +360,6 @@ These are the key issues that emerged throughout the project development, and ho
 &nbsp;
 
 ## Unfixed Bugs 
-
-- In the Edit Movie page section, the user's current 'movie review' and 'view date' should be displayed  in the Flask form fields for the user to edit, however they are not. Currently only shows empty 'movie review' textarea field and today's date in 'view date'.
 
 - Some pages have white spaces (when scrolled horizontally, vertically or both).
 
