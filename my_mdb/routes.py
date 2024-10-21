@@ -140,10 +140,8 @@ def delete_movie(movie_id):
 def edit_movie(movie_id):
     movie = Movie.query.get_or_404(movie_id)
     form = EditMovieForm()
-
-    if request.method == 'GET':
-        form.movie_review.data = movie.movie_review
-        form.view_date.data = movie.view_date
+    form.movie_review.data = movie.movie_review
+    form.view_date.data = movie.view_date
 
     if request.method == "POST":
         is_review_filled = check_for_empty_field(request.form.get("movie_review"))
