@@ -1,10 +1,10 @@
-<div class="movie-card-column flex column" >
-    <figure>
-        <img class="movie-card-poster" src="/static/img/joker-poster.jpg" alt="Movie Poster" data-movie-name="{{ movie.movie_name}}" data-movie-date="{{ movie.view_date}}" data-movie-review="{{ movie.movie_review}}" onclick="getMovieDataforDialog(this)">
-    </figure>
-    <div class="main-movie-caption flex row">
-        <div class="movie-card-name"> 
+<div class="flex card-container">
+    <div class="movie-card-column flex column" >
+        <figure>
+            <img class="movie-card-poster" src="/static/img/joker-poster.jpg" alt="Movie Poster" data-movie-name="{{ movie.movie_name}}" data-movie-date="{{ movie.view_date}}" data-movie-review="{{ movie.movie_review}}" onclick="getMovieDataforDialog(this)">
+        </figure>
+        <div class="movie-card-name  main-movie-caption flex row"> 
             <p>{{ movie.movie_name }}</p>
         </div>
-    </div>
-</div> 
+    </div> 
+</div>
