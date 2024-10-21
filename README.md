@@ -140,7 +140,6 @@ As a starting point, I have designed this website with a mobile first mindset us
 \
 &nbsp;
 
-
 ## Wireframes
 
 I have used [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") to develop my wireframes for my website. I initially created the mobile version and then the wireframes and then scaled it up for desktop. The website has 3 pages that are all scrollable and displays/hides sections with logic in lieu of having even more HTML pages to decrease inconvenient reloading of entire website.
@@ -163,7 +162,6 @@ The wireframes are below:
 
 ## Mockups
 Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ "Figma") to help me plan the interface design. Mockups for both mobile and desktop have been created as part of the website design phase, and can be viewed via this link [Mockups](https://www.figma.com/design/9iYeCSMx1ZhPTEsWesTW6V/Project-3?node-id=0-1&t=h3CqbXc5uzz9nmsm-1 "Mockups").
-
 
 \
 &nbsp;
@@ -377,14 +375,17 @@ These are the key issues that emerged throughout the project development, and ho
 
 This project was deployed via Heroku, using the following steps:
 
-1. Generated requirements.txt and Procfile (containing command: "web: python run.py")
-2. Modified __init__.py file so that SQLAlchemy can also read our external database
-3. Saved, added, committed and pushed changes to GitHub.
-4. Logged in Heroku website, created a new app and added Config Vars.
-5. In the 'Deployment method' section, connected to GitHub (and also Enable Automatic Deploys).
-6. Run console and imported Postgres database.
-7. The website deployed and the link is [My Mdb Website](https://my-mdb-eadb6d03939b.herokuapp.com/ "My Mdb")
-8. If any changes were required, they could be done, commited and pushed to GitHub and the changes would automatically be updated and deployed.
+1. Log in Heroku website, create a new app
+2. Go to Settings and add the following Config Vars:
+  - DATABASE_URL: Enter Postgres URL postgres://XXX
+  - IP: 0.0.0.0
+  - PORT: 5000
+  - SECRET_KEY: XXXX
+3. In the 'Deployment method' section, connect to GitHub (and also Enable Automatic Deploys).
+4. Run in console: (```python3```)
+5. In console, import Postgres database: (```from my_mdb import db```) and then (```db.create_all()```).
+6. Deploy the website. This link is [My Mdb Website](https://my-mdb-eadb6d03939b.herokuapp.com/ "My Mdb")
+7. If any changes were required, they could be done, commited and pushed to GitHub and the changes would automatically be updated and deployed.
 
 ## How to Run this Project Locally 
 
@@ -395,9 +396,17 @@ To work on this project within your local IDE such as VSCode, Pycharm etc:
   4. Navigate into the desired working directory.
   5. Type ```git clone``` and then paste the URL you copied in Step 2.
   6. Hit Enter and your local clone will be created.
+  7. Within your project, in a terminal run ```pip install -r /path/to/requirements.txt```.
+  8. Create an env.py file within the project folder and include the name of this file in your .gitignore file before committing.
+  9. Within your env.py file, add and modify the following:
+    - ```import os```
+    - ```os.environ.setdefault("IP", "0.0.0.0")```
+    - ```os.environ.setdefault("PORT", "XXXX")```
+    - ```os.environ.setdefault("SECRET_KEY", "XXXX")```
+    - ```os.environ.setdefault("DEBUG", "True")```
+    - ```os.environ.setdefault("DB_URL", "postgresql:///XXX")```
 
 For further reference on cloning a respository from GitHub, click [here.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository "Cloning a repository")
-
 
 &nbsp;
 [Back to Top](#table-of-contents)
