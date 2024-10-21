@@ -76,6 +76,7 @@ def register():
 @app.route("/my-movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
+        print(session["user_id"] and session["user"])
         movies = list(Movie.query.filter(Movie.user_id==session["user_id"]).order_by(Movie.view_date.desc()))
         return render_template("/pages/main.html", username=session["user"], movies=movies)
 
