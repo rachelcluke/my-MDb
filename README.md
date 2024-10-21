@@ -264,7 +264,78 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
   - When these backend validations have been checked through, only then can a new user be registered. Another feature, which is not shown on the interface is that the password gets hashed in the backend.
 
+### My Movies Page
 
+- Dynamic Customisation
+  - When the user is logged in/ registered, they are redirected to their account. This page displayes their username.
+  \
+    &nbsp;
+
+    ![My Movies Page - Tablet](docs/features/main-tablet-page.png)
+
+    \
+    &nbsp;
+
+- Intuitive Navigation
+  - Positioned at the top, the user can either click on the logo or 'My Movies' in the header to redirect themselves back to the their account. As you can see below, when a page is active, it is more translucent to indicate to the user which page they are currently on.
+  \
+    &nbsp;
+
+    ![Navigation Header - Tablet](docs/features/main-navigation-header.png)
+
+    \
+    &nbsp;
+
+  - When the user hovers over another navigation link, it changes colour to depict to the user that it is interactive.
+  \
+    &nbsp;
+
+    ![Navigation Header Hover - Tablet](docs/features/main-navigation-header-hover.png)
+
+    \
+    &nbsp;
+
+- Intuitive Navigation
+  - Positioned at the top, the user can either click on the logo or 'My Movies' in the header to redirect themselves back to the their account. As you can see below, when a page is active, it is more translucent to indicate to the user which page they are currently on.
+  \
+    &nbsp;
+
+    ![Navigation Header - Tablet](docs/features/main-navigation-header.png)
+
+    \
+    &nbsp;
+
+- Logout Authentication Feature
+  - At the very right of the header, there is an option for the user to logout of their account. When clicked, the user is logged out and a confirmation message is displayed to the user.
+  \
+    &nbsp;
+
+    ![Logged Out Message - Tablet](docs/features/main-logged-out.png)
+
+    \
+    &nbsp;
+
+- Call to Action
+  - The only button present on this page, is an 'Add Movie' button, which will navigate the user to an Add Movie form which will be discussed next.
+
+### Add Movie Form
+
+- Dynamic Customisation
+  - When the user is logged in/ registered, they are redirected to their account. This page displayes their username.
+  \
+    &nbsp;
+
+    ![My Movies Page - Tablet](docs/features/main-tablet-page.png)
+
+    \
+    &nbsp;
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 ## Future Features (to be implemented)
 
@@ -275,6 +346,8 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 - Dynamic star ratings entered by the user. To be displayed within the movie cards, specifically under the movie posters, where it will display 0-5 stars based on the user's personal movie rating.
 
 - More filters within the My Movies and Community pages to allow the user to search for specific movies, view dates, potential star ratings (for example, 0-1 stars, 1-2 stars etc).
+
+- Include a contact form/ methods so that users are able to reach out for support if the website is down or if they have any issues or questions.
 
 \
 &nbsp;
@@ -453,7 +526,9 @@ These are the key issues that emerged throughout the project development, and ho
 
 ## Unfixed Bugs 
 
-- The first time, 'My Movies' page is launched (main.html), the 'My Movies' in the header is not transculent as it should be to indicate it is active. This feature only works when the navigation link is clicked on.
+- New registered users are unintentionally being assigned same user id within the db table despite it being set to a foreign, unique key. This is the reason why a new user can view other people's movies within their account and this needs to be rectified immediately.
+
+- When a movie card other than the first one gets selected, and gets 'edited', the edit form displays the first movie card's data. 
 
 - Flask field validation pop-ups should be adjusted according to media queries.
 
