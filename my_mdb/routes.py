@@ -19,14 +19,12 @@ def login():
                                     request.form.get("username").lower()).first()
 
         if existing_user:
-            print(request.form.get("username"))
-
             if check_password_hash(
                     existing_user.password, request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
                         session["user_id"] = existing_user.id
                         return redirect(url_for(
-                            "my_movies", username=session["user"]))
+                            "my_movies", username=session["user"], user_id=session["user_id"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -67,7 +65,6 @@ def register():
             )
             db.session.add(new_user)
             db.session.commit()
-
             session["user"] = request.form.get("username").lower()
             return redirect(url_for("my_movies", username=session["user"]))
 
@@ -76,9 +73,11 @@ def register():
 @app.route("/my-movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
-        print(session["user_id"] and session["user"])
-        movies = list(Movie.query.filter(Movie.user_id==session["user_id"]).order_by(Movie.view_date.desc()))
-        return render_template("/pages/main.html", username=session["user"], movies=movies)
+        current_user = session["user"]
+        current_user_id = User.query.get_or_404(current_user.id)
+        print(current_user_id and session["user"])
+        movies = list(Movie.query.filter(Movie.user_id==current_user_id).order_by(Movie.view_date.desc()))
+        return render_template("/pages/main.html", username=session["user"], movies=movies, current_user_id=current_user_id)
 
     return render_template("/pages/main.html", title='My Movies', movies=movies)
 
