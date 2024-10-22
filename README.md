@@ -113,11 +113,24 @@ The last update to this file was: **October 22nd, 2024**
 
 ## Moodboard
 
-One of the first milestones of this project was to create a moodboard to help envision the overall house style of the webiite and ensure that all of the sections and elements are cohesive. The software I used to create the moodboard for this website is [Mila Note](https://milanote.com/ "Mila Note").
+One of the first milestones of this project was to create a moodboard to help envision the overall house style of the website and ensure that all of the sections and elements are cohesive. The software I used to create the moodboard for this website is [Mila Note](https://milanote.com/ "Mila Note").
 Below, is the moodboard:
 ![Moodboard](docs/moodboard.png)
 
 ## Fonts
+
+- In order to 'jazz things up', and move away from the basic fonts available, I have used [Google Fonts](https://fonts.google.com/ "Google Fonts") to find a text that best suits the feel of the website. 
+- For the launch page and also for all of the page headers, I decided to use [Rubik](https://fonts.google.com/?query=rubik "Rubik font"). This font fits the futuristic theme and is also clear and easy to read. 
+- For the buttons and main text, I have chosen [Titillium Web](https://fonts.google.com/specimen/Titillium+Web "Titillium Web") as I feel it suits the sci-fi feel to the website and it also is not as bold as the header font.
+- Last but not least, for the My MDb logo, I picked a similar font used for IMDb's logo which is [Roboto Condensed](https://fonts.google.com/specimen/Roboto+Condensed "Roboto Condensed"). This font compliments the other fonts and also suits the cinematic theme.
+
+Additional Notes:
+
+- I have intentionally imported the fonts in the css file and not the html files as it saved some space in the html file and as this is a static website, the slightly longer loading time is not critical.
+  
+- Backup fonts (sans-serif) have been put in place as a safety net, in case the custom fonts used are not available.
+
+- There is a 'double reset' in the css file. It simplifies calculate rem unit as I no longer need to think in scale factor of 1.6 but 10 instead.
 
 ## Icons
 
