@@ -2,16 +2,12 @@
 
 //Query Selectors
 const movieCardImgRef = document.querySelectorAll('.movie-card-poster');
-//const movieCardDialogRef = document.querySelector('.movie-card-dialog-{{ movie.id }}');
 const warningCancelDialogRef = document.querySelector('#warning-cancel-dialog');
 const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
-// const closeDialogBtnRef = document.querySelector('#close-dialog-btn');
 const closeDialogBtnsRef = document.querySelectorAll('.close-dialog-btn');
-//const deleteMovieBtnRef = document.querySelector('#div-delete-btn');
 const deleteMovieBtnsRef = document.querySelectorAll('.delete-dialog-btn');
 const cancelBtnRef = document.querySelector('#cancel-btn');
 const closeCancelDialogBtnRef = document.querySelector('#close-cancel-warning-dialog-btn');
-//const closeDeleteDialogBtnRef = document.querySelector('#close-delete-warning-dialog-btn');
 const closeDeleteDialogBtnsRef = document.querySelectorAll('.close-delete-dialog-btn'); 
 const cardMovieNameRef = document.querySelector(".movie-card-name");
 const dialogMovieNameRef = document.querySelector("#dialog-movie-name");
@@ -105,20 +101,6 @@ function formatDateField() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // for( var i=0; i<movieCardImgRef.length; i++){
-    //     console.log('movieCardImgRef[i]: ', movieCardImgRef[i])
-    //     movieCardImgRef[i].addEventListener("click", () => { 
-    //         setMovieDataforDialog();
-    //         movieCardDialogRef.showModal();
-    //     });
-    // }
-
-    //closeDialogBtnRef?.addEventListener("click",  () => {
-        //console.log('CLOSE CLICKED!');
-        //movieCardDialogRef.close();
-        //console.log('In Close', movieCardDialogRef);
-    //});
-
     cancelBtnRef?.addEventListener("click",  () => {
         warningCancelDialogRef.showModal();
     });
@@ -126,13 +108,5 @@ document.addEventListener("DOMContentLoaded", () => {
     closeCancelDialogBtnRef?.addEventListener("click",  () => {
         warningCancelDialogRef.close();
     });
-
-    //deleteMovieBtnsRef?.addEventListener("click",  () => {
-        //warningDeleteDialogRef.showModal();
-    //});
-
-    //closeDeleteDialogBtnRef?.addEventListener("click",  () => {
-        //warningDeleteDialogRef.close();
-    //});
 
 });

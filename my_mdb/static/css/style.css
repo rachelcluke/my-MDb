@@ -878,7 +878,7 @@ dialog p {
     }
 
     .movie-card-column figure img, .movie-card-community-column figure img {
-        width: 45%;
+        width: 40%;
         height: auto;
     }
 
@@ -893,7 +893,8 @@ dialog p {
     .main-movie-caption, .main-movie-community-caption {
         padding-left: .5rem;
         padding-bottom: 5rem;
-        margin-top: -17rem;
+        margin-top: -3rem;
+        margin-bottom: -5rem;
     }
 
     #dialog-btn-row {
