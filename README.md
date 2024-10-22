@@ -691,7 +691,7 @@ These are the key issues that emerged throughout the project development, and ho
 - Some pages have white spaces (when scrolled horizontally, vertically or both).
 
 - CSS Media queries for larger devices (i.e., laptops + desktops) are not complete. The My Movies and Community Page should display movie cards as rows of 4, and not a column like it is set by default for smaller devices (i.e., mobiles + tablets). 
- - This issue may also be the cause of why sometimes the page gets 'cut off' at the bottom or why the footer is not always fixed at the bottom, as it should be.
+ - This issue may also be the cause of why sometimes the page gets 'cut off' at the bottom.
 
 \
 &nbsp;
