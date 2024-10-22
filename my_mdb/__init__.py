@@ -1,9 +1,10 @@
+"""This file requires an external env.py with the config vars."""
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 if os.path.exists("env.py"):
-    import env  
+    import env
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
@@ -17,4 +18,4 @@ else:
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
 
 db = SQLAlchemy(app)
-from my_mdb import routes 
+from my_mdb import routes

@@ -558,7 +558,7 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 - [W3C JS Validation Service](https://jshint.com "JSHint JS") 
 
-- [Python PEP8 checker](http://ww7.pep8online.com/?usid=27&utid=8834820127 "Python PEP8 checker")
+- [Python PEP8 checker](https://www.codewof.co.nz/style/python3/ "Python PEP8 checker")
 
 \
 &nbsp;
@@ -568,21 +568,41 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
 # Validating
 
-## HTML Validation
+## HTML Validator Results
+
 - Using the w3 validator, I inputted the Heroku deployment URL to check the HTML throughout the website. There were no errors.
   - HTML validator [results](docs/validator/w3-nu-html-validation.png "W3C HTML")
 
-## CSS Validation
+## CSS Validator Results
+
 - Initially for the CSS, there were 9 value errors, so these have been amended and as a result, there are now no errors.
   - CSS (style.css) validator [results](docs/validator/w3-css-validation.png "W3C CSS")
 
-## JS Validation
+## JS Validator Results
+
 - There are five warnings within the index.js, all to do with the ESVersion and not the syntax.
   - JS (index.js) validator [results](docs/validator/js-hint-js-validation.png "JSHint JS")
 
-## Python PEP8 checker
-- XXXX
+## Python PEP8 Checker Results
+
+- __ init __.py
+  - Initially 7 style issues were located, mainly around 'whitespace's. The important ones were resolved.
+  - Python PEP8 checker [results](docs/validator/python-check-init.png "Python PEP8")
+
+- routes.py
   - Python PEP8 checker [results](docs/validator/XXXX.png "Python PEP8")
+
+- run.py
+  - Initially 3 style issues were located, to do with leaving a blank line at the end of the file etc. These have been resolved and there are no style errors now.
+  - Python PEP8 checker [results](docs/validator/python-check-run.png "Python PEP8")
+
+- models.py
+  - Initially style issues were identified, mostly to do with 'whitespaces', spacing before and after classes and docstrings. The issues not relating to import or breaking up long lines, were resolved.
+  - Python PEP8 checker [results](docs/validator/python-check-models.png "Python PEP8")
+
+- validation.py
+  - The main style issues resolved for this file, were to do with re-formatting the docstrings, to ensure that there is command, description, args and parameters.
+  - Python PEP8 checker [results](docs/validator/python-check-validation.png "Python PEP8")
 
 \
 &nbsp;
@@ -687,6 +707,9 @@ These are the key issues that emerged throughout the project development, and ho
 - miscellaneous
   - There was an issue near the beginning of the project when the style.css was not getting read. This was resolved by creating a 'static' folder (which contains the css, favicons, img and js file), within my project folder.
 
+\
+&nbsp;
+[Back to Top](#table-of-contents)
 \
 &nbsp;
 
