@@ -1,9 +1,9 @@
-""""This file handles the flask redirects and the respective functions that happen."""
+"""This file handles the flask redirects and the respective functions that happen."""
 
 from flask import flash, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
-from flask_bcrypt import Bcrypt 
+from flask_bcrypt import Bcrypt
 from werkzeug.security import generate_password_hash, check_password_hash
 from my_mdb import app, db
 from my_mdb.models import User, Movie, LoginForm, RegisterForm, AddMovieForm, EditMovieForm
@@ -12,24 +12,24 @@ from validation import check_for_empty_field, check_input_length, check_date_for
 
 @app.route("/")
 def index():
-    """Returns launch.html page"""
+    """Return launch.html page."""
     return render_template("/pages/launch.html")
 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    """Return Login Authentication page."""
     form = LoginForm()
-    if request.method=='POST':
-        existing_user = User.query.filter(User.username == \
-                                    request.form.get("username").lower()).first()
+    if request.method == 'POST':
+        existing_user = User.query.filter(User.username == request.form.get("username").lower()).first()
 
         if existing_user:
             if check_password_hash(
-                    existing_user.password, request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        session["user_id"] = existing_user.id
-                        return redirect(url_for(
-                            "my_movies", username=session["user"], user_id=session["user_id"]))
+                existing_user.password, request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    session["user_id"] = existing_user.id
+                    return redirect(url_for(
+                        "my_movies", username=session["user"], user_id=session["user_id"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
@@ -42,26 +42,27 @@ def login():
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
+    """Return Register Authentication page."""
     form = RegisterForm()
-    if request.method=='POST':
+    if request.method == 'POST':
         form_username = request.form.get("username")
         form_password = request.form.get("password")
         existing_user = User.query.filter(User.username == form_username.lower()).all()
         is_username_filled = check_for_empty_field(form_username)
         is_password_filled = check_for_empty_field(form_password)
-        is_username_length_validated = check_input_length(form_username,4,15)
-        is_password_length_validated = check_input_length(form_password,8,20)
-    
+        is_username_length_validated = check_input_length(form_username, 4, 15)
+        is_password_length_validated = check_input_length(form_password, 8, 20)
+
         if existing_user:
             flash("This user already exists.")
             return redirect(url_for("register"))
-        elif (is_username_filled == False)|(is_password_filled == False):
+        elif (is_username_filled is False) | (is_password_filled is False):
             flash("Username/ Password cannot be empty.")
             return redirect(url_for("register"))
-        elif (is_password_length_validated == False):
+        elif (is_password_length_validated is False):
             flash("Password must be between 8-20 characters.")
             return redirect(url_for("register"))
-        elif (is_username_length_validated == False):
+        elif (is_username_length_validated is False):
             flash("Username must be between 4-15 characters.")
             return redirect(url_for("register"))
         else:
@@ -75,13 +76,14 @@ def register():
             current_user = session["user"]
             return redirect(url_for("my_movies", username=session["user"], user_id=session["user_id"]))
 
-    return render_template("/pages/register.html", title='Register',form=form)
+    return render_template("/pages/register.html", title='Register', form=form)
 
 
 @app.route("/my-movies", methods=("GET", "POST"))
 def my_movies():
+    """Return Movie Page."""
     if "user" in session:
-        movies = list(Movie.query.filter(Movie.user_id==session["user_id"]).order_by(Movie.view_date.desc()))
+        movies = list(Movie.query.filter(Movie.user_id == session["user_id"]).order_by(Movie.view_date.desc()))
         print("user_id:", session["user_id"], "user:", session["user"], "current_user:", current_user)
         return render_template("/pages/main.html", username=session["user"], movies=movies)
 
@@ -90,6 +92,7 @@ def my_movies():
 
 @app.route("/logout")
 def logout():
+    """Logout user."""
     session.pop("user")
     flash("You have been logged out")
     return redirect(url_for("login"))
@@ -97,30 +100,31 @@ def logout():
 
 @app.route("/add-movie", methods=["GET", "POST"])
 def add_movie():
+    """Return Add Movie form."""
     form = AddMovieForm()
     if request.method == "POST":
 
         is_movie_name_filled = check_for_empty_field(request.form.get("movie_name"))
         is_review_filled = check_for_empty_field(request.form.get("movie_review"))
         is_date_filled = check_for_empty_field(("view_date"))
-        is_movie_name_length_validated = check_input_length((request.form.get("movie_name")),1,50)
-        is_movie_review_length_validated = check_input_length((request.form.get("movie_review")),1,20)
+        is_movie_name_length_validated = check_input_length((request.form.get("movie_name")), 1, 50)
+        is_movie_review_length_validated = check_input_length((request.form.get("movie_review")), 1, 20)
         is_date_format_validated = check_date_format(request.form.get("view_date"))
         is_date_entry_validated = check_date_entry(request.form.get("view_date"))
 
-        if (is_movie_name_filled == False) | (is_review_filled == False) | (is_date_filled == False):
+        if (is_movie_name_filled is False) | (is_review_filled is False) | (is_date_filled is False):
             flash("All fields must not be empty.")
             return redirect(url_for("add_movie"))
-        elif (is_movie_name_length_validated == False):
+        elif (is_movie_name_length_validated is False):
             flash("Movie name must be 1-50 characters.")
             return redirect(url_for("add_movie"))
-        elif (is_movie_review_length_validated == False):
+        elif (is_movie_review_length_validated is False):
             flash("Movie review must be 1-200 characters.")
             return redirect(url_for("add_movie"))
-        elif (is_date_format_validated == False):
+        elif (is_date_format_validated is False):
             flash("Incorrect data format, should be YYYY-MM-DD")
             return redirect(url_for("add_movie"))
-        elif (is_date_entry_validated == False):
+        elif (is_date_entry_validated is False):
             flash("View date cannot be in the future or beyond a 100 years ago.")
             return redirect(url_for("add_movie"))
         else: 
@@ -134,12 +138,13 @@ def add_movie():
             db.session.add(new_movie)
             db.session.commit()
             return redirect(url_for("my_movies"))
-        
-    return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
+
+    return render_template("/pages/addMoviePage.html", title='Add Movie', form=form)
 
 
 @app.route("/delete-movie/<int:movie_id>")
 def delete_movie(movie_id):
+    """Delete movie entry."""
     movie = Movie.query.get_or_404(movie_id)
     db.session.delete(movie)
     db.session.commit()
@@ -148,6 +153,7 @@ def delete_movie(movie_id):
 
 @app.route("/edit-movie/<int:movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
+    """Return Edit Movie Form page."""
     movie = Movie.query.get_or_404(movie_id)
     print('MOVIE: ', movie_id)
     form = EditMovieForm()
@@ -157,33 +163,34 @@ def edit_movie(movie_id):
     if request.method == "POST":
         is_review_filled = check_for_empty_field(request.form.get("movie_review"))
         is_date_filled = check_for_empty_field(request.form.get("view_date"))
-        is_movie_review_length_validated = check_input_length((request.form.get("movie_review")),1,200)
+        is_movie_review_length_validated = check_input_length((request.form.get("movie_review")), 1, 200)
         is_date_format_validated = check_date_format(request.form.get("view_date"))
         is_date_entry_validated = check_date_entry(request.form.get("view_date"))
 
-        if (is_review_filled == False) | (is_date_filled == False):
+        if (is_review_filled is False) | (is_date_filled is False):
             flash("All fields must not be empty.")
             return redirect(url_for('edit_movie', movie_id=movie.id))
-        elif (is_movie_review_length_validated == False):
+        elif (is_movie_review_length_validated is False):
             flash("Movie review must be 1-200 characters.")
             return redirect(url_for('edit_movie', movie_id=movie.id))
-        elif (is_date_format_validated == False):
+        elif (is_date_format_validated is False):
             flash("Incorrect data format, should be YYYY-MM-DD")
             return redirect(url_for('edit_movie', movie_id=movie.id))
-        elif (is_date_entry_validated == False):
+        elif (is_date_entry_validated is False):
             flash("View date cannot be in the future or beyond a 100 years ago.")
             return redirect(url_for('edit_movie', movie_id=movie.id))
-        else: 
-            movie.movie_review=request.form.get("movie_review"),
-            movie.view_date=request.form.get("view_date"),
+        else:
+            movie.movie_review = request.form.get("movie_review"),
+            movie.view_date = request.form.get("view_date"),
             db.session.commit()
             return redirect(url_for("my_movies"))
 
-    return render_template("/pages/editMoviePage.html",title='Edit Movie', form=form, movie=movie)
+    return render_template("/pages/editMoviePage.html", title='Edit Movie', form=form, movie=movie)
 
 
 @app.route("/community", methods=("GET", "POST"))
 def community():
+    """Return Community Page."""
     if "user" in session:
         movies = list(Movie.query.order_by(Movie.view_date.desc()).all())
         return render_template("/pages/community.html", username=session["user"], movies=movies)

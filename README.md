@@ -590,7 +590,7 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
   - Python PEP8 checker [results](docs/validator/python-check-init.png "Python PEP8")
 
 - routes.py
-  - Python PEP8 checker [results](docs/validator/XXXX.png "Python PEP8")
+  - Most of the errors around the syntax (mostly to do with spacing, indentation and required docstrings) were resolved. Only ones left are to do with imports and long lines.
 
 - run.py
   - Initially 3 style issues were located, to do with leaving a blank line at the end of the file etc. These have been resolved and there are no style errors now.
@@ -724,6 +724,8 @@ These are the key issues that emerged throughout the project development, and ho
 
 - CSS Media queries for larger devices (i.e., laptops + desktops) are not complete. The My Movies and Community Page should display movie cards as rows of 4, and not a column like it is set by default for smaller devices (i.e., mobiles + tablets). 
  - This issue may also be the cause of why sometimes the page gets 'cut off' at the bottom.
+
+- For some media queries/ pages, the footer 'floats'. It should be rooted at the bottom of the page.
 
 \
 &nbsp;
