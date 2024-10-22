@@ -1,6 +1,6 @@
 #myMDB (Movie Tracker) Website
 
-[Am I responsive - myMDB](docs/amiresponsive.png "Am I responsive")
+![Am I responsive - myMDB](docs/amiresponsive.png "Am I responsive")
 
 # Project Overview
 
@@ -53,12 +53,12 @@ The last update to this file was: **October 22nd, 2024**
   - [Tools](#tools)
 - [Validating](#validating)
 - [Testing](#testing)
-  -[Testing user stories](#testing-user-stories)
-  -[Debugging](#debugging)
-  -[Unfixed bugs](#unfixed-bugs)
+  - [Testing User Stories](#testing-user-stories)
+  - [Debugging](#debugging)
+  - [Unfixed bugs](#unfixed-bugs)
 - [Deployment](#deployment)
-  -[Heroku](#heroku)
-  -[How to run this project localy](#how-to-run-this-project-locally)
+  - [Heroku](#heroku)
+  - [How to Run this Project Localy](#how-to-run-this-project-locally)
 - [Credits](#credits)
 
 \
@@ -120,6 +120,8 @@ Below, is the moodboard:
 ## Fonts
 
 ## Icons
+
+During testing, the console indicated that an icon from Favicon was required as the 'logo' symbol for the browser tab. As a fitting icon, I downloaded and incoporated the film icon from [Favicon](https://favicon.io/ "Favicon").
 
 ## Colours
 
@@ -668,6 +670,9 @@ These are the key issues that emerged throughout the project development, and ho
 - run.py
   - There was initially an operational error when running ```from my_mdb import db``` in a terminal. This was due to a misspelling of the app's name (i.e.,'mymdb' was written and not 'my_mdb') which imported the app so this was amended. 
 
+- index.js
+  - The movie card dialogs were successfully being passed flask route data, however the edit button for each dialog was only passing the first movie card's ID (relative to the user's account). This was resolved by assigning the dialog reference later in the getMovieDataforDialog() function and passing the movie id in that method.
+
 - .gitignore
   - Initially, the env.py was not included in this file, and was getting committed to the respository. To rectify this, ```git rm -r --cached .env``` was ran in a terminal and env.py was added to the .gitignore file. Additionally, a new secret key was created from running the command ```openssl rand -hex 32```.
 
@@ -679,11 +684,14 @@ These are the key issues that emerged throughout the project development, and ho
 
 ## Unfixed Bugs
 
-- When a movie card other than the first one gets selected, and gets 'edited', the edit form displays the first movie card's data. 
+- The close movie card dialog button and delete button only work for the 'first' movie card. If the user wishes to close the dialog, they either have to go back in the browser or click 'Edit' and then confirm 'Cancel' to redirect back to their account. 
 
 - Flask field validation pop-ups should be adjusted according to media queries.
 
 - Some pages have white spaces (when scrolled horizontally, vertically or both).
+
+- CSS Media queries for larger devices (i.e., laptops + desktops) are not complete. The My Movies and Community Page should display movie cards as rows of 4, and not a column like it is set by default for smaller devices (i.e., mobiles + tablets). 
+ - This issue may also be the cause of why sometimes the page gets 'cut off' at the bottom or why the footer is not always fixed at the bottom, as it should be.
 
 \
 &nbsp;
