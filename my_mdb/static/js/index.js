@@ -4,14 +4,15 @@
 const movieCardImgRef = document.querySelectorAll('.movie-card-poster');
 //const movieCardDialogRef = document.querySelector('.movie-card-dialog-{{ movie.id }}');
 const warningCancelDialogRef = document.querySelector('#warning-cancel-dialog');
-//const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
+const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
 // const closeDialogBtnRef = document.querySelector('#close-dialog-btn');
 const closeDialogBtnsRef = document.querySelectorAll('.close-dialog-btn');
 //const deleteMovieBtnRef = document.querySelector('#div-delete-btn');
 const deleteMovieBtnsRef = document.querySelectorAll('.delete-dialog-btn');
 const cancelBtnRef = document.querySelector('#cancel-btn');
 const closeCancelDialogBtnRef = document.querySelector('#close-cancel-warning-dialog-btn');
-const closeDeleteDialogBtnRef = document.querySelector('#close-delete-warning-dialog-btn');
+//const closeDeleteDialogBtnRef = document.querySelector('#close-delete-warning-dialog-btn');
+const closeDeleteDialogBtnsRef = document.querySelectorAll('.close-delete-dialog-btn'); 
 const cardMovieNameRef = document.querySelector(".movie-card-name");
 const dialogMovieNameRef = document.querySelector("#dialog-movie-name");
 const dialogMovieDateRef = document.querySelector("#dialog-movie-date");
@@ -68,9 +69,18 @@ function getMovieDataforDialog(obj) {
         });
     });
 
-    //closeDeleteDialogBtnRef?.addEventListener("click",  () => {
-        //warningDeleteDialogRef.close();
-    //});
+    closeDeleteDialogBtnsRef.forEach(button => {
+        button.addEventListener("click", (event) => {
+            const movieId = event.target.dataset.movieId;
+            const deleteDialogRef = document.querySelector(`#warningDeleteDialog-${movieId}`);
+    
+            if (deleteDialogRef) {
+                deleteDialogRef.close(); 
+            } else {
+                console.error(`Dialog not found for movie id: ${movieId}`);
+            }
+        });
+    });
 }
 
 function setMovieDataforDialog() {
