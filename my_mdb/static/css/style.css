@@ -354,7 +354,7 @@ dialog {
     margin-left: 15%;
 }
 
-#warning-cancel-dialog, #warning-delete-dialog {
+#warning-cancel-dialog, .warning-delete-dialog {
     height: 80%;
     width: 75%;
     margin-left: 10%;
@@ -493,7 +493,7 @@ dialog p {
         margin-top: -10%;
     }
 
-    #warning-cancel-dialog, #warning-delete-dialog {
+    #warning-cancel-dialog, .warning-delete-dialog {
         height: 70%;
     }
 
@@ -715,7 +715,7 @@ dialog p {
         padding: .2rem 7rem .2rem 7rem;
     }   
 
-    #warning-cancel-dialog p, #warning-delete-dialog p {
+    #warning-cancel-dialog p, .warning-delete-dialog p {
         padding: 5rem;
     }
 
@@ -746,7 +746,7 @@ dialog p {
         margin-top: -3%;
     }
 
-    #warning-cancel-dialog, #warning-delete-dialog {
+    #warning-cancel-dialog, .warning-delete-dialog {
         height: 75%;
         width: 85%;
         margin-left: 5%;
@@ -921,7 +921,7 @@ dialog p {
         font-size: 6rem;
     }
 
-    #warning-cancel-dialog p, #warning-delete-dialog p {
+    #warning-cancel-dialog p, .warning-delete-dialog p {
         padding: 10rem 2rem 5rem 2rem;
     }
 

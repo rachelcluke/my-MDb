@@ -1,3 +1,5 @@
+""""This file handles the flask redirects and the respective functions that happen."""
+
 from flask import flash, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -7,9 +9,12 @@ from my_mdb import app, db
 from my_mdb.models import User, Movie, LoginForm, RegisterForm, AddMovieForm, EditMovieForm
 from validation import check_for_empty_field, check_input_length, check_date_format, check_date_entry
 
+
 @app.route("/")
 def index():
+    """Returns launch.html page"""
     return render_template("/pages/launch.html")
+
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -33,6 +38,7 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("/pages/auth.html", title='Login', form=form)
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -71,6 +77,7 @@ def register():
 
     return render_template("/pages/register.html", title='Register',form=form)
 
+
 @app.route("/my-movies", methods=("GET", "POST"))
 def my_movies():
     if "user" in session:
@@ -80,11 +87,13 @@ def my_movies():
 
     return render_template("/pages/main.html", title='My Movies', movies=movies)
 
+
 @app.route("/logout")
 def logout():
     session.pop("user")
     flash("You have been logged out")
     return redirect(url_for("login"))
+
 
 @app.route("/add-movie", methods=["GET", "POST"])
 def add_movie():
@@ -128,12 +137,14 @@ def add_movie():
         
     return render_template("/pages/addMoviePage.html", title='Add Movie',form=form)
 
+
 @app.route("/delete-movie/<int:movie_id>")
 def delete_movie(movie_id):
     movie = Movie.query.get_or_404(movie_id)
     db.session.delete(movie)
     db.session.commit()
     return redirect(url_for("my_movies"))
+
 
 @app.route("/edit-movie/<int:movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
@@ -169,6 +180,7 @@ def edit_movie(movie_id):
             return redirect(url_for("my_movies"))
 
     return render_template("/pages/editMoviePage.html",title='Edit Movie', form=form, movie=movie)
+
 
 @app.route("/community", methods=("GET", "POST"))
 def community():

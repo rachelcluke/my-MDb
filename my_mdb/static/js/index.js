@@ -6,7 +6,7 @@ const movieCardImgRef = document.querySelectorAll('.movie-card-poster');
 const warningCancelDialogRef = document.querySelector('#warning-cancel-dialog');
 const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
 // const closeDialogBtnRef = document.querySelector('#close-dialog-btn');
-const closeDialogBtnsRef = document.querySelectorAll('.closeDialogBtn');
+const closeDialogBtnsRef = document.querySelectorAll('.close-dialog-btn');
 const deleteMovieBtnRef = document.querySelector('#div-delete-btn');
 const cancelBtnRef = document.querySelector('#cancel-btn');
 const closeCancelDialogBtnRef = document.querySelector('#close-cancel-warning-dialog-btn');
@@ -47,7 +47,6 @@ function getMovieDataforDialog(obj) {
             const dialogRef = document.getElementById(`movieCardDialog-${movieId}`);
     
             if (dialogRef) {
-                console.log('CLOSE CLICKED for movie id:', movieId);
                 dialogRef.close(); // Close the corresponding dialog
             } else {
                 console.error(`Dialog not found for movie id: ${movieId}`);
