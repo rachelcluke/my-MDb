@@ -210,7 +210,7 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
   - When the user logins, there are validations to ensure the user enters the necessary data in the correct format. 
   - For Username, an entry of 4-15 characters is required.
   - For Password, an entry of 8-20 characters is required.
-  - If they validations are not met, a respective flask pop up appears. An example of this is shown below.
+  - If these validations are not met, a respective flask pop up appears. An example of this is shown below.
   \
     &nbsp;
 
@@ -267,7 +267,7 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 ### My Movies Page
 
 - Dynamic Customisation
-  - When the user is logged in/ registered, they are redirected to their account. This page displayes their username.
+  - When the user is logged in/ registered, they are redirected to their account. This page displays their username.
   \
     &nbsp;
 
@@ -318,19 +318,159 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 - Call to Action
   - The only button present on this page, is an 'Add Movie' button, which will navigate the user to an Add Movie form which will be discussed next.
 
-### Add Movie Form
+### Add Movie Card
 
-- Dynamic Customisation
-  - When the user is logged in/ registered, they are redirected to their account. This page displayes their username.
+- Form
+  - To create a movie entry, the user must fill out this intuitive form, with the following 3 fields: movie name, movie review and date they watched it.
   \
     &nbsp;
 
-    ![My Movies Page - Tablet](docs/features/main-tablet-page.png)
+    ![Add Movie - Laptop](docs/features/add-movie-laptop-page.png)
 
     \
     &nbsp;
 
+- Cancel & Warning Dialog
+  - There is an option for the user to dismiss their progress of creating a movie entry and return back to their account. If the user clicks on this cancel button, a warning dialog pops up to ask again if the user wants to 'cancel' as they would not be able to undo this.
+  - The 'No, Resume' button is intentionally on the right in case the user accidentally clicks too quickly and will mitigate user error.
+  \
+    &nbsp;
 
+    ![Add Movie Warning Dialog- Laptop](docs/features/add-movie-cancel-dialog.png)
+
+    \
+    &nbsp;
+
+- Front-end (Flask) Validation
+  - Within this Add Movie form, there are validations to ensure the user enters the necessary data in the correct format. 
+  - For Movie Name, an entry of 1-50 characters is required.
+  - For Movie Review, an entry of 1-200 characters is required.
+  - For View Date, a date picked from the calendar, or written in the correct format DD/MM/YYYY. Date must not be in the future or beyond a 100 years ago. As a proactive user-error mitigation method, the calendar only allows the user to pick valid dates (i.e., blocks out future dates and dates 100 years ago.)
+    \
+    &nbsp;
+
+    ![Add Movie - Calendar Validation](docs/features/add-movie-calendar.png)
+
+    \
+    &nbsp;
+
+  - If these validations are not met, a respective flask pop up appears. An example of this is shown below.
+  \
+    &nbsp;
+
+    ![Add Movie - Frontend Validation](docs/features/add-movie-flask-validation.png)
+
+    \
+    &nbsp;
+
+- Backend (Python) Validation
+  - The same validations mentioned above are also checked in the backend before the user can successfully login. This is to ensure that even if the user were to maliciously change the HTML of the website, they will still not be able to login without the correct credentials.
+  - For example, for the Movie Review, if I were to remove the min and max attributes from the HTML, this error message would be displayed to the user:
+  \
+    &nbsp;
+
+    ![Add Movie - Backend Validation](docs/features/add-movie-python-validation.png)
+
+    \
+    &nbsp;
+
+### View Movie Cards (in My Movies)
+
+- View Movie Entry
+  - Once a movie entry has been successfully submitted, the user will be redirected to their Movies page where the new entry will be displayed. The movies shown on the 'My Movies' page only displays the movies watched by the current user, and are ordered by their view date.
+  \
+    &nbsp;
+
+    ![View Movie Entry](docs/features/main-view-entry.png)
+
+    \
+    &nbsp;
+
+- Read More Info
+  - When the user clicks on the poster (which goes translucent when hovered to indicate to the user it is interactive), a dialog pops displaying the correct, respective info the user has entered in (the movie name, movie review and view date).
+  - It is in this dialog, that the user is able to 'Edit' or 'Delete' their movie entry.
+  \
+    &nbsp;
+
+    ![View More Info](docs/features/main-view-dialog.png)
+
+    \
+    &nbsp;  
+
+### Edit Movie Card
+
+- Edit Form
+  - After the user has clicked on the 'Edit' button displayed in the movie card's dialog, the user will be redirected to a Edit Movie page form.
+  - The form is prepopulated with the movie's info, and the user is able to edit the movie review and view date of the movie entry. If the user wishes to update the movie name, they would have to create a new movie entry.
+  \
+    &nbsp;
+
+    ![Edit Movie Form](docs/features/main-edit-prepopulated.png)
+
+    \
+    &nbsp;  
+
+- View Update/s
+  - For example, if the user were to change their movie reviewand successfully submit their edit request (refer to screenshot below) 
+
+  \
+    &nbsp;
+
+    ![Edit Movie Review](docs/features/main-edit-review.png)
+
+    \
+    &nbsp;  
+  
+  - This change would be made and can be viewed in the My Movies, which is where the user is redirected to, after the edit submission. Below, is the screenshot evincing that the change that has been made in the backend.
+
+  \
+    &nbsp;
+
+    ![Edit Movie - View Change](docs/features/main-edit-change.png)
+
+    \
+    &nbsp;  
+
+- Validation
+  - Similar to the Add Movie Form, there is frontend validation (Flask form pop ups) and also backend validation to ensure that the user enters data in the correct format.
+  - The form is prepopulated with the movie's info, and the user is able to edit the movie review and view date of the movie entry. If the user wishes to update the movie name, they would have to create a new movie entry.
+  - For example, if a user were to remove the html attribute of the movie review textfield area 'maxlength', and try to submit a movie review with more than 200 characters (ex, 201 characters), an error message would pop up and the user would be redirected to the edit form (refer to screenshot below):
+  \
+    &nbsp;
+
+    ![Edit Validation](docs/features/main-edit-backend-validation.png)
+
+    \
+    &nbsp;  
+
+- Cancel Edit Request
+  - Just like the Add Movie form, the Edit form has an option for the user to opt out of the edit form. When the user clicks on the 'Cancel button', a warning dialog appears to confirm that the user wants to leave the page. The 'Resume' button is intentionally on the right hand side to help mitigate user error.
+  \
+    &nbsp;
+
+    ![Cancel Edit Form Dialog](docs/features/main-edit-warning-dialog-laptop.png)
+
+    \
+    &nbsp;  
+
+  - If the user were to cancel the edit request, no updates would be committed to the database, and the user would be redirected back to their movies page.
+
+### Delete Movie Card
+
+- Delete Movie 
+  - As outlined previously, when a movie card (poster) is clicked on, a dialog with the movie card's info is shown. Within this dialog, there is also an 'Edit' and 'Delete' button.
+  - When the 'Delete' button is clicked, a warning dialog appears to the user to confirm that they want to proceed or if they would like to cancel their Delete request.
+  \
+    &nbsp;
+
+    ![Delete Dialog](docs/features/delete-warning-dialog.png)
+
+    \
+    &nbsp;  
+
+  - If the user clicks on 'Yes, Delete', positioned intentionally on the left-hand side to help mitigate user error, then the movie card is deleted. The user is redirected to their Movies page, and that movie card is removed from their page.
+
+ 
 \
 &nbsp;
 [Back to Top](#table-of-contents)
@@ -524,9 +664,7 @@ These are the key issues that emerged throughout the project development, and ho
 \
 &nbsp;
 
-## Unfixed Bugs 
-
-- New registered users are unintentionally being assigned same user id within the db table despite it being set to a foreign, unique key. This is the reason why a new user can view other people's movies within their account and this needs to be rectified immediately.
+## Unfixed Bugs
 
 - When a movie card other than the first one gets selected, and gets 'edited', the edit form displays the first movie card's data. 
 
