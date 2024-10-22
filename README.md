@@ -588,7 +588,7 @@ The initial phase of testing consisted of checking through the stories. Below, I
     &nbsp;
     ![Login Page](docs/features/login-laptop-page.png)
 
-    ![Register Page](TBD)
+    ![Register Page](docs/features/register-mobile-page.png)
   \
   &nbsp;
     Before the user can access their account, they must login. If the user does not have an account, there is also an option for them to create an account. Both Login and Register pages allow users to easily navigate between the two.
@@ -598,13 +598,13 @@ The initial phase of testing consisted of checking through the stories. Below, I
 2. As a user, I want to be able to create, read, update and delete my movie entries.
       \
     &nbsp;
-    ![Add Movie Feature](TBD)
+    ![Add Movie Feature](docs/features/add-movie-laptop-page.png)
 
-    ![My Movies Page](TBD)
+    ![My Movies Page](docs/features/main-view-entry.png)
 
-    ![Edit Movie Feature](TBD)
+    ![Edit Movie Feature](docs/features/main-edit-prepopulated.png)
 
-    ![Delete Movie Feature](TBD)
+    ![Delete Movie Feature](docs/features/delete-warning-dialog.png)
   \
   &nbsp;
     The user's account 'My Movies' is where the user can view their movies and also fill a (flask) form to add a movie to their database. When they click on their respective movie entry, a dialog appears showing the respective movie's info and also providing the option to the user to edit or delete the movie entry.
@@ -613,7 +613,7 @@ The initial phase of testing consisted of checking through the stories. Below, I
     
 3. As a user, I want to be able to view other users' entries.
     &nbsp;
-    ![Community Page](TBD)
+    ![Community Page](docs/features/community-movie-card.png)
   \
   &nbsp;
     Aside from My Movies page, there is another page called Community, where the user can see what movies other users have been watching.
@@ -622,7 +622,7 @@ The initial phase of testing consisted of checking through the stories. Below, I
 
 4. As a user, I want to be able to navigate around the website easily.
     &nbsp;
-    ![Header](TBD)
+    ![Header](docs/features/main-navigation-header.png))
   \
   &nbsp;
     The website has a clear and clean navigation layout to make it intuitive for the user to navigate around the website. One of the features is a header, which indicates which page is active. Another feature is when users hover over interactable UI components, there are visual effects (for example change of colour, opacity etc.)
@@ -631,9 +631,9 @@ The initial phase of testing consisted of checking through the stories. Below, I
 
 5. As a user, I want to be able to logout of my account.
     &nbsp;
-    ![Header](TBD)
+    ![Header](docs/features/main-navigation-header.png)
 
-    ![Logged Out Flask Message](TBD)
+    ![Logged Out Flask Message](docs/features/main-logged-out.png)
   \
   &nbsp;
     On the top right-hand corner, one of the options in the navigation header is to 'Logout'. When clicked, the user is logged out and directed back to the login page.
