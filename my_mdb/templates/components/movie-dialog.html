@@ -1,11 +1,11 @@
 <!-- Dialog when user clicks on movie poster to edit/ delete entry -->
-<dialog class="movie-card-dialog-{{ movie.id }}" >
+<dialog id="movieCardDialog-{{ movie.id }}" class="movie-card-dialog-{{ movie.id }}" >
   <!-- Top row of edit, delete + close dialog btns -->
   <div class="flex row" id="dialog-btn-row">
     {% include "components/button-edit.html" %}
     {% include "components/button-delete.html" %}
     <div class="flex right-end" id="close-dialog-btn-div">
-      <button autofocus> X </button>
+      <button id="closeDialogBtn-{{ movie.id }}" data-movie-id="{{ movie.id }}" class="close-dialog-btn" autofocus> X </button>
     </div>
   </div> 
 

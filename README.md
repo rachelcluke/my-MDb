@@ -699,7 +699,8 @@ These are the key issues that emerged throughout the project development, and ho
   - There was initially an operational error when running ```from my_mdb import db``` in a terminal. This was due to a misspelling of the app's name (i.e.,'mymdb' was written and not 'my_mdb') which imported the app so this was amended. 
 
 - index.js
-  - The movie card dialogs were successfully being passed flask route data, however the edit button for each dialog was only passing the first movie card's ID (relative to the user's account). This was resolved by assigning the dialog reference later in the getMovieDataforDialog() function and passing the movie id in that method.
+  - The movie card dialogs were successfully being passed flask route data, however the edit button for each dialog was only passing the first movie card's ID (relative to the user's account). This was resolved by assigning the dialog reference later in the getMovieDataforDialog() function and passing the movie id in that method from the dialog class (in movie-dialog.html).
+  - The close button for dialog was also working (i.e., closing the movie dialog) for the first movie card. To resolve this, in movie-dialog.html, an id which passes through the movie id, a data movie Id attribute and a class was added to the close 'x' button. The class of this button, was then targetted in the index.js query selectors and an addEventListener method for all the buttons with this class was added. Console logs were used to debug and figure out what was happening/ what data was being passed.
 
 - .gitignore
   - Initially, the env.py was not included in this file, and was getting committed to the respository. To rectify this, ```git rm -r --cached .env``` was ran in a terminal and env.py was added to the .gitignore file. Additionally, a new secret key was created from running the command ```openssl rand -hex 32```.
@@ -715,7 +716,7 @@ These are the key issues that emerged throughout the project development, and ho
 
 ## Unfixed Bugs
 
-- The close movie card dialog button and delete button only work for the 'first' movie card. If the user wishes to close the dialog, they either have to go back in the browser or click 'Edit' and then confirm 'Cancel' to redirect back to their account. 
+- The delete button only works for the 'first' movie card. 
 
 - Flask field validation pop-ups should be adjusted according to media queries.
 

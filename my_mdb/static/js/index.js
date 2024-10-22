@@ -5,7 +5,8 @@ const movieCardImgRef = document.querySelectorAll('.movie-card-poster');
 //const movieCardDialogRef = document.querySelector('.movie-card-dialog-{{ movie.id }}');
 const warningCancelDialogRef = document.querySelector('#warning-cancel-dialog');
 const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
-const closeDialogBtnRef = document.querySelector('#close-dialog-btn-div');
+// const closeDialogBtnRef = document.querySelector('#close-dialog-btn');
+const closeDialogBtnsRef = document.querySelectorAll('.closeDialogBtn');
 const deleteMovieBtnRef = document.querySelector('#div-delete-btn');
 const cancelBtnRef = document.querySelector('#cancel-btn');
 const closeCancelDialogBtnRef = document.querySelector('#close-cancel-warning-dialog-btn');
@@ -32,8 +33,6 @@ let yyyy = today.getFullYear();
 //Functions
 function getMovieDataforDialog(obj) {
 
-    console.log('Before Assigning', movieCardDialogRef)
-
     currentMovieName = obj.dataset.movieName;
     currentMovieDate = obj.dataset.movieDate;
     currentMovieReview = obj.dataset.movieReview;
@@ -42,25 +41,27 @@ function getMovieDataforDialog(obj) {
     setMovieDataforDialog();
     movieCardDialogRef.showModal();
 
-    console.log('After Assigning', movieCardDialogRef)
-
-    closeDialogBtnRef?.addEventListener("click",  () => {
-        console.log('CLOSE CLICKED!')
-        movieCardDialogRef.close();
-        console.log('In Close', movieCardDialogRef)
-
+    closeDialogBtnsRef.forEach(button => {
+        button.addEventListener("click", (event) => {
+            const movieId = event.target.dataset.movieId;
+            const dialogRef = document.getElementById(`movieCardDialog-${movieId}`);
+    
+            if (dialogRef) {
+                console.log('CLOSE CLICKED for movie id:', movieId);
+                dialogRef.close(); // Close the corresponding dialog
+            } else {
+                console.error(`Dialog not found for movie id: ${movieId}`);
+            }
+        });
     });
 }
 
 function setMovieDataforDialog() {
-    console.log('dialogMovieIdRef: ', dialogMovieIdRef)
-    console.log('currentMovieId: ', currentMovieId)
-
     dialogMovieNameRef.textContent = currentMovieName;
     dialogMovieDateRef.textContent = currentMovieDate;
     dialogMovieReviewRef.textContent = currentMovieReview;
     dialogMovieIdRef.textContent = currentMovieId;
-    console.log('dialogMovieIdRef: ', dialogMovieIdRef.textContent)
+    console.log('dialogMovieIdRef: ', dialogMovieIdRef.textContent);
 }
 
 function formatDateField() {
@@ -86,12 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //     });
     // }
 
-    // closeDialogBtnRef?.addEventListener("click",  () => {
-    //     console.log('CLOSE CLICKED!')
-    //     movieCardDialogRef.close();
-    //     console.log('2', movieCardDialogRef)
-
-    // });
+    //closeDialogBtnRef?.addEventListener("click",  () => {
+        //console.log('CLOSE CLICKED!');
+        //movieCardDialogRef.close();
+        //console.log('In Close', movieCardDialogRef);
+    //});
 
     cancelBtnRef?.addEventListener("click",  () => {
         warningCancelDialogRef.showModal();
