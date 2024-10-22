@@ -1,6 +1,6 @@
 #myMDB (Movie Tracker) Website
 
-<!--[Am I responsive - myMDB](docs/XXX "Am I responsive")-->
+[Am I responsive - myMDB](docs/amiresponsive.png "Am I responsive")
 
 # Project Overview
 
@@ -20,9 +20,10 @@ The following are high-level details of this project:
 - The final version has been deployed via GitHub Pages.
 - There are no passwords or secret keys in the project repository. 
 
+The last update to this file was: **October 22nd, 2024**
 
-The last update to this file was: **October 21st, 2024**
-
+\
+    &nbsp;
 # Table of Contents
 
 - [My MDb](#my-mdb)
@@ -52,12 +53,16 @@ The last update to this file was: **October 21st, 2024**
   - [Tools](#tools)
 - [Validating](#validating)
 - [Testing](#testing)
+  -[Testing user stories](#testing-user-stories)
+  -[Debugging](#debugging)
+  -[Unfixed bugs](#unfixed-bugs)
 - [Deployment](#deployment)
- -[Heroku](#heroku)
- -[How to run this project localy](#run-locally)
+  -[Heroku](#heroku)
+  -[How to run this project localy](#how-to-run-this-project-locally)
 - [Credits](#credits)
 
-
+\
+    &nbsp;
 # UX
 
 ## User Goals
