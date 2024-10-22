@@ -118,9 +118,7 @@ a, a:visited {
 #logo-text a{
     font-size: 2rem;
     font-family: var(--font-roboto);
-    font-weight: 700px;
     color: var(--offwhite);
-    letter-spacing: -5%;
     padding-left: 1rem;
     opacity: 100%;
 }
@@ -210,7 +208,6 @@ a, a:visited {
     padding: .5rem 5rem .5rem 5rem;
     border-radius: 1.5rem 1.5rem;
     font-weight: 600;
-    letter-spacing: -10%;
     background-color: var(--supernova);
 }
 
@@ -291,7 +288,6 @@ form .auth-btn {
     padding: .5rem 5rem .5rem 5rem;
     border-radius: 1.5rem 1.5rem;
     font-weight: 600;
-    letter-spacing: -10%;
     background-color: var(--supernova);
 }
 
@@ -369,11 +365,11 @@ dialog {
 }
 
 #movie-api-description{
-    padding-left: -50%;
+    margin-left: -50%;
 }
 
 #dialog-movie-name {
-    flex-wrap: none;
+    flex-wrap: nowrap;
     width: auto;
 }
 
@@ -474,7 +470,6 @@ dialog p {
 
     .login-btn, .register-btn {
         padding: 1rem 7rem 1rem 7rem;
-        letter-spacing: -10%;
         font-size: 2.5rem;
     }
 
@@ -534,7 +529,7 @@ dialog p {
     }
 
     body {
-        padding: 10rem, 10rem, 10rem, 10rem;
+        padding: 10rem 10rem 10rem 10rem;
     }
 
     #logo-text a{
@@ -642,7 +637,6 @@ dialog p {
 
     .login-btn, .register-btn {
         padding: 2rem 15rem 2rem 15rem;
-        letter-spacing: -10%;
         font-size: 4rem;
     }
 
