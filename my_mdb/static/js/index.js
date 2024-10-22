@@ -2,7 +2,7 @@
 
 //Query Selectors
 const movieCardImgRef = document.querySelectorAll('.movie-card-poster');
-const movieCardDialogRef = document.querySelector('.movie-card-dialog');
+//const movieCardDialogRef = document.querySelector('.movie-card-dialog-{{ movie.id }}');
 const warningCancelDialogRef = document.querySelector('#warning-cancel-dialog');
 const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
 const closeDialogBtnRef = document.querySelector('#close-dialog-btn-div');
@@ -22,6 +22,7 @@ let currentMovieName;
 let currentMovieDate;
 let currentMovieReview;
 let currentMovieId;
+let movieCardDialogRef;
 
 let today = new Date();
 let dd = today.getDate();
@@ -30,17 +31,36 @@ let yyyy = today.getFullYear();
 
 //Functions
 function getMovieDataforDialog(obj) {
+
+    console.log('Before Assigning', movieCardDialogRef)
+
     currentMovieName = obj.dataset.movieName;
     currentMovieDate = obj.dataset.movieDate;
     currentMovieReview = obj.dataset.movieReview;
     currentMovieId =  obj.dataset.movieId;
+    movieCardDialogRef = document.querySelector(`.movie-card-dialog-${currentMovieId}`);
+    setMovieDataforDialog();
+    movieCardDialogRef.showModal();
+
+    console.log('After Assigning', movieCardDialogRef)
+
+    closeDialogBtnRef?.addEventListener("click",  () => {
+        console.log('CLOSE CLICKED!')
+        movieCardDialogRef.close();
+        console.log('In Close', movieCardDialogRef)
+
+    });
 }
 
 function setMovieDataforDialog() {
+    console.log('dialogMovieIdRef: ', dialogMovieIdRef)
+    console.log('currentMovieId: ', currentMovieId)
+
     dialogMovieNameRef.textContent = currentMovieName;
     dialogMovieDateRef.textContent = currentMovieDate;
     dialogMovieReviewRef.textContent = currentMovieReview;
     dialogMovieIdRef.textContent = currentMovieId;
+    console.log('dialogMovieIdRef: ', dialogMovieIdRef.textContent)
 }
 
 function formatDateField() {
@@ -58,16 +78,20 @@ function formatDateField() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    for( var i=0; i<movieCardImgRef.length; i++){
-        movieCardImgRef[i].addEventListener("click", () => { 
-            setMovieDataforDialog();
-            movieCardDialogRef.showModal();
-        });
-    }
+    // for( var i=0; i<movieCardImgRef.length; i++){
+    //     console.log('movieCardImgRef[i]: ', movieCardImgRef[i])
+    //     movieCardImgRef[i].addEventListener("click", () => { 
+    //         setMovieDataforDialog();
+    //         movieCardDialogRef.showModal();
+    //     });
+    // }
 
-    closeDialogBtnRef?.addEventListener("click",  () => {
-        movieCardDialogRef.close();
-    });
+    // closeDialogBtnRef?.addEventListener("click",  () => {
+    //     console.log('CLOSE CLICKED!')
+    //     movieCardDialogRef.close();
+    //     console.log('2', movieCardDialogRef)
+
+    // });
 
     cancelBtnRef?.addEventListener("click",  () => {
         warningCancelDialogRef.showModal();

@@ -1,5 +1,5 @@
 <!-- Dialog when user clicks on movie poster to edit/ delete entry -->
-<dialog class="movie-card-dialog">
+<dialog class="movie-card-dialog-{{ movie.id }}" >
   <!-- Top row of edit, delete + close dialog btns -->
   <div class="flex row" id="dialog-btn-row">
     {% include "components/button-edit.html" %}
@@ -12,13 +12,13 @@
   <!-- Row with movie poster + api info -->
   <div class="flex row" id="movie-api-info">
     <figure>
-      <img class="movie-card-poster" src="/static/img/joker-poster.jpg" alt="Movie Poster">
+      <img class="movie-dialog-poster" src="/static/img/joker-poster.jpg" alt="Movie Poster">
     </figure>
     <div class="flex column" id="movie-api-description">
       <div class="flex row" id="dialog-movie-name">
         <p>{{ movie.movie_name }}</p>
       </div>
-      <div id ="dialog-movie-id" class="hidden">
+      <div id ="dialog-movie-id">
         <p>{{ movie.id }}</p>
       </div>
     </div>

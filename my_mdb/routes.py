@@ -142,6 +142,7 @@ def delete_movie(movie_id):
 @app.route("/edit-movie/<int:movie_id>", methods=["GET", "POST"])
 def edit_movie(movie_id):
     movie = Movie.query.get_or_404(movie_id)
+    print('MOVIE: ', movie_id)
     form = EditMovieForm()
     form.movie_review.data = movie.movie_review
     form.view_date.data = movie.view_date
