@@ -4,10 +4,11 @@
 const movieCardImgRef = document.querySelectorAll('.movie-card-poster');
 //const movieCardDialogRef = document.querySelector('.movie-card-dialog-{{ movie.id }}');
 const warningCancelDialogRef = document.querySelector('#warning-cancel-dialog');
-const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
+//const warningDeleteDialogRef = document.querySelector('#warning-delete-dialog');
 // const closeDialogBtnRef = document.querySelector('#close-dialog-btn');
 const closeDialogBtnsRef = document.querySelectorAll('.close-dialog-btn');
-const deleteMovieBtnRef = document.querySelector('#div-delete-btn');
+//const deleteMovieBtnRef = document.querySelector('#div-delete-btn');
+const deleteMovieBtnsRef = document.querySelectorAll('.delete-dialog-btn');
 const cancelBtnRef = document.querySelector('#cancel-btn');
 const closeCancelDialogBtnRef = document.querySelector('#close-cancel-warning-dialog-btn');
 const closeDeleteDialogBtnRef = document.querySelector('#close-delete-warning-dialog-btn');
@@ -47,12 +48,29 @@ function getMovieDataforDialog(obj) {
             const dialogRef = document.querySelector(`#movieCardDialog-${movieId}`);
     
             if (dialogRef) {
-                dialogRef.close(); // Close the corresponding dialog
+                dialogRef.close(); 
             } else {
                 console.error(`Dialog not found for movie id: ${movieId}`);
             }
         });
     });
+
+    deleteMovieBtnsRef.forEach(button => {
+        button.addEventListener("click", (event) => {
+            const movieId = event.target.dataset.movieId;
+            const deleteDialogRef = document.querySelector(`#warningDeleteDialog-${movieId}`);
+    
+            if (deleteDialogRef) {
+                deleteDialogRef.showModal(); 
+            } else {
+                console.error(`Dialog not found for movie id: ${movieId}`);
+            }
+        });
+    });
+
+    //closeDeleteDialogBtnRef?.addEventListener("click",  () => {
+        //warningDeleteDialogRef.close();
+    //});
 }
 
 function setMovieDataforDialog() {
@@ -60,7 +78,6 @@ function setMovieDataforDialog() {
     dialogMovieDateRef.textContent = currentMovieDate;
     dialogMovieReviewRef.textContent = currentMovieReview;
     dialogMovieIdRef.textContent = currentMovieId;
-    console.log('dialogMovieIdRef: ', dialogMovieIdRef.textContent);
 }
 
 function formatDateField() {
@@ -100,12 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
         warningCancelDialogRef.close();
     });
 
-    deleteMovieBtnRef?.addEventListener("click",  () => {
-        warningDeleteDialogRef.showModal();
-    });
+    //deleteMovieBtnsRef?.addEventListener("click",  () => {
+        //warningDeleteDialogRef.showModal();
+    //});
 
-    closeDeleteDialogBtnRef?.addEventListener("click",  () => {
-        warningDeleteDialogRef.close();
-    });
+    //closeDeleteDialogBtnRef?.addEventListener("click",  () => {
+        //warningDeleteDialogRef.close();
+    //});
 
 });
