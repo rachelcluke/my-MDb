@@ -44,7 +44,7 @@ function getMovieDataforDialog(obj) {
     closeDialogBtnsRef.forEach(button => {
         button.addEventListener("click", (event) => {
             const movieId = event.target.dataset.movieId;
-            const dialogRef = document.getElementById(`movieCardDialog-${movieId}`);
+            const dialogRef = document.querySelector(`#movieCardDialog-${movieId}`);
     
             if (dialogRef) {
                 dialogRef.close(); // Close the corresponding dialog
