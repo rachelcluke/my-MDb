@@ -170,7 +170,7 @@ The wireframes are below:
 
 [Login Page - Mobile & Desktop Wireframes](docs/wireframes/wireframe-login-page-mobile-desktop.png "login mobile and desktop wireframes")
 
-[Main Page - Mobile & Desktop Wireframes](docs/wireframes/wireframe-landing-page-mobile-desktop.png "main mobile and desktop wireframes")
+[Main Page - Mobile & Desktop Wireframes](docs/wireframes/wireframe-main-page-mobile-desktop.png "main mobile and desktop wireframes")
 
 [Community Page - Mobile & Desktop Wireframes](docs/wireframes/wireframe-community-page-mobile-desktop.png "community mobile and desktop wireframes")
 
@@ -761,7 +761,7 @@ This project was deployed via Heroku, using the following steps:
 3. In the 'Deployment method' section, connect to GitHub (and also Enable Automatic Deploys).
 4. Run in console: (```python3```)
 5. In console, import Postgres database: (```from my_mdb import db```) and then (```db.create_all()```).
-6. Deploy the website. This link is [My Mdb Website](https://my-mdb-eadb6d03939b.herokuapp.com/ "My Mdb")
+6. Deploy the website. This link is [My Mdb Website](https://my-mdb-eadb6d03939b.herokuapp.com/ "My Mdb").
 7. If any changes were required, they could be done, commited and pushed to GitHub and the changes would automatically be updated and deployed.
 
 ## How to Run this Project Locally 
