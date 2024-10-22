@@ -569,12 +569,20 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 # Validating
 
 ## HTML Validation
+- Using the w3 validator, I inputted the Heroku deployment URL to check the HTML throughout the website. There were no errors.
+  - HTML validator [results](docs/validator/w3-nu-html-validation.png "W3C HTML")
 
 ## CSS Validation
+- Initially for the CSS, there were 9 value errors, so these have been amended and as a result, there are now no errors.
+  - CSS (style.css) validator [results](docs/validator/w3-css-validation.png "W3C CSS")
 
 ## JS Validation
+- There are five warnings within the index.js, all to do with the ESVersion and not the syntax.
+  - JS (index.js) validator [results](docs/validator/js-hint-js-validation.png "JSHint JS")
 
 ## Python PEP8 checker
+- XXXX
+  - Python PEP8 checker [results](docs/validator/XXXX.png "Python PEP8")
 
 \
 &nbsp;
@@ -629,7 +637,7 @@ The initial phase of testing consisted of checking through the stories. Below, I
 
 4. As a user, I want to be able to navigate around the website easily.
     &nbsp;
-    ![Header](docs/features/main-navigation-header.png))
+    ![Header](docs/features/main-navigation-header.png)
   \
   &nbsp;
     The website has a clear and clean navigation layout to make it intuitive for the user to navigate around the website. One of the features is a header, which indicates which page is active. Another feature is when users hover over interactable UI components, there are visual effects (for example change of colour, opacity etc.)
