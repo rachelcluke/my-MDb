@@ -704,6 +704,7 @@ dialog p {
     #movie-api-info img {
         width: 35%;
         height: auto;
+        margin-left: -45%;
     }
 
     #movie-user-info {
@@ -878,6 +879,11 @@ dialog p {
 
     .movie-card-column figure img, .movie-card-community-column figure img {
         width: 45%;
+        height: auto;
+    }
+
+    .movie-dialog-poster {
+        padding-right: 15rem;
     }
 
     #movie-user-info {
