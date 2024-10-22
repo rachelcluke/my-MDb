@@ -261,7 +261,6 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
     \
     &nbsp;
-
   - When these backend validations have been checked through, only then can a new user be registered. Another feature, which is not shown on the interface is that the password gets hashed in the backend.
 
 ### My Movies Page
@@ -420,7 +419,6 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
     \
     &nbsp;  
-  
   - This change would be made and can be viewed in the My Movies, which is where the user is redirected to, after the edit submission. Below, is the screenshot evincing that the change that has been made in the backend.
 
   \
@@ -452,7 +450,6 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
     \
     &nbsp;  
-
   - If the user were to cancel the edit request, no updates would be committed to the database, and the user would be redirected back to their movies page.
 
 ### Delete Movie Card
@@ -467,10 +464,21 @@ Based on the wireframes, I created mockups using [Figma](https://www.figma.com/ 
 
     \
     &nbsp;  
-
   - If the user clicks on 'Yes, Delete', positioned intentionally on the left-hand side to help mitigate user error, then the movie card is deleted. The user is redirected to their Movies page, and that movie card is removed from their page.
 
- 
+### Community Page
+
+- View other users' movie cards
+  - In the navigation header, the user can navigate to the Community page. This page contains all the movie cards watched by users, and is ordered descending by date (i.e., the latest seen movies are on top).
+  \
+    &nbsp;
+
+    ![Community Page](docs/features/community-movie-card.png)
+
+    \
+    &nbsp;  
+  - The Community movie cards are slightly different to those in My Movies, as they have more info on the main screen (Movie Title, View Date and User ID). They also are not interactable (i.e., you cannot click on the movie poster for a dialog to edit/delete the movie card). Users can only edit/delete movie cards in their own movies page.
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
