@@ -729,9 +729,9 @@ These are the key issues that emerged throughout the project development, and ho
 
 ## Unfixed Bugs
 
-- The delete button only works for the 'first' movie card. 
-
 - Flask field validation pop-ups should be adjusted according to media queries.
+
+- For Heroku deployment, when a new user registers, their ID does not increment (reason unknown) hence they can view other user's movies in their account. This is not an issue when running locally.
 
 - Some pages have white spaces (when scrolled horizontally, vertically or both).
 
