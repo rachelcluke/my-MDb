@@ -737,7 +737,9 @@ These are the key issues that emerged throughout the project development, and ho
 - CSS Media queries for larger devices (i.e., laptops + desktops) are not complete. The My Movies and Community Page should display movie cards as rows of 4, and not a column like it is set by default for smaller devices (i.e., mobiles + tablets). 
  - This issue may also be the cause of why sometimes the page gets 'cut off' at the bottom.
 
-- For some media queries/ pages, the footer 'floats'. It should be rooted at the bottom of the page.
+- When the website is in 'Inspect' mode in the browser, sometimes the background is cut off (it is not cut off otherwise), and the light text cannot be seen in the Inspect view, especially regarding the Community movie card captions. To view these captions, exit the Inspect view.
+
+- For some media queries/ pages (specifically My Movies page, when there are no movie entries), the footer 'floats'. It should be rooted at the bottom of the page.
 
 \
 &nbsp;
