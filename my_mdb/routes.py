@@ -74,7 +74,8 @@ def register():
             db.session.commit()
             session["user"] = request.form.get("username").lower()
             current_user = session["user"]
-            return redirect(url_for("my_movies", username=session["user"], user_id=session["user_id"]))
+            flash("New user has been registered, please login")
+            return redirect(url_for("login"))
 
     return render_template("/pages/register.html", title='Register', form=form)
 

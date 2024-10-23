@@ -700,6 +700,7 @@ These are the key issues that emerged throughout the project development, and ho
 
 - routes.py
   - For register(), when implementing the existing user validation, there was an Unbound Local Error due to a User query calling a variable that was only declared afterwards. This was resolved by reordering the local variables.
+  - For register(), when a new user registered and flask rendered directly to the My Movies page, even though the newly registered username was rendered fine, there was an issue with loading the correct movies. This was resolved by switching the redirect url from the My Movies page to the Login page instead. A flash message is displayed to the user confirming that their credentials has been set up and they can login again.
   - For my_movies(), initially all the movies were showing up in the user's My Movies page, which was not the intended experience, as it should have only been displaying the user's movies. To resolve this, a multiple query was used (i) to order the movies by their 'view date' and (ii) to filter movies by the user in session's ID. 
   - For edit_movie(), when an error validation was being caught, there was a werkzeug error when redirecting the url. This was resolved by passing and including the respective movie id within the url.
   - The app route names have all been modified to be user-friendly for ther users to type in the url (i.e., only lowercase and dashes used).
@@ -730,8 +731,6 @@ These are the key issues that emerged throughout the project development, and ho
 ## Unfixed Bugs
 
 - Flask field validation pop-ups should be adjusted according to media queries.
-
-- For Heroku deployment, when a new user registers, their ID does not increment (reason unknown) hence they can view other user's movies in their account. This is not an issue when running locally.
 
 - Some pages have white spaces (when scrolled horizontally, vertically or both).
 
